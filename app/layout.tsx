@@ -37,15 +37,15 @@ export default function RootLayout({
     return (
         <html lang="en">
             <head>
-                <Script async src="https://www.googletagmanager.com/gtag/js?id=G-SBKV8PB2QN"></Script>
-                <Script>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-SBKV8PB2QN"></script>
+                <script>
                     {`window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
 
                     gtag('config', 'G-SBKV8PB2QN');
                     `}
-                </Script>
+                </script>
             </head>
             <body>
                 {children}

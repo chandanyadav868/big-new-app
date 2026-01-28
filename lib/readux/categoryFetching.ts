@@ -23,7 +23,7 @@ export const fetchCategories = createAsyncThunk<ArticlesProp, { category: string
     "categories/fetchCategories",
     async ({ category, fetchedArticleLength }, thunkApi) => {
         try {
-            const response = await fetch(`/category/api?category=${category}&fetchedArticleLength=${fetchedArticleLength}`);
+            const response = await fetch(`/api/category/?category=${category}&fetchedArticleLength=${fetchedArticleLength}`);
             if (response.ok) {
                 const responseJson = await response.json();                
                 return responseJson.data as ArticlesProp;
