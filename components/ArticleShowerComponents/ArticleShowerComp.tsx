@@ -1,16 +1,14 @@
 import { SingleArticleProps } from '@/lib/readux/singleArticleFetched'
-import Image from 'next/image';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/readux/store';
-import Link from 'next/link';
-import NotLoggedINError from '../NotLoggedInError';
+import NotLoggedINError from '@/components/NotLoggedInError';
 import CommentComponents, { NotloggedInDialogboxShowProp } from '../CommentComponents';
-import FigureImage from '../FigureImage';
-import LineDivider from '../LineDivider';
-import HeadingRender from '../HeadingRender';
-import MDEditorMarkdown from '../MDEditorMarkdown';
-import ProfileBanner from '../ProfileBanner';
+import FigureImage from '@/components/FigureImage';
+import LineDivider from '@/components/LineDivider';
+import HeadingRender from '@/components/HeadingRender';
+import MDEditorMarkdown from '@/components/MDEditorMarkdown';
+import ProfileBanner from '@/components/ProfileBanner';
 
 
 const ArticleShowerComp = ({ _id, blogImageUrl, featuredImagealt, content, isLiked, createdBy, likes, dislikes, isDisLiked, title, category }: SingleArticleProps) => {
