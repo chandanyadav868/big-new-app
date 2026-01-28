@@ -19,7 +19,7 @@ function RelatedArticleFetch({ category }: { category: string }) {
     };
 
     return (
-        <area role='related article container' className='max-w-screen-lg mx-auto px-3 mt-2'>
+        <article role='related article container' className='max-w-screen-lg mx-auto px-3 mt-2'>
 
             <h1 className='font-bold lg:text-4xl text-2xl text-center mb-2'>Related Articles {category.toUpperCase()}</h1>
 
@@ -32,7 +32,7 @@ function RelatedArticleFetch({ category }: { category: string }) {
                     <span onClick={() => moreArticle(data[category].articles?.length)} className='text-white bg-black p-2 rounded-md mt-4 cursor-pointer'>More Article</span>
                 </div>
             }
-        </area>
+        </article>
     )
 }
 
