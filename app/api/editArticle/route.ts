@@ -13,7 +13,7 @@ export async function GET(req: NextRequest) {
   try {
     await connectToDatabase();
     const response = await ArticleModel.findById({ _id: articleId }).lean();
-    console.log({response});
+    // console.log({response});
 
     if (!response) return NextResponse.json({ status: 400, message: "We have not found any article related to it", error: "error" });
 

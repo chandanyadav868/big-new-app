@@ -28,7 +28,7 @@ export async function GET(req: NextRequest) {
     try {
       const cookiesObject = await cookies();
       const value = cookiesObject.get("accessToken")?.value;
-      console.log("Cookies:-", value);
+      // console.log("Cookies:-", value);
       if (!value) {
         return NextResponse.json({
           status: 404,
@@ -44,7 +44,7 @@ export async function GET(req: NextRequest) {
       const userExistance = await BlogUser.findById({ _id: id })
         .select("-password -refreshToken")
         .lean();
-      console.log(userExistance);
+      // console.log(userExistance);
 
       if (!userExistance) {
         return NextResponse.json({

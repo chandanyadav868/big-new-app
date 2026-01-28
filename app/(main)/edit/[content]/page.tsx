@@ -2,9 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import ContentEditor from '@/components/ContendEditor';
-import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, RootState } from '@/lib/readux/store';
-import { singleArticleEditFetching } from '@/lib/readux/editContent';
 
 export interface PropsContentEdit {
   blogImageUrl?: string;
@@ -25,10 +22,8 @@ const ContentEdit = () => {
   // article loading
   useEffect(() => {
     const response = async () => {
-      const WEBSITE_URL = process.env.WEBSITE_URL
-
       try {
-        const response = await fetch(`${WEBSITE_URL}/api/editArticle?contentId=${content}`);
+        const response = await fetch(`/api/editArticle?contentId=${content}`);
         const jsonConverted = await response.json();
         if (response.status === 200) {
           setAricle(jsonConverted?.data);

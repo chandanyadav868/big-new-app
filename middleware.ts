@@ -11,14 +11,14 @@ interface JWTPayload {
 
 export async function middleware(request: NextRequest,response:NextResponse) {
   try {
-    console.log("URL:- ",request.url);
+    // console.log("URL:- ",request.url);
     
     const cookiesObject = await cookies();
     const accessToken = cookiesObject.get("accessToken");
     let userId="";
     if (accessToken?.value) {
         const {payload} = await jwtVerify(accessToken.value, new TextEncoder().encode(process.env.NEXT_PUBLIC_JWT_SECRET));
-        console.log("middleware code:- ",payload.id);
+        // console.log("middleware code:- ",payload.id);
         userId = payload.id as string || "";
     }
 
