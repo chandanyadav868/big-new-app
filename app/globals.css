@@ -5,7 +5,7 @@
 body{
     width: 100%;
     height: 100vh;
-    background: #f4eff3;
+    /* background-image: linear-gradient(90deg, #E8D6C2, #C0A685) */
 }
 
 @layer utilities{

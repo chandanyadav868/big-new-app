@@ -11,7 +11,7 @@ const BlogModel = new mongoose.Schema({
     likes: [{ type: mongoose.Schema.Types.ObjectId, ref: "BlogUser" }],
     dislikes: [{ type: mongoose.Schema.Types.ObjectId, ref: "BlogUser" }],
     public: { type: Boolean, default: false },
-    slug: { type: String, required: true, unique: true },
+    slug: { type: String, required: true, unique: true, index: true },
     content: { type: String, required: true }
 }, { timestamps: true })
 

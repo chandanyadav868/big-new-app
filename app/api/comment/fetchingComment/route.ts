@@ -8,10 +8,10 @@ export async function GET(req:NextRequest){
         const {searchParams} = req.nextUrl;
         const blogId = searchParams.get("blogId");
         const fetchedComment = searchParams.get("fetchedComment");
-        console.log("blogId:- ", blogId,"\n", "fetchedComment:- ", fetchedComment);
+        // console.log("blogId:- ", blogId,"\n", "fetchedComment:- ", fetchedComment);
         
-        const intialComment = await CommentModel.findOne({blog:blogId}).populate("user","username fullname _id").sort({createdAt:-1}).exec();
-        console.log("intialComment:- ",intialComment);
+        const intialComment = await CommentModel.find({blog:blogId}).populate("user","username fullname _id").sort({createdAt:-1}).exec();
+        // console.log("intialComment:- ",intialComment);
         
         return NextResponse.json({message:"Comment Fetched correctly",comment:intialComment},{status:200});
     } catch (error) {

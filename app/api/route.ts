@@ -67,28 +67,16 @@ export async function GET(req: NextRequest) {
     }
   } else if (id && single === "yes") {
     const cookiesObject = await cookies();
-    let value = undefined;
 
-    if (cookiesObject.get("userId")?.value) {
-      value = new mongoose.Types.ObjectId(cookiesObject.get("userId")?.value);
+    let currentUser = new mongoose.Types.ObjectId(cookiesObject.get("userId")?.value) ?? undefined;
 
-      console.log("currentUser UserId:- ", value);
-    }
+    // console.log("CurrentUser Blog:- ", currentUser);
 
-    let currentUser = undefined;
-    if (value) {
-      console.log("Got Your bro");
-      console.log("currentUser UserId:- ", value);
-      currentUser = value;
-    }
-
-    console.log("CurrentUser Blog:- ", currentUser);
-    
     try {
       const singArticle = await ArticleModel.aggregate([
         {
           $match: {
-            _id: new mongoose.Types.ObjectId(id),
+            slug: id,
           },
         },
         {
@@ -119,19 +107,24 @@ export async function GET(req: NextRequest) {
             as: "createdBy",
             pipeline: [
               {
-                $addFields:{
-                  isFollowed:{
-                    $cond:{
-                      if:{$eq:[currentUser,undefined]},
-                      then:false,
-                      else:{$in:[currentUser,"$followers"]}
+                $addFields: {
+                  isFollowed: {
+                    $cond: {
+                      if: { $eq: [currentUser, undefined] },
+                      then: false,
+                      else: { $in: [currentUser, "$followers"] }
                     }
+                  },
+                  sizeOfFollower: {
+                    $size: "$followers"
                   }
                 }
               },
               {
                 $project: {
                   password: 0,
+                  refreshToken: 0,
+                  followers: 0
                 },
               },
             ],
@@ -153,7 +146,7 @@ export async function GET(req: NextRequest) {
   } else if (id === "logout") {
     try {
       console.log("Yes Logging Out");
-// this is for the accessToken logged out
+      // this is for the accessToken logged out
       const cookiesObject = await cookies();
       cookiesObject.set("accessToken", "", {
         httpOnly: true,
@@ -162,7 +155,7 @@ export async function GET(req: NextRequest) {
         path: "/",
       });
 
-// this is for the userId logged out
+      // this is for the userId logged out
       cookiesObject.set("userId", "", { // Clear the userId cookie
         httpOnly: true,
         secure: true,
@@ -172,7 +165,7 @@ export async function GET(req: NextRequest) {
 
       return NextResponse.json({ status: 200, message: "Logout Successfully" });
     } catch (error) {
-      console.log("Error",error)
+      console.log("Error", error)
       return NextResponse.json({
         status: 500,
         message: "Something Went Wrong in Logout Proccessing",
@@ -183,105 +176,166 @@ export async function GET(req: NextRequest) {
     console.log("Got Your bro");
 
     try {
-      const articles = await ArticleModel.aggregate([
-        {
-          $facet: {
-            trending: [
-              {
-                $sort: {
-                  createdAt: -1,
+      const articles = await ArticleModel.aggregate(
+        [
+          {
+            $facet: {
+              trending: [
+                {
+                  $match: {
+                    public: true
+                  }
                 },
-              },
-              {
-                $limit: 5,
-              },
-              {
-                $addFields: {
-                  likes: { $size: "$likes" },
-                  dislikes: { $size: "$dislikes" },
+                {
+                  $sort: {
+                    createdAt: -1
+                  }
                 },
-              },
-              {
-                $lookup: {
-                  from: "blogusers",
-                  localField: "createdBy",
-                  foreignField: "_id",
-                  as: "createdBy",
-                  pipeline: [
-                    {
-                      $project: {
-                        password: 0,
-                        createdAt: 0,
-                        updatedAt: 0,
-                      },
+                {
+                  $limit: 5
+                },
+                {
+                  $project: {
+                    content: 0,
+                    likes: 0,
+                    dislikes: 0
+                  }
+                },
+                {
+                  $lookup:
+                  /**
+                   * from: The target collection.
+                   * localField: The local join field.
+                   * foreignField: The target join field.
+                   * as: The name for the results.
+                   * pipeline: Optional pipeline to run on the foreign collection.
+                   * let: Optional variables to use in the pipeline field stages.
+                   */
+                  {
+                    from: "blogusers",
+                    localField: "createdBy",
+                    foreignField: "_id",
+                    as: "createdBy",
+                    pipeline: [
+                      {
+                        $project: {
+                          username: 1,
+                          fullname: 1
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  $unwind: "$createdBy"
+                }
+              ],
+              articles: [
+                {
+                  $match:
+                  /**
+                   * query: The query in MQL.
+                   */
+                  {
+                    public: true
+                  }
+                },
+                {
+                  $sort:
+                  /**
+                   * query: The query in MQL.
+                   */
+                  {
+                    createdAt: -1
+                  }
+                },
+                {
+                  $lookup:
+                  /**
+                   * from: The target collection.
+                   * localField: The local join field.
+                   * foreignField: The target join field.
+                   * as: The name for the results.
+                   * pipeline: Optional pipeline to run on the foreign collection.
+                   * let: Optional variables to use in the pipeline field stages.
+                   */
+                  {
+                    from: "blogusers",
+                    localField: "createdBy",
+                    foreignField: "_id",
+                    as: "createdBy",
+                    pipeline: [
+                      {
+                        $project: {
+                          username: 1,
+                          fullname: 1
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  $unwind:
+                  /**
+                   * path: Path to the array field.
+                   * includeArrayIndex: Optional name for index.
+                   * preserveNullAndEmptyArrays: Optional
+                   *   toggle to unwind null and empty values.
+                   */
+                  {
+                    path: "$createdBy"
+                  }
+                },
+                {
+                  $group:
+                  /**
+                   * _id: The id of the group.
+                   * fieldN: The first field name.
+                   */
+                  {
+                    _id: "$category",
+                    articles: {
+                      $push: "$$ROOT"
+                    }
+                  }
+                },
+                {
+                  $addFields:
+                  /**
+                   * newField: The new field name.
+                   * expression: The new field expression.
+                   */
+                  {
+                    articles: {
+                      $slice: ["$articles", 5]
                     },
-                  ],
+                    sizeOfArticles: {
+                      $size: "$articles"
+                    }
+                  }
                 },
-              },
-              {
-                $unwind: "$createdBy",
-              },
-            ],
-            articles: [
-              {
-                $sort: {
-                  createdAt: -1,
-                },
-              },
-              {
-                $group: {
-                  _id: "$category",
-                  articles: {
-                    $push: "$$ROOT",
-                  },
-                },
-              },
-              {
-                $project: {
-                  _id: 0,
-                  articles: { $slice: ["$articles", 5] },
-                },
-              },
-              {
-                $unwind: "$articles",
-              },
-              {
-                $replaceRoot: {
-                  newRoot: "$articles",
-                },
-              },
-              {
-                $addFields: {
-                  likes: { $size: "$likes" },
-                  dislikes: { $size: "$dislikes" },
-                },
-              },
-              {
-                $lookup: {
-                  from: "blogusers",
-                  localField: "createdBy",
-                  foreignField: "_id",
-                  as: "createdBy",
-                  pipeline: [
-                    {
-                      $project: {
-                        password: 0,
-                        createdBY: 0,
-                      },
-                    },
-                  ],
-                },
-              },
-              {
-                $unwind: "$createdBy",
-              },
-            ],
-          },
-        },
-      ]);
+                {
+                  $project:
+                  /**
+                   * specifications: The fields to
+                   *   include or exclude.
+                   */
+                  {
+                    articles: {
+                      content: 0,
+                      likes: 0,
+                      dislikes: 0
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      );
 
       // console.log("Fetched Articles:", articles);
-      return NextResponse.json(articles, { status: 200 });
+      return NextResponse.json(articles[0], { status: 200 });
     } catch (error) {
       console.error("Error fetching articles:", error);
       return NextResponse.json(
@@ -315,7 +369,7 @@ export async function GET(req: NextRequest) {
           // Fetch the document again to confirm the changes
           const articleFindedi = await ArticleModel.findOne({ _id: articleId });
           console.log("Updated Article:", articleFindedi.likes);
-          
+
         } else {
           await ArticleModel.updateOne(
             { _id: articleId },
@@ -335,8 +389,8 @@ export async function GET(req: NextRequest) {
         message: "Successfully Done Likes",
       });
     } catch (error) {
-      console.log("Error",error);
-      
+      console.log("Error", error);
+
       return NextResponse.json({
         status: 500,
         message: "Something Went Wrong",
@@ -368,9 +422,9 @@ export async function GET(req: NextRequest) {
           // Fetch the document again to confirm the changes
           const articleFindedi = await ArticleModel.findOne({ _id: articleId });
           console.log("Updated Article:", articleFindedi.dislikes);
-          
+
         } else {
-           await ArticleModel.updateOne(
+          await ArticleModel.updateOne(
             { _id: articleId },
             { $push: { dislikes: userId } },
             { new: true }
@@ -389,13 +443,13 @@ export async function GET(req: NextRequest) {
       });
     } catch (error) {
       console.log("Error ", error);
-      
+
       return NextResponse.json({
         status: 500,
         message: "Something Went Wrong",
       });
     }
-  } else if(id === "follow"){
+  } else if (id === "follow") {
     try {
       const cookiesObject = await cookies();
       const userId = new mongoose.Types.ObjectId(
@@ -405,8 +459,8 @@ export async function GET(req: NextRequest) {
       const creatorId = searchParams.get("creatorId");
       const creatorFinded = await BlogUser.findOne({ _id: creatorId }).select("-password -refreshToken");
 
-      console.log("Follow currentUser:- ", creatorFinded.followers,"userId:- ",userId);
-      
+      console.log("Follow currentUser:- ", creatorFinded.followers, "userId:- ", userId);
+
 
       if (creatorFinded) {
         if (creatorFinded.followers.includes(userId)) {
@@ -420,7 +474,7 @@ export async function GET(req: NextRequest) {
           // Fetch the document again to confirm the changes
           const creatorFindedi = await BlogUser.findOne({ _id: creatorId });
           console.log("Updated Article:", creatorFindedi.followers);
-          
+
         } else {
           await BlogUser.updateOne(
             { _id: creatorId },
@@ -440,12 +494,12 @@ export async function GET(req: NextRequest) {
         message: "Successfully Done Follow",
       });
     } catch (error) {
-      console.log("Error",error);
-  
+      console.log("Error", error);
+
       return NextResponse.json({
         status: 500,
         message: "Something Went Wrong",
-        error:error
+        error: error
       });
     }
   }

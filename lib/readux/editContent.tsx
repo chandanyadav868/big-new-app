@@ -30,7 +30,7 @@ export interface SingleArticleProps {
 }
 
 export const singleArticleEditFetching = createAsyncThunk<
-    SingleArticleProps[],
+    SingleArticleProps,
     // Return type (void for now, adjust if you return anything)
     { id: string;}, // Argument type (id: string)
     { rejectValue: string } // Optional: Custom error handling type
@@ -45,7 +45,7 @@ export const singleArticleEditFetching = createAsyncThunk<
                 console.log(jsonConverted);
                 
                 if (jsonConverted?.data?.length > 0) {
-                    return jsonConverted.data[0]; // Return the first article
+                    return jsonConverted.data; // Return the first article
                 } else {
                     console.warn("No data found in API response");
                     return thunkApi.rejectWithValue("No article found");
@@ -62,12 +62,12 @@ export const singleArticleEditFetching = createAsyncThunk<
 );
 
 interface InitiaStateProps {
-    article: SingleArticleProps[];
+    article: SingleArticleProps | null;
     error: string | null;
     loading: boolean;
 }
 const initialState: InitiaStateProps = {
-    article: [],
+    article: null,
     error: null,
     loading: false,
 };

@@ -6,118 +6,106 @@ import mongoose from "mongoose";
 
 
 export async function GET(req: NextRequest) {
-    try {
-        const url = req.nextUrl;
-        const profileName = url.searchParams.get("profileName");
+  try {
+    const url = req.nextUrl;
+    const profileName = url.searchParams.get("profileName");
 
-        if (!profileName) {
-            return NextResponse.json({ message: "profileName missing", status: 200 });
+    if (!profileName) {
+      return NextResponse.json({ message: "profileName missing", status: 200 });
+    }
+
+    let cookiesObject = req.cookies.get("userId");
+
+    let ExistingUser = cookiesObject?.value ?? "";
+
+    console.log("Value:- ", ExistingUser);
+    // ExistingUser = "6755455603bf36a0b4db1726"
+
+    // Database connection, to know there is connection established to the mongodb
+    await connectToDatabase();
+    const articlesOfUser = await BlogUser.aggregate([
+      {
+        $match: {
+          username: profileName
         }
-
-        let cookiesObject = req.cookies.get("userId") ;
-
-        let ExistingUser=cookiesObject?.value??"";
-
-        console.log("Value:- ", ExistingUser);
-        // ExistingUser = "6755455603bf36a0b4db1726"
-
-        // Database connection, to know there is connection established to the mongodb
-        await connectToDatabase();
-        const userExisting = await BlogUser.aggregate([
-          {
-            $match: {
-              username:profileName
-            }
+      },
+      {
+        $addFields: {
+          followerCount: {
+            $size: "$followers"
           },
-          {
-            $lookup: {
-              from: "articlemodels",
-              localField: "_id",
-              foreignField: "createdBy",
-              as: "result",
-              pipeline:[
-                {
-                  $sort:{createdAt:-1}
-                },
-                {
-                  $group:{
-                    _id:"$category",
-                    articles:{
-                      $push:"$$ROOT"
-                    }
-                  }
-                },
-                {
-                  $addFields:{
-                    articles:{
-                      $slice:["$articles",5]
-                    }
-                  }
-                },
-                {
-                  $unwind:"$articles"
-                },
-                {
-                  $replaceRoot:{
-                    newRoot:"$articles"
-                  }
-                },
-                {
-                  $addFields:{
-                    likes:{
-                      $size:"$likes"
-                    },
-                    dislikes:{
-                      $size:"$dislikes"
-                    }
-                  }
-                },
-                {
-                  $project:{
-                    content:0,
-                    createdBy:0,
-                    __v:0
-                  }
+          isFollowing: {
+            $in: [
+              { $convert: { input: ExistingUser, to: "objectId", onError: null } },
+              "$followers"
+            ]
+          },
+          isYouOwner: {
+            $eq: [
+              "$_id",
+              { $convert: { input: ExistingUser, to: "objectId", onError: null } }
+            ]
+          }
+        }
+      },
+      {
+        $project: {
+          refreshToken: 0,
+          password: 0,
+          followers: 0
+        }
+      },
+      {
+        $lookup:
+        {
+          from: "articlemodels",
+          localField: "_id",
+          foreignField: "createdBy",
+          as: "arrayOfArticles",
+          pipeline: [
+            {
+              $sort: {
+                updatedAt: -1
+              }
+            },
+            {
+              $group: {
+                _id: "$category",
+                articles: {
+                  $push: "$$ROOT"
                 }
-              ]
-            }
-          },
-          {
-            $addFields: {
-              followerCount: {
-                $size:"$followers"
-              },
-              isFollowing:{
-                $in:[
-                  {$convert:{input:ExistingUser,to:"objectId",onError:null}},
-                  "$followers"
-                ]
-              },
-              ownerChannel:{
-                $eq:[
-                  "$_id",
-                  {$convert:{input:ExistingUser,to:"objectId",onError:null}}
-                ]
+              }
+            },
+            {
+              $project: {
+                articles: {
+                  content: 0,
+                  likes: 0,
+                  dislikes: 0,
+                  createdBy: 0
+                }
+              }
+            },
+            {
+              $addFields: {
+                totalSizeOfArticles: {
+                  $size: "$articles"
+                },
+                articles: {
+                  $slice: ["$articles", 5]
+                }
               }
             }
-          },
-          {
-            $project: {
-              refreshToken:0,
-              password:0,
-              followers:0
-            }
-          }
-        ])
-        // console.log(userExisting[0]);
-
-
-        return NextResponse.json({ message: "Successfully Fetched Data", status: 200,data: userExisting[0]??{}});
-    } catch (error) {
-      console.log(error);
-      
-        return NextResponse.json({ message: "Server Error" }, { status: 500 });
-    }
+          ]
+        }
+      }
+    ])
+    // console.log(userExisting[0]);
+    return NextResponse.json({ message: "Successfully Fetched Data", status: 200, data: articlesOfUser[0] ?? {} });
+  } catch (error) {
+    console.log("Error in Profile Fetching channel:- ",error);
+    return NextResponse.json({ message: "Server Error", status: 500 });
+  }
 }
 
 
@@ -183,7 +171,7 @@ export async function GET(req: NextRequest) {
         {
           $project:{
             content:0,
-      			createdBy:0
+            createdBy:0
           }
         }
       ]

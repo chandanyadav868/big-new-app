@@ -1,85 +1,90 @@
-import { createAsyncThunk,createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-export interface ArticleProps{
-    blogImageUrl:string
-    category:string
-    createdAt:string
-    description:string
-    dislikes:number[]
-    featuredImagealt:string
-    likes:number[]
-    public:boolean
-    slug:string
-    title:string
-    updatedAt:string
-    views:number
-    _id:string
+export interface ArticleProps {
+    _id: string
+    slug: string
+    title: string
+    views: number
+    public: boolean
+    category: string
+    updatedAt: string
+    createdAt: string
+    description: string
+    blogImageUrl: string
+    featuredImagealt: string
 }
 
-export interface ProfileProps{
-    email:string;
-    followerCount:number;
-    fullname:string;
-    isFollowing:boolean;
-    ownerChannel:boolean;
-    updatedAt:Date;
-    username:string;
-    _id:string;
-    result:ArticleProps[]
+export interface ProfileProps {
+    _id: string;
+    email: string;
+    updatedAt: Date;
+    fullname: string;
+    username: string;
+    isYouOwner: boolean;
+    isFollowing: boolean;
+    followerCount: number;
+    arrayOfArticles: {
+        _id: string;
+        articles: ArticleProps[],
+        totalSizeOfArticles: number
+    }[]
 }
 
-let intialProfile:Partial<ProfileProps> = {};
+let intialProfile: Partial<ProfileProps> = {};
 
 const initialState = {
-    loading:false,
-    error:"",
+    loading: false,
+    error: "",
     intialProfile
 }
 
-export const profileAsyncThunk = createAsyncThunk<ProfileProps,{profile:string}>(
+export const profileAsyncThunk = createAsyncThunk<ProfileProps, { profile: string }>(
     "profile",
-    async ({profile},thunkApi)=>{
-        try { 
+    async ({ profile }, thunkApi) => {
+        try {
             const response = await fetch(`/api/profile?profileName=${profile}`);
             const JsonResponse = await response.json();
-            console.log("JosnResponse:- ",JsonResponse);
+            // console.log("JosnResponse:- ", JsonResponse);
             return JsonResponse.data
         } catch (error) {
-            console.log("Error in profileAsyncThunk:- ",error);
+            console.log("Error in profileAsyncThunk:- ", error);
             thunkApi.rejectWithValue(`Error in ProfileAsyncThunk ${error}`)
         }
     }
 )
 
 const profileFetching = createSlice({
-    name:"profile",
+    name: "profile",
     initialState,
-    reducers:{
-        addingNewArticle:(state,payload)=>{
-            let copyIntialResult = state.intialProfile.result;
+    reducers: {
+        addingNewArticle: (state, payload: { type: string, payload: { section: string, data: ArticleProps[] } }) => {
+            let copyIntialResult = state.intialProfile.arrayOfArticles;
             if (!copyIntialResult) {
                 copyIntialResult = []
             };
-            // console.log("payload:- ",payload);
-            state.intialProfile.result = [...copyIntialResult,...payload.payload]
+            console.log("payload:- ", payload);
+            const { data, section } = payload.payload
+            state.intialProfile.arrayOfArticles = copyIntialResult.map((v,i)=> v._id === section? {...v,articles:[...v.articles,...data]}:v);
+
+            return state
         }
     },
     extraReducers(builder) {
-        builder.addCase(profileAsyncThunk.pending,(state,action)=>{
+        builder.addCase(profileAsyncThunk.pending, (state, action) => {
             state.loading = true,
-            state.error = ""
+                state.error = ""
         });
-        builder.addCase(profileAsyncThunk.fulfilled,(state,action)=>{
+        builder.addCase(profileAsyncThunk.fulfilled, (state, action) => {
             state.loading = false,
-            state.intialProfile = action.payload
+                state.intialProfile = action.payload
         });
-        builder.addCase(profileAsyncThunk.rejected,(state,action)=>{
+        builder.addCase(profileAsyncThunk.rejected, (state, action) => {
             state.loading = false;
-            state.error = action.error.message??""
+            state.error = action.error.message ?? ""
         })
     },
 })
 
-export const {addingNewArticle} = profileFetching.actions
+export const { addingNewArticle } = profileFetching.actions
 
 export const profileFetchingData = profileFetching.reducer

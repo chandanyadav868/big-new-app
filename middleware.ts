@@ -9,8 +9,10 @@ interface JWTPayload {
   exp: number;
 }
 
-export async function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest,response:NextResponse) {
   try {
+    console.log("URL:- ",request.url);
+    
     const cookiesObject = await cookies();
     const accessToken = cookiesObject.get("accessToken");
     let userId="";
@@ -39,7 +41,22 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: "/:path*",
+  matcher:[
+    /*
+     * Match all request paths except for the ones starting with:
+     * - api (API routes)
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     */
+    {
+      source: '/((?!api|_next/static|_next/image|images|favicon.ico).*)',
+      missing: [
+        { type: 'header', key: 'next-router-prefetch' },
+        { type: 'header', key: 'purpose', value: 'prefetch' },
+      ],
+    },
+  ]
 };
 
 // we can not use jwt verify because of Edge runtime of next.js, it does not have module [Error: The edge runtime does not support Node.js 'crypto' module.

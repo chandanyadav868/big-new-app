@@ -1,5 +1,6 @@
 import { connectToDatabase } from "@/lib/mongodb";
 import { ArticleModel } from "@/model/blog_model";
+import { BlogUser } from "@/model/user_model";
 import { NextRequest,NextResponse } from "next/server";
 
 export async function GET(req:NextRequest){
@@ -12,23 +13,29 @@ export async function GET(req:NextRequest){
         }
         
         const cookiesObject = req.cookies.get("userId");
-        console.log("cookiesObjectL- ",cookiesObject);
+        console.log("cookiesObjectL- ",cookiesObject,req.cookies.get("userId"));
         
-        if (!cookiesObject?.value) {
-            return NextResponse.json({message:"Your are not logged in"},{status:401})
-        }
+        // if (!cookiesObject?.value) {
+        //     return NextResponse.json({message:"Your are not logged in"},{status:401})
+        // }
 
         await connectToDatabase();
-        const articleExisting = await ArticleModel.findById(deleteArticleId);
+        const articleExisting = await ArticleModel.findById(deleteArticleId,{
+            title:1
+        },{
+            populate:"createdBy",  
+        });
+        const userExisting = await BlogUser.findById(articleExisting.createdBy);
 
         if (!articleExisting) {
             return NextResponse.json({message:"Article does not exist"},{status:200})
         }
 
         console.log("articleExisting:- ", articleExisting);
+        console.log("userExisting:- ", userExisting);
 
-        const articleDeleted = await ArticleModel.deleteOne({_id:articleExisting});
-        console.log("articleDeleted:- ",articleDeleted);
+        // const articleDeleted = await ArticleModel.deleteOne({_id:articleExisting});
+        // console.log("articleDeleted:- ",articleDeleted);
         
         return NextResponse.json({message:"Successfully Fetched"},{status:200})
         

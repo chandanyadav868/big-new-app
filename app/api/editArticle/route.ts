@@ -6,93 +6,35 @@ import { NextResponse } from "next/server";
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const articleId = searchParams.get("contentId");
-  const content = searchParams.get("content");
+  
+  // if article id is not present then throw
+  if (!articleId) return NextResponse.json({ status: 500, message: "Please provide the ArticleId", error: "Provide articleId" });
 
-  console.log("article edit id:- ", articleId);
-  console.log("article edit id:- ", content);
+  try {
+    await connectToDatabase();
+    const response = await ArticleModel.findById({ _id: articleId }).lean();
+    console.log({response});
 
-  if (articleId && content === "Get") {
-    try {
-      await connectToDatabase()
-      const response = await ArticleModel.find({ _id: articleId }).lean();
+    if (!response) return NextResponse.json({ status: 400, message: "We have not found any article related to it", error: "error" });
 
-      // console.log(response);
-      
-      if (!response[0]._id) {
-        return NextResponse.json({
-          status: 400,
-          message: "We have not found any article related to it",
-          error:"error"
-        });
-      }
+    return NextResponse.json({ status: 200, message: "Data Got", data: response });
 
-      if (response[0]._id) {
-        return NextResponse.json({
-          status: 200,
-          message: "Data Got",
-          data: response,
-        });
-      }
-
-    } catch (error) {
-      return NextResponse.json({
-        status: 500,
-        message: "Something Went Wrong",
-        error:error
-      });
-    }
+  } catch (error) {
+    return NextResponse.json({ status: 500, message: "Something Went Wrong", error: JSON.stringify((error as any).message) });
   }
-
-  return NextResponse.json({
-    status: 500,
-    message: "Something Went Wrong",
-  });
 }
 
 export async function POST(req: NextRequest) {
-  const {
-    id,
-    blogImageUrl,
-    category,
-    content,
-    featuredImagealt,
-    slug,
-    title,
-    description,
-    visibility,
-  } = await req.json();
-
+  const data = await req.json();  
   try {
-
-    // Construct the update object dynamically
     const updateFields: Record<string, unknown> = {};
 
-    if (blogImageUrl) updateFields.blogImageUrl = blogImageUrl;
-    if (category) updateFields.category = category;
-    if (content) updateFields.content = content;
-    if (featuredImagealt) updateFields.featuredImagealt = featuredImagealt;
-    if (slug) updateFields.slug = slug;
-    if (title) updateFields.title = title;
-    if (description) updateFields.description = description;
-    if (visibility !== undefined) updateFields.visibility = visibility;
-
-    // Update the document using $set to modify only specified fields
-    const responseFind = await ArticleModel.findOne({_id:id});
-    console.log("Article Found! ",responseFind);
-    
+    for (const key in data){ updateFields[key] = data[key] };
 
     const response = await ArticleModel.updateOne(
-      { _id: id }, // Filter by id
+      { _id: data._id }, // Filter by id
       { $set: updateFields }, // Update only the fields in updateFields
     );
-
-    // Check if the update was successful
-    if (response.modifiedCount === 0) {
-      return NextResponse.json({ status: 404, message: "No document found to update" });
-    }
-
-    const responseUpdate = await ArticleModel.findOne({_id:id});
-    console.log("Article Found! after update ",responseUpdate);
 
     return NextResponse.json({ status: 200, message: "Submit Successfully" });
 

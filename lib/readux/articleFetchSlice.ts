@@ -5,33 +5,37 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 // lib/redux/articleFetchSlice.ts
 
 export interface CreatedAuthor{
-    username:string,
-    fullname:string,
-    email?:string
+    _id:string
+    username:string;
+    fullname:string;
 }
 
 export interface Article {
+    _id:string;
+    title:string,
+    slug: string;
+    views: number;
+    content: string;
+    public: boolean;
+    category: string;
     createdAt: string;
     updatedAt: string;
-    createdBy: CreatedAuthor;
+    description:string;
     blogImageUrl: string;
     featuredImagealt: string;
-    category: string;
-    title:string,
-    description:string,
-    views: number;
-    likes: number[];
-    dislikes: number[];
-    public: boolean;
-    slug: string;
-    content: string;
+    createdBy: CreatedAuthor;
+}
+
+export interface ArticlesProp {
     _id:string;
+    articles:Article[];
+    totalSizeOfArticles:number;
 }
 
 
 // New interface for the response structure
 export interface FetchedArticlesResponse {
-    articles: Article[]; // Regular articles
+    articles: ArticlesProp[]; // Regular articles
     trending: Article[]; // Trending articles
   }
 
@@ -39,14 +43,11 @@ export const articleAsyncFetching = createAsyncThunk<FetchedArticlesResponse, vo
     "article/articleFetching",
     async (_, thunkApi) => {
         try {
-            const response = await fetch("/api?id=homePage"); // Fetch from the API route
-
-            // console.log(response);
-            
+            const response = await fetch("/api?id=homePage"); // Fetch from the API route            
             if (!response.ok) throw new Error("Failed to fetch articles");
             const data = await response.json();
-            console.log("Fetched Articles:", data);
-            return data[0] as FetchedArticlesResponse;
+            // console.log("Fetched Articles:", data);
+            return data as FetchedArticlesResponse;
         } catch (error) {
             console.log("Error in fetching value",error);
             return thunkApi.rejectWithValue("Failed to fetch articles");
@@ -54,18 +55,23 @@ export const articleAsyncFetching = createAsyncThunk<FetchedArticlesResponse, vo
     }
 );
 
+interface fetchCategoriesReturnProp {
+    category:string;
+    article:Article[]
+}
+
 
 
 
 interface ArticleState {
-    article: Article[]; // Regular articles
+    article: ArticlesProp[] | null; // Regular articles
     trending: Article[]; // Trending articles
     error: string | null;
     loading: boolean;
 }
 
 const initialState: ArticleState = {
-    article: [], // Regular articles
+    article: null, // Regular articles
     trending: [], // Trending articles
     error: null,
     loading: false,
@@ -90,7 +96,6 @@ export const fetchArticle = createSlice({
             state.loading = false;
             state.error = action.payload || null;
         })
-
     },
 })
 

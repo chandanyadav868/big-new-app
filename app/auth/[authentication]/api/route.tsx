@@ -33,78 +33,67 @@ const Access_Refresh_Token = async (id: string): Promise<{ refreshToken: string 
 }
 
 export async function POST(req: NextRequest) {
-    // const data = req.url;
+    const data = await req.json();
     const { searchParams } = new URL(req.url);
     const newParam = searchParams.get("new");
 
-    console.log("data:-", searchParams.get("new"));
-
     await connectToDatabase();
 
-    if (newParam === "newAccount") {
-        try {
-
-            const { username, fullname, email, password } = await req.json();
-
-            console.log(username, fullname, email, password);
-
-            // console.log("db connection log", dbConnection);
-
-            const newUser = new BlogUser({
-                username,
-                fullname,
-                email,
-                password
-            });
+    try {
+        if (newParam === "newAccount") {
+            const { username, fullname, email, password } = data;
+            const newUser = new BlogUser({ username, fullname, email, password });
             await newUser.save();
-
-            console.log("new User", newUser);
-
             return NextResponse.json({ status: 200, data: "Successfully created your account" });
-        } catch (error) {
-            const errorProps = error as ErrorMongoDbProps
-            console.log("Error in ", errorProps.errorResponse);
 
-            return NextResponse.json({ status: 500, message: errorProps.errorResponse })
-        }
-    } else {
-        const { email, password } = await req.json();
-        console.log(email, password);
+        } else if (newParam === "resetpassword") {
+            const { newpassword, email } = data;
+            const existinguser = await BlogUser.findOne({ email });
+            console.log({ existinguser });
 
-        const dbResponse = await BlogUser.findOne({ email }).lean() as LoginProps | null;
-
-        if (!dbResponse) {
-            return NextResponse.json({ status: 404, message: `User not found with Email Id` });
-        }
-
-        if (dbResponse as LoginProps) {
-            const passwordCheaking = await bcrypt.compare(password, dbResponse.password);
-            console.log("", passwordCheaking);
-            if (!passwordCheaking) {
-                return NextResponse.json({ status: 404, message: `User Password Incorrect` });
-            } else if (passwordCheaking === true) {
-                const { email, fullname, _id, username } = dbResponse;
-
-                // access and refresh tokenn generate
-                const { refreshToken } = await Access_Refresh_Token(_id);
-
-                console.log(refreshToken);
-
-                // Set the refresh token as a secure HTTP-only cookie
-
-                const cookieStore = await cookies();
-                cookieStore.set("accessToken", refreshToken, { 
-                    httpOnly: true, 
-                    secure: true, 
-                    sameSite: "strict", 
-                    path: "/" 
-                });
-
-                return NextResponse.json({ status: 200, message: `User Logged in Successfully`, data: { email, fullname, _id, username } });
-
+            if (!existinguser) {
+                throw new Error("User not found");
             }
 
+            existinguser.password = newpassword;
+            // we are doing this for trigerring the middleware of pre, with other like update it do not tringer
+            await existinguser.save()
+
+            return NextResponse.json({ status: 200, message: `Successfully changed password`, data: null });
+
+        } else {
+            const { email, password } = data;
+            const dbResponse = await BlogUser.findOne({ email }).lean() as LoginProps | null;
+            if (!dbResponse) return NextResponse.json({ status: 404, message: `User not found with Email Id` });
+
+            const passwordCheaking = await bcrypt.compare(password, dbResponse.password);
+
+            console.log("passwordCheaking", passwordCheaking);
+
+            if (!passwordCheaking) return NextResponse.json({ status: 404, message: `User Password Incorrect` });
+
+            // access and refresh tokenn generate
+            const { refreshToken } = await Access_Refresh_Token(dbResponse._id);
+
+            console.log(refreshToken);
+
+            // Set the refresh token as a secure HTTP-only cookie
+
+            const cookieStore = await cookies();
+            cookieStore.set("accessToken", refreshToken, {
+                httpOnly: true,
+                secure: true,
+                sameSite: "strict",
+                path: "/"
+            });
+
+            return NextResponse.json({ status: 200, message: `User Logged in Successfully`, data: [] });
+
         }
+    } catch (error) {
+        const errorProps = error as ErrorMongoDbProps
+        console.log("Error in ", errorProps.errorResponse);
+        return NextResponse.json({ status: 500, message: errorProps.errorResponse })
     }
 }
 

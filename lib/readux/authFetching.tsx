@@ -20,7 +20,7 @@ export const AuthFetchingBackend = createAsyncThunk<USERAUTHPROPS, void, { rejec
             const responseAuth = await fetch("/api?id=auth");
             if (responseAuth.ok) {
                 const jsonObject = await responseAuth.json();
-                console.log(jsonObject.data);
+                // console.log(jsonObject.data);
                 return jsonObject.data as USERAUTHPROPS;
             } else {
                 // Handle non-200 responses

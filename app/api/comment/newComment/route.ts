@@ -23,9 +23,13 @@ export async function POST(req: NextRequest) {
             text: text
         });
 
+        if (!commentSaved) {
+            return NextResponse.json({ message: "Comment did not happened" }, { status: 200 });
+        }
+
         console.log("commentSaved:- ", commentSaved);
 
-        return NextResponse.json({ message: "Successfully Done" }, { status: 200 });
+        return NextResponse.json({ message: "Successfully Done", data: commentSaved }, { status: 200 });
 
     } catch (error) {
         console.log("Error in the Commenting Api");
