@@ -11,7 +11,7 @@ const BlogContainer = ({ className = "", blogImageUrl, category, slug, createdAt
     return (
         <section className={`flex gap-4 border-1 rounded-md p-2 flex-wrap items-center shadow-2xl ${className}`}>
             <div className={`w-full mx-auto min-[768px]:w-[200px] shrink-0 overflow-hidden rounded-md`}>
-                <SingleArticleLinkPage createdAt={createdAt} slug={slug} title={title}>
+                <SingleArticleLinkPage createdAt={createdAt} slug={slug} title={`blog image ${blogImageUrl}`}>
                     <Image src={blogImageUrl ? blogImageUrl : "https://mannatthemes.com/blogloo/default/assets/images/widgets/sm-3.jpg"} alt='blog image'
                         fetchPriority='high'
                         quality={65}

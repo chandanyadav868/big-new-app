@@ -189,7 +189,7 @@ function CommentComponents({ articleId }: CommentComponentsProps) {
     }
 
     return (
-        <div className='p-4 bg-gray-700'>
+        <div role='comment holder div' className='p-4 bg-gray-700'>
             <h1 className='text-2xl font-bold text-center  text-white p-2'>Comments</h1>
             <div>
                 <div className='h-[444px] shadow-inner overflow-y-auto comment_overflow'>
@@ -227,7 +227,7 @@ function CommentComponents({ articleId }: CommentComponentsProps) {
                 {/* commenting input */}
                 <form onSubmit={(e) => commentingButton(e)} className='flex gap-2 mt-2'>
                     <input ref={commentInputRef} type="text" className='w-full shadow-md px-4 py-4 rounded-md outline-none' placeholder='message...' />
-                    <button type='submit'>
+                    <button type='submit' role='use for commenting on article' aria-label='commenting button'>
                         <SendIcon color='white' />
                     </button>
                 </form>

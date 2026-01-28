@@ -41,7 +41,7 @@ export default SideContainer
 export const CreatedByComp = ({ createdBy }: { createdBy: CreatedAuthor }) => {
     return (
         <div className='flex justify-between items-center flex-wrap gap-4'>
-            <Link href={`/u/${createdBy.username}`}>
+            <Link href={`/u/${createdBy.username}`} aria-label='User channel link'>
                 <div className='flex gap-2 items-center'>
                     <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&s" alt="avatar Image" width={100} height={100} className='object-cover w-[30px] h-[30px] rounded-full' />
                     <div className='flex-1 flex-col flex justify-around w-full'>
@@ -59,7 +59,7 @@ export const CreatedByComp = ({ createdBy }: { createdBy: CreatedAuthor }) => {
 
 export const SingleArticleLinkPage = ({ createdAt, slug, children, title }: { slug: string | undefined, createdAt: string | undefined, children: React.ReactNode, title?: string }) => {
     return (
-        <Link className='h-[100%]' title={title} href={articleSlug({ slug, createdAt })}>
+        <Link className='h-[100%]' aria-label={`Read more about ${title}`} href={articleSlug({ slug, createdAt })}>
             {children}
         </Link>
     )
