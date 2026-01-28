@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ArticleShower from "./ArticleShower";
+import ArticleShower from "@/app/(main)/article/[slug]/ArticleShower";
 
 type Props = {
   params: Promise<{
