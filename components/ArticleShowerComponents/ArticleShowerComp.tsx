@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/readux/store';
 import Link from 'next/link';
-import NotLoggedINError from '../notLoggedInError';
+import NotLoggedINError from '../NotLoggedInError';
 import CommentComponents, { NotloggedInDialogboxShowProp } from '../CommentComponents';
 import FigureImage from '../FigureImage';
 import LineDivider from '../LineDivider';

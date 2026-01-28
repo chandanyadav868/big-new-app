@@ -15,17 +15,6 @@ function NotLoggedINError({ btnText, button, setNotloggedInDialogboxShow }: NotL
   const dilogBox = useRef<HTMLDivElement | null>(null);
   const [dialogBoxPosition, setDialogBoxPosition] = useState({});
 
-  function boxSwitchOff(e: PointerEvent) {
-    // target is the element where you clicked
-    const target = e.target as Node;
-
-    // check dilogbox is open and dilogbox target element containing
-    if (dilogBox.current && !dilogBox.current.contains(target)) {
-      setNotloggedInDialogboxShow(null);
-      document.body.style.overflow = "auto";
-    }
-  }
-
   useEffect(() => {
     const dialogBoxRectDom = dilogBox.current?.getBoundingClientRect();
 
@@ -48,7 +37,16 @@ function NotLoggedINError({ btnText, button, setNotloggedInDialogboxShow }: NotL
       document.body.style.overflow = "auto";
     };
   }, [])
+ function boxSwitchOff(e: MouseEvent) {
+    // target is the element where you clicked
+    const target = e.target as Node;
 
+    // check dilogbox is open and dilogbox target element containing
+    if (dilogBox.current && !dilogBox.current.contains(target)) {
+      setNotloggedInDialogboxShow(null);
+      document.body.style.overflow = "auto";
+    }
+  }
 
   return (
     <div ref={dilogBox} className={`z-10 fixed`} style={{ ...dialogBoxPosition }}>

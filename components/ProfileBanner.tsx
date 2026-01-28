@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
-import NotLoggedINError from './notLoggedInError';
+import NotLoggedINError from './NotLoggedInError';
 import { NotloggedInDialogboxShowProp } from './CommentComponents';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/readux/store';

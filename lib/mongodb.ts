@@ -11,7 +11,9 @@ if (!cached) {
 }
 
 export async function connectToDatabase(){
-    console.log(process.env.NEXT_PUBLIC_MONGODB_URL, MONGODB_URL);
+    if (process.env.NODE_ENV != "production") {
+        console.log(process.env.NEXT_PUBLIC_MONGODB_URL);
+    }
     
     if (cached.conn) {       
         console.log("Using cached database connection."); 

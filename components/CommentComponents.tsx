@@ -3,7 +3,7 @@ import { SendIcon, ThumbsDown, ThumbsUp } from 'lucide-react'
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react'
-import NotLoggedINError from './notLoggedInError';
+import NotLoggedINError from './NotLoggedInError';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/readux/store';
 
