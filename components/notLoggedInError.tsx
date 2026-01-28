@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
 import { NotloggedInDialogboxShowProp } from './CommentComponents';
 
-interface NotLoggedINErrorProps {
+interface NotLoggedInErrorProps {
   btnText: string;
   setNotloggedInDialogboxShow: React.Dispatch<React.SetStateAction<NotloggedInDialogboxShowProp | null>>
   button?: {
@@ -11,7 +11,7 @@ interface NotLoggedINErrorProps {
   } | null
 }
 
-function NotLoggedINError({ btnText, button, setNotloggedInDialogboxShow }: NotLoggedINErrorProps) {
+function NotLoggedInError({ btnText, button, setNotloggedInDialogboxShow }: NotLoggedInErrorProps) {
   const dilogBox = useRef<HTMLDivElement | null>(null);
   const [dialogBoxPosition, setDialogBoxPosition] = useState({});
 
@@ -60,4 +60,4 @@ function NotLoggedINError({ btnText, button, setNotloggedInDialogboxShow }: NotL
   )
 }
 
-export default NotLoggedINError
+export default NotLoggedInError

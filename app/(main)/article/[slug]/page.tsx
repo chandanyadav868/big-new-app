@@ -11,7 +11,7 @@ type Props = {
 async function singleArticle({ slug }: { slug: string | undefined }) {
   // ❗ IMPORTANT: fetch must be ABSOLUTE URL on server
   const res = await fetch(
-    `http://localhost:3000/api?id=${slug}&single=yes`,
+    `/api?id=${slug}&single=yes`,
     { cache: "no-store" }
   );
 

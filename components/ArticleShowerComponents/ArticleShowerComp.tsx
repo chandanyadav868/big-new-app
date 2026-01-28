@@ -2,7 +2,7 @@ import { SingleArticleProps } from '@/lib/readux/singleArticleFetched'
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/readux/store';
-import NotLoggedINError from '@/components/NotLoggedInError';
+import NotLoggedInError from '@/components/NotLoggedInError';
 import CommentComponents, { NotloggedInDialogboxShowProp } from '../CommentComponents';
 import FigureImage from '@/components/FigureImage';
 import LineDivider from '@/components/LineDivider';
@@ -133,7 +133,7 @@ const ArticleShowerComp = ({ _id, blogImageUrl, featuredImagealt, content, isLik
 
       {/* not logged in components */}
       {notloggedInDialogboxShow?.notLoggedIn &&
-        <NotLoggedINError button={notloggedInDialogboxShow} setNotloggedInDialogboxShow={setNotloggedInDialogboxShow} btnText={"Follow"} />}
+        <NotLoggedInError button={notloggedInDialogboxShow} setNotloggedInDialogboxShow={setNotloggedInDialogboxShow} btnText={"Follow"} />}
     </section>
   )
 }
