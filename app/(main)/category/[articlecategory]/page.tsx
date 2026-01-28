@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
 };
 
-function page({children}:{children:React.ReactNode}) {
+function page() {
   return (
     <>
     <Categorypage/>
