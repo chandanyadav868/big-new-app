@@ -91,7 +91,8 @@ const ArticleShowerComp = ({ _id, blogImageUrl, featuredImagealt, content, isLik
   }
 
   return (
-    <article role='main content information' className='max-w-screen-lg mx-auto p-2'>
+    <main role='main content information' >
+      <article className='max-w-screen-lg mx-auto p-2'>
 
       <LineDivider className='my-0.5' />
       <p className='font-bold text-lg text-center'>{category?.toUpperCase()}</p>
@@ -134,7 +135,8 @@ const ArticleShowerComp = ({ _id, blogImageUrl, featuredImagealt, content, isLik
       {/* not logged in components */}
       {/* {notloggedInDialogboxShow?.notLoggedIn &&
         <NotLoggedInError button={notloggedInDialogboxShow} setNotloggedInDialogboxShow={setNotloggedInDialogboxShow} btnText={"Follow"} />} */}
-    </article>
+        </article>
+    </main>
   )
 }
 
