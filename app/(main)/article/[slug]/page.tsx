@@ -9,9 +9,11 @@ type Props = {
 };
 
 async function singleArticle({ slug }: { slug: string | undefined }) {
+    const WEBSITE_URL = process.env.WEBSITE_URL
+
   // ❗ IMPORTANT: fetch must be ABSOLUTE URL on server
   const res = await fetch(
-    `/api?id=${slug}&single=yes`,
+    `${WEBSITE_URL}/api?id=${slug}&single=yes`,
     { cache: "no-store" }
   );
 

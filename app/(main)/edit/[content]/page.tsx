@@ -25,8 +25,10 @@ const ContentEdit = () => {
   // article loading
   useEffect(() => {
     const response = async () => {
+      const WEBSITE_URL = process.env.WEBSITE_URL
+
       try {
-        const response = await fetch(`/api/editArticle?contentId=${content}`);
+        const response = await fetch(`${WEBSITE_URL}/api/editArticle?contentId=${content}`);
         const jsonConverted = await response.json();
         if (response.status === 200) {
           setAricle(jsonConverted?.data);

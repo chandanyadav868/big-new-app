@@ -5,11 +5,11 @@ export const metadata: Metadata = {
     title: "News Website - Human Talking",
     description: "This is the website for getting trending, latest news",
     robots: {
-        index: false,
+        index: true,
         follow: true,
     },
     alternates: {
-    canonical: 'https://yourdomain.com/news/article-slug',
+    canonical: `${process.env.WEBSITE_URL}`,
   },
 };
 
