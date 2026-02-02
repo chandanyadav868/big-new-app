@@ -43,6 +43,7 @@ const Header = () => {
                     <li><Link href="/category/aew">AEW</Link></li>
                     <li><Link href="/category/free-fire">Free Fire</Link></li>
                     <li><Link href="/category/football">Football</Link></li>
+                    <li><Link href="/web-stories">Web Stories</Link></li>
                 </ul>
             </nav>
         </>

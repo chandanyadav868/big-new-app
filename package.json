@@ -13,7 +13,9 @@
     "@tailwindcss/typography": "^0.5.15",
     "@uiw/react-md-editor": "^4.0.5",
     "bcrypt": "^5.1.1",
+    "cheerio": "^1.2.0",
     "groq-sdk": "^0.9.1",
+    "he": "^1.2.0",
     "jose": "^5.9.6",
     "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.475.0",
@@ -22,13 +24,17 @@
     "mongoose": "^8.8.4",
     "mysql2": "^3.16.2",
     "next": "15.0.3",
+    "prettier": "^3.8.1",
+    "prismjs": "^1.30.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.54.0",
-    "react-redux": "^9.2.0"
+    "react-redux": "^9.2.0",
+    "react-simple-code-editor": "^0.14.1"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
+    "@types/he": "^1.2.3",
     "@types/jsonwebtoken": "^9.0.7",
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^20",

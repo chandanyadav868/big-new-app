@@ -1,0 +1,1771 @@
+"<html amp="" lang="en">
+
+<head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
+    <script async="" src="https://cdn.ampproject.org/v0.js"></script>
+    <script async="" src="https://cdn.ampproject.org/v0/amp-story-1.0.js" custom-element="amp-story"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Playfair+Display&amp;family=Oswald%3Awght%40400%3B500%3B700&amp;family=Lora"
+        rel="stylesheet" />
+    <link href="https://wp.stories.google/static/21/images/templates/experience-thailand/page1_bg.jpg" rel="preload"
+        as="image" />
+    <style amp-boilerplate="">
+        body {
+            -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            animation: -amp-start 8s steps(1, end) 0s 1 normal both
+        }
+
+        @-webkit-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @-moz-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @-ms-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @-o-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+    </style><noscript>
+        <style amp-boilerplate="">
+            body {
+                -webkit-animation: none;
+                -moz-animation: none;
+                -ms-animation: none;
+                animation: none
+            }
+        </style>
+    </noscript>
+    <style amp-custom="">
+         h1,
+        h2,
+        h3 {
+            font-weight: normal;
+        }
+
+         amp-story-page {
+             background-color: #131516;
+            
+        }
+
+         amp-story-grid-layer {
+             overflow: visible;
+            
+        }
+
+         @media (max-aspect-ratio: 9 / 16) {
+             @media (min-aspect-ratio: 320 / 678) {
+                 amp-story-grid-layer.grid-layer {
+                     margin-top: calc((100% / 0.5625 - 100% / 0.6666666666666666) / 2);
+                    
+                }
+
+                
+            }
+
+            
+        }
+
+          @media not all and (min-resolution:.001dpcm) {
+             @media {
+                 p.text-wrapper>span {
+                     font-size: calc(100% - 0.5px);
+                    
+                }
+
+                
+            }
+
+            
+        }
+
+         .page-fullbleed-area,
+         .page-background-overlay-area {
+             position: absolute;
+             overflow: hidden;
+             width: 100%;
+             left: 0;
+             height: calc(1.1851851851851851 * 100%);
+             top: calc((1 - 1.1851851851851851) * 100% / 2);
+            
+        }
+
+         .element-overlay-area {
+             position: absolute;
+             width: 100%;
+             height: 100%;
+             top: 0;
+             left: 0;
+            
+        }
+
+         .page-safe-area {
+             overflow: visible;
+             position: absolute;
+             top: 0;
+             bottom: 0;
+             left: 0;
+             right: 0;
+             width: 100%;
+             height: calc(0.84375 * 100%);
+             margin: auto 0;
+            
+        }
+
+         .mask {
+             position: absolute;
+             overflow: hidden;
+            
+        }
+
+         .fill {
+             position: absolute;
+             top: 0;
+             left: 0;
+             right: 0;
+             bottom: 0;
+             margin: 0;
+            
+        }
+
+         @media (prefers-reduced-motion: no-preference) {
+             .animation-wrapper {
+                 opacity: var(--initial-opacity);
+                 transform: var(--initial-transform);
+                
+            }
+
+            
+        }
+
+         amp-story-grid-layer.align-bottom {
+             align-content: end;
+             padding: 0;
+            
+            /*                  AMP CTA Layer will exactly occupy 74px regardless of any device.                  To space out captions 74px from the BOTTOM (AMP CTA Layer),                  74px from the TOP should also be spaced out and thus: 2 * 74px                  will be the desired max-height.                */
+             max-height: calc(100vh - (2 * 74px));
+            
+        }
+
+         .captions-area {
+             padding: 0 32px 0;
+            
+        }
+
+         amp-story-captions {
+             margin-bottom: 16px;
+             text-align: center;
+            
+        }
+
+         amp-story-audio-sticker {
+             height: 100%;
+            
+        }
+
+         .audio-sticker {
+             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+            
+        }
+
+        
+    </style>
+    <meta name="web-stories-replace-head-start" />
+    <title>Experience Thailand</title>
+    <link rel="canonical"
+        href="http://wordpress-ew4ws4kog0ow4cwss4o8g04o.46.202.167.245.sslip.io/?post_type=web-story&amp;p=6" />
+    <meta name="web-stories-replace-head-end" />
+</head>
+
+<body><amp-story standalone="" publisher="Human Talking"
+        publisher-logo-src="http://wordpress-ew4ws4kog0ow4cwss4o8g04o.46.202.167.245.sslip.io/wp-content/uploads/2026/01/cropped-logo-1.png-1.png"
+        title="Experience Thailand"
+        poster-portrait-src="http://wordpress-ew4ws4kog0ow4cwss4o8g04o.46.202.167.245.sslip.io/wp-content/uploads/2026/01/cropped-download.jpg"><amp-story-page
+            id="fca5c47a-e26f-4feb-b2a3-f6d8b6c68996" auto-advance-after="7s"><amp-story-grid-layer
+                template="vertical" aspect-ratio="412:618" class="grid-layer">
+                <div class="page-fullbleed-area" style="background-color:#867068">
+                    <div class="page-safe-area">
+                        <div
+                            style="position:absolute;pointer-events:none;left:0;top:-9.25926%;width:100%;height:118.51852%;opacity:1">
+                            <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                class="mask" id="el-ca140433-52d1-4423-896f-2e5c856cb22f">
+                                <div style="position:absolute;width:372.48678%;height:140%;left:-141.47215%;top:-21.17647%"
+                                    data-leaf-element="true"><amp-img layout="fill"
+                                        src="https://wp.stories.google/static/21/images/templates/experience-thailand/page1_bg.jpg"
+                                        alt="Close up of elephant&#x27;s face"
+                                        disable-inline-width="true"></amp-img></div>
+                            </div>
+                        </div>
+                        <div class="page-background-overlay-area" style="background:transparent"></div>
+                    </div>
+                </div>
+            </amp-story-grid-layer><amp-story-grid-layer template="vertical" aspect-ratio="412:618"
+                class="grid-layer">
+                <div class="page-fullbleed-area">
+                    <div class="page-safe-area">
+                        <div
+                            style="position:absolute;pointer-events:none;left:0;top:42.55663%;width:100%;height:6.79612%;opacity:1">
+                            <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                id="el-d5ca2488-668b-4e21-a7d8-05c17084742b">
+                                <h1 class="fill text-wrapper"
+                                    style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:1.6973300970873784%
+                                    0;font-family:&quot;Playfair
+                                    Display&quot;,serif;font-size:0.679612em;line-height:1;text-align:center;padding:0;color:#000000">
+                                    <span><span style="color: rgba(255, 255, 255, 1); text-transform:
+                                            uppercase">Experience</span></span></h1>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:-0.48544%;top:50%;width:100.24272%;height:15.85761%;opacity:1">
+                            <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                id="el-3c00f665-e2ff-4393-aef4-6ca790f599fd">
+                                <h1 class="fill text-wrapper"
+                                    style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:5.776997578692493%
+                                    0;font-family:&quot;Oswald&quot;,sans-serif;font-size:1.601942em;line-height:1;text-align:center;padding:0;color:#000000">
+                                    <span><span style="font-weight: 700; color: #fff; text-transform:
+                                            uppercase">Thailand</span></span></h1>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:4.85437%;top:88.1877%;width:31.06796%;height:9.06149%;opacity:1">
+                            <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                class="mask" id="el-7de325ef-2490-4e19-9c9c-7031bffa4b05">
+                                <div class="fill" style="background-color:#094228;will-change:transform"></div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:11.65049%;top:91.18123%;width:14.56311%;height:3.07443%;opacity:1">
+                            <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                class="mask" id="el-a6b25c2c-a676-404b-ab44-5bd5b49598f5">
+                                <div style="position:absolute;width:101.33319%;height:100%;left:-0.6666%;top:0%"
+                                    data-leaf-element="true"><amp-img layout="fill"
+                                        src="https://wp.stories.google/static/21/images/templates/experience-thailand/icon_logo.png"
+                                        alt="icon_logo" disable-inline-width="true"></amp-img></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </amp-story-grid-layer></amp-story-page><amp-story-page id="3cdf0fde-f515-477d-8688-472c4cc5a8b3"
+            auto-advance-after="7s"><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-6c1f870f-05fd-43e4-b0d0-fbbfa1e2f447","keyframes":{"transform":["translate3d(0px, 35%, 0)","translate3d(0px, 0px, 0)"]},"delay":500,"direction":"normal","duration":600,"easing":"cubic-bezier(0.645, 0.045, 0.355, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-21ae7774-20c3-42fe-b125-b2774b9fec69","keyframes":{"opacity":[0,1]},"delay":800,"direction":"normal","duration":300,"easing":"cubic-bezier(0.645, 0.045, 0.355, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-394e4221-a56f-4b12-aa51-3c5aa252b435","keyframes":{"opacity":[0,1]},"delay":500,"duration":600,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-6cadcdf4-ef8a-4f6b-a150-d179d6cbe950","keyframes":{"transform":["translate3d(-121.50943%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":500,"duration":600,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-afe9f215-8dfd-44d4-929c-a0d6e136352c","keyframes":{"opacity":[0,1]},"delay":800,"duration":500,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-77941222-4287-4cb9-b697-f6a860407c71","keyframes":{"transform":["translate3d(-128.15534%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":800,"duration":500,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-grid-layer template="vertical" aspect-ratio="412:618"
+                class="grid-layer">
+                <div class="page-fullbleed-area" style="background-color:#fff">
+                    <div class="page-safe-area">
+                        <div
+                            style="position:absolute;pointer-events:none;left:0;top:-9.25926%;width:100%;height:118.51852%;opacity:1">
+                            <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                class="mask" id="el-143182cf-804b-4d71-93d8-d4a53c9e6ed6">
+                                <div class="fill" style="will-change:transform"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </amp-story-grid-layer><amp-story-grid-layer template="vertical" aspect-ratio="412:618"
+                class="grid-layer">
+                <div class="page-fullbleed-area">
+                    <div class="page-safe-area">
+                        <div
+                            style="position:absolute;pointer-events:none;left:-0.97087%;top:-9.87055%;width:101.21359%;height:75.72816%;opacity:1">
+                            <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                class="mask" id="el-a81f2dcc-b5a3-4be6-8a06-bb42ac828ed0">
+                                <div class="fill" style="background-color:#094228;will-change:transform"></div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:13.83495%;top:2.75081%;width:64.32039%;height:42.88026%;opacity:1">
+                            <div id="anim-394e4221-a56f-4b12-aa51-3c5aa252b435" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                <div id="anim-6cadcdf4-ef8a-4f6b-a150-d179d6cbe950" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-121.50943%,
+                                    0px, 0)">
+                                    <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                        id="el-bfd53cf2-f8e8-41f0-8449-48772b5194bb">
+                                        <p class="fill text-wrapper"
+                                            style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:4.8199999999999985%
+                                            0;font-family:&quot;Oswald&quot;,sans-serif;font-size:0.857605em;line-height:1;text-align:left;padding:0;color:#000000">
+                                            <span><span style="color: #fff; text-transform: uppercase">I travel to
+                                                    find myself in the eyes and hearts of others”</span></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:8.00971%;top:2.589%;width:4.61165%;height:8.25243%;opacity:1">
+                            <div id="anim-6c1f870f-05fd-43e4-b0d0-fbbfa1e2f447" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(0px,
+                                35%, 0)">
+                                <div id="anim-21ae7774-20c3-42fe-b125-b2774b9fec69" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                    <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                        id="el-90e3970e-a7be-4ecb-91a6-4f6065f28de1">
+                                        <h1 class="fill text-wrapper"
+                                            style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:65.95789473684208%
+                                            0;font-family:&quot;Oswald&quot;,sans-serif;font-size:0.841424em;line-height:1;text-align:left;padding:0;color:#000000">
+                                            <span><span style="color: #fff">“</span></span></h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:14.07767%;top:56.79612%;width:50%;height:3.72168%;opacity:1">
+                            <div id="anim-afe9f215-8dfd-44d4-929c-a0d6e136352c" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                <div id="anim-77941222-4287-4cb9-b697-f6a860407c71" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-128.15534%,
+                                    0px, 0)">
+                                    <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                        id="el-88df74ed-7334-4e91-957c-c48b8da344e4">
+                                        <p class="fill text-wrapper"
+                                            style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:-0.08737864077669975%
+                                            0;font-family:&quot;Lora&quot;,serif;font-size:0.291262em;line-height:1.3;text-align:left;padding:0;color:#000000">
+                                            <span><span style="color: #fff">– Anonymous</span></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:16.99029%;top:53.8835%;width:66.01942%;height:67.31392%;transform:rotate(90deg);opacity:1">
+                            <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0;transform:scale3d(1,
+                                -1, 1)" class="mask" id="el-8a21c4e7-4e9b-4811-9b8b-f36d0297a9e4">
+                                <div style="position:absolute;width:121.9833%;height:120%;left:-10.94078%;top:-7.49431%"
+                                    data-leaf-element="true"><amp-img layout="fill"
+                                        src="https://wp.stories.google/static/21/images/templates/experience-thailand/page2_image1.jpg"
+                                        alt="Variety of prepared food dishes" disable-inline-width="true"></amp-img>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </amp-story-grid-layer></amp-story-page><amp-story-page id="80b4f7b3-c54a-4e40-9a75-c937cedfed4b"
+            auto-advance-after="7s"><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-f0aa6056-449e-44e2-a724-9224c686928b","keyframes":{"opacity":[0,1]},"delay":400,"duration":600,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-3056b36e-4e14-484c-8600-a5ec20591986","keyframes":{"transform":["translate3d(-128.67134%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":400,"duration":600,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-86848d68-a2da-4e65-b535-a053b92e8426","keyframes":{"opacity":[0,1]},"delay":400,"duration":600,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-a2b39a92-c29a-4b07-b272-037ea318c3ff","keyframes":{"transform":["translate3d(-116.5992%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":400,"duration":600,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-af4738d0-ac4b-4ad6-95ce-ab5d1f367fed","keyframes":{"opacity":[0,1]},"delay":600,"duration":600,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-grid-layer template="vertical" aspect-ratio="412:618"
+                class="grid-layer">
+                <div class="page-fullbleed-area" style="background-color:#fff">
+                    <div class="page-safe-area">
+                        <div
+                            style="position:absolute;pointer-events:none;left:0;top:-9.25926%;width:100%;height:118.51852%;opacity:1">
+                            <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                class="mask" id="el-b39e1373-e1d4-40ee-bd0c-298924b61a3e">
+                                <div class="fill" style="will-change:transform"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </amp-story-grid-layer><amp-story-grid-layer template="vertical" aspect-ratio="412:618"
+                class="grid-layer">
+                <div class="page-fullbleed-area">
+                    <div class="page-safe-area">
+                        <div
+                            style="position:absolute;pointer-events:none;left:0;top:45.95469%;width:78.64078%;height:63.43042%;opacity:1">
+                            <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                class="mask" id="el-4c694857-df14-4ba9-8791-9b13935dbbbe">
+                                <div style="position:absolute;width:100%;height:103.31633%;left:0%;top:0%"
+                                    data-leaf-element="true"><amp-img layout="fill"
+                                        src="https://wp.stories.google/static/21/images/templates/experience-thailand/page3_image1.jpg"
+                                        alt="Preparing a street food dish" disable-inline-width="true"></amp-img>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:57.28155%;top:45.95469%;width:21.35922%;height:14.23948%;opacity:1">
+                            <div id="anim-af4738d0-ac4b-4ad6-95ce-ab5d1f367fed" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0;background-clip:content-box;background-color:#000"
+                                    id="el-3cf17fb8-a5ae-4f32-8e5f-d3a0513215de">
+                                    <p class="fill text-wrapper"
+                                        style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:5.4772727272727275%
+                                        0;font-family:&quot;Oswald&quot;,sans-serif;font-size:0.323625em;line-height:1;text-align:left;padding:21.59090909090909%
+                                        20.454545454545457%;color:#000000"><span><span style="font-weight: 500; color:
+                                                #fff; text-transform: uppercase">Learn</span><span
+                                                style="font-weight: 500; color: #fff; text-transform:
+                                                uppercase">More</span></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:9.95146%;top:22.65372%;width:59.95146%;height:14.88673%;opacity:1">
+                            <div id="anim-86848d68-a2da-4e65-b535-a053b92e8426" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                <div id="anim-a2b39a92-c29a-4b07-b272-037ea318c3ff" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-116.5992%,
+                                    0px, 0)">
+                                    <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                        id="el-883808f1-b87b-4b35-b0f1-0945e0faef2e">
+                                        <p class="fill text-wrapper"
+                                            style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:-0.07287449392712611%
+                                            0;font-family:&quot;Lora&quot;,serif;font-size:0.291262em;line-height:1.3;text-align:left;padding:0;color:#000000">
+                                            <span><span style="color: rgba(9, 66, 40, 1)">The cheapest and most
+                                                    authentic way to experience Thai life. Prepare yourself, some like
+                                                    it hot!</span></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:9.95146%;top:2.42718%;width:34.70874%;height:16.82848%;opacity:1">
+                            <div id="anim-f0aa6056-449e-44e2-a724-9224c686928b" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                <div id="anim-3056b36e-4e14-484c-8600-a5ec20591986" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-128.67134%,
+                                    0px, 0)">
+                                    <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                        id="el-6258d646-a291-498f-81ab-3095f352bb26">
+                                        <h2 class="fill text-wrapper"
+                                            style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:8.76363636363636%
+                                            0;font-family:&quot;Oswald&quot;,sans-serif;font-size:0.841424em;line-height:1;text-align:left;padding:0;color:#000000">
+                                            <span><span style="color: rgba(9, 66, 40, 1); text-transform:
+                                                    uppercase">Street</span><span style="color: rgba(9, 66, 40, 1);
+                                                    text-transform: uppercase">Food</span></span></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </amp-story-grid-layer></amp-story-page><amp-story-page id="6302fb0d-8f99-4498-91eb-bca15d67ae84"
+            auto-advance-after="7s"><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-d723711e-5128-4642-833e-defb20583977","keyframes":{"opacity":[0,1]},"delay":475,"duration":600,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-f29a3138-75b9-49ac-a0ef-8204d8600843","keyframes":{"transform":["translate3d(0px, -278.5829%, 0)","translate3d(0px, 0px, 0)"]},"delay":475,"duration":600,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-54771f0a-e4d9-43fc-a8de-0ef5638c4a3c","keyframes":{"opacity":[0,1]},"delay":450,"duration":600,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-67d1b38c-b312-42f8-a17e-7e46fa8809dd","keyframes":{"transform":["translate3d(0px, -435.47011%, 0)","translate3d(0px, 0px, 0)"]},"delay":450,"duration":600,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-b00111d4-3f41-4abd-8fab-3c06c3f88041","keyframes":{"opacity":[0,1]},"delay":500,"duration":600,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-5892dd80-a6c7-4411-9bf6-2f9afc494f4c","keyframes":{"transform":["translate3d(0px, -134.06084%, 0)","translate3d(0px, 0px, 0)"]},"delay":500,"duration":600,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-grid-layer template="vertical" aspect-ratio="412:618"
+                class="grid-layer">
+                <div class="page-fullbleed-area" style="background-color:#2f342d">
+                    <div class="page-safe-area">
+                        <div
+                            style="position:absolute;pointer-events:none;left:0;top:-9.25926%;width:100%;height:118.51852%;opacity:1">
+                            <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                class="mask" id="el-a920881d-6fab-4d96-8884-0df9f0b6a8fd">
+                                <div style="position:absolute;width:266.06198%;height:100%;left:-83.03099%;top:0%"
+                                    data-leaf-element="true"><amp-img layout="fill"
+                                        src="https://wp.stories.google/static/21/images/templates/experience-thailand/page4_bg.jpg"
+                                        alt="Aerial view of floating market boats"
+                                        disable-inline-width="true"></amp-img></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </amp-story-grid-layer><amp-story-grid-layer template="vertical" aspect-ratio="412:618"
+                class="grid-layer">
+                <div class="page-fullbleed-area">
+                    <div class="page-safe-area">
+                        <div
+                            style="position:absolute;pointer-events:none;left:9.46602%;top:0;width:81.06796%;height:27.18447%;opacity:1">
+                            <div id="anim-b00111d4-3f41-4abd-8fab-3c06c3f88041" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                <div id="anim-5892dd80-a6c7-4411-9bf6-2f9afc494f4c" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(0px,
+                                    -134.06084%, 0)">
+                                    <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                        class="mask" id="el-3d3b38a3-d8db-4a86-a4e2-0be30e92b177">
+                                        <div class="fill" style="background-color:#fff;will-change:transform"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:16.26214%;top:4.85437%;width:33.73786%;height:4.20712%;opacity:1">
+                            <div id="anim-54771f0a-e4d9-43fc-a8de-0ef5638c4a3c" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                <div id="anim-67d1b38c-b312-42f8-a17e-7e46fa8809dd" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(0px,
+                                    -435.47011%, 0)">
+                                    <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                        id="el-1b892512-7510-4c09-a750-7dfd21ece74a">
+                                        <p class="fill text-wrapper"
+                                            style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:1.3093525179856118%
+                                            0;font-family:&quot;Oswald&quot;,sans-serif;font-size:0.323625em;line-height:1.3;text-align:left;padding:0;color:#000000">
+                                            <span><span style="color: rgba(9, 66, 40, 1); text-transform:
+                                                    uppercase">Floating Market</span></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:16.50485%;top:10.67961%;width:64.80583%;height:11.16505%;opacity:1">
+                            <div id="anim-d723711e-5128-4642-833e-defb20583977" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                <div id="anim-f29a3138-75b9-49ac-a0ef-8204d8600843" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(0px,
+                                    -278.5829%, 0)">
+                                    <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                        id="el-d773e2ce-05a7-4195-a815-cfd66e93f66a">
+                                        <p class="fill text-wrapper"
+                                            style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:-0.06741573033707922%
+                                            0;font-family:&quot;Lora&quot;,serif;font-size:0.291262em;line-height:1.3;text-align:left;padding:0;color:#000000">
+                                            <span><span style="color: rgba(9, 66, 40, 1)">Experience the unique
+                                                    floating market, where all goods are sold from boats.</span></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </amp-story-grid-layer></amp-story-page>
+
+        <amp-story-page id="c2d56aca-cb1a-41eb-bbdc-41dc2c4f597c"
+            auto-advance-after="7s"><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-6a08177d-5b73-4ae6-a2a3-b9bef336abca","keyframes":{"opacity":[0,1]},"delay":600,"duration":600,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-53489856-439e-4ede-a5aa-e5bdd7661686","keyframes":{"transform":["translate3d(-118.29268%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":600,"duration":600,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-31be21b3-807b-45e5-9573-ddbb3fedf73d","keyframes":{"opacity":[0,1]},"delay":600,"duration":600,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-9c8d4507-d56e-4c56-bc94-b78ee842150a","keyframes":{"transform":["translate3d(-114.52145%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":600,"duration":600,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-97839c22-e9cc-4ff7-afb4-6567b3e919ef","keyframes":{"opacity":[0,1]},"delay":0,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-grid-layer template="vertical" aspect-ratio="412:618"
+                class="grid-layer">
+                <div class="page-fullbleed-area" style="background-color:#523c30">
+                    <div class="page-safe-area">
+                        <div
+                            style="position:absolute;pointer-events:none;left:0;top:-9.25926%;width:100%;height:118.51852%;opacity:1">
+                            <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                class="mask" id="el-117a9caa-d0cc-47d0-b00e-ee623bbcd5fc">
+                                <div style="position:absolute;width:410.03585%;height:130%;left:-79.19466%;top:-15.10494%"
+                                    data-leaf-element="true"><amp-img layout="fill"
+                                        src="https://wp.stories.google/static/21/images/templates/experience-thailand/page6_bg.jpg"
+                                        alt="Temples surrounded by greenery" disable-inline-width="true"></amp-img>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </amp-story-grid-layer><amp-story-grid-layer template="vertical" aspect-ratio="412:618"
+                class="grid-layer">
+                <div class="page-fullbleed-area">
+                    <div class="page-safe-area">
+                        <div
+                            style="position:absolute;pointer-events:none;left:10.92233%;top:65.37217%;width:59.70874%;height:17.47573%;opacity:1">
+                            <div id="anim-6a08177d-5b73-4ae6-a2a3-b9bef336abca" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                <div id="anim-53489856-439e-4ede-a5aa-e5bdd7661686" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-118.29268%,
+                                    0px, 0)">
+                                    <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                        id="el-c40c8eae-e683-4fa6-a632-e1d652279a37">
+                                        <h2 class="fill text-wrapper"
+                                            style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:5.290243902439026%
+                                            0;font-family:&quot;Oswald&quot;,sans-serif;font-size:0.873786em;line-height:1;text-align:left;padding:0;color:#000000">
+                                            <span><span style="color: rgba(255, 255, 255, 1); text-transform:
+                                                    uppercase">Top 5</span><span style="color: rgba(255, 255, 255,
+                                                    1); text-transform: uppercase">Chiang Mai</span></span></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:10.67961%;top:84.30421%;width:73.54369%;height:13.59223%;opacity:1">
+                            <div id="anim-31be21b3-807b-45e5-9573-ddbb3fedf73d" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                <div id="anim-9c8d4507-d56e-4c56-bc94-b78ee842150a" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-114.52145%,
+                                    0px, 0)">
+                                    <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                        id="el-ca20176a-3245-4735-9b1c-66017aa9e528">
+                                        <p class="fill text-wrapper"
+                                            style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:-0.2459777227722769%
+                                            0;font-family:&quot;Arial&quot;,&quot;Helvetica
+                                            Neue&quot;,&quot;Helvetica&quot;,sans-serif;font-size:0.291262em;line-height:1.2;text-align:left;padding:0;color:#000000">
+                                            <span><span style="color: rgba(255, 255, 255, 1)">If you only have one day
+                                                    to see as many sights as you can, we’ve compiled a list of walkable
+                                                    must-see destinations.</span></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:33.00971%;top:-9.06149%;width:65.04854%;height:72.97735%;opacity:1">
+                            <div id="anim-97839c22-e9cc-4ff7-afb4-6567b3e919ef" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                    id="el-a26880a7-7949-4522-8006-71a3be643a06"><svg
+                                        style="display:block;position:absolute;top:0;height:100%;width:auto"
+                                        viewBox="0 0 256 430" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <title>Map</title>
+                                        <path d="M.791885 18.644c3.924175 4.9232 7.913745.9847 11.837915 0 .4578-.1313
+                                            1.0464-1.0502.981-1.5097-.5886-3.2821 1.0465-7.15501-2.8777-9.71504
+                                            1.7005-2.0349 3.401-3.87288
+                                            4.8398-5.84214.5233-.722059.8503-1.903612.7195-2.75696-.2616-1.70669-.9811-3.41338-1.3735-5.12008-.1308-.72206.0654-1.5754.2616-2.29746.5232-1.44412
+                                            1.1773-2.88822 2.0275-4.98882 2.6815-1.0502 6.3441-2.4944 3.9242-7.9426.327
+                                            0 .654 0 1.0464-.0657 1.8313 1.1816 3.6626 2.4288 5.5593 3.5447.7194.3938
+                                            1.635.6564 2.4853.6564 2.6161.0656 5.2976 0 8.1753 0 .9157-2.1662
+                                            3.3356-1.9693 5.6247-2.6913 2.4853-.7877 4.382-.5908 7.2597
+                                            1.1815.5886-3.1508 1.2426-5.7765 1.4389-8.4021.327-3.8073 1.962-5.1201
+                                            5.8208-4.3981 2.0275.3939 4.055.919 6.0825.7878 2.6161-.1313 3.6625-3.0852
+                                            2.4199-6.433-.1962-.8533-.8503-1.7067-1.2427-2.3631 2.8778.3282 5.8863.8534
+                                            8.9602 1.0503.8503.0656 2.1583-.7221 2.6161-1.5098 1.8313-3.3477
+                                            3.9242-3.5446 6.0825-.3282.3924.5252.7848 1.0503 1.1118 1.6411 1.9621 3.8728
+                                            1.8313 3.8072 4.5782.3938.7195-.8533 1.9621-1.7067 3.0086-1.7067.5886 0
+                                            1.2426 1.5754 1.8967 2.4288 1.5042 2.0349 1.8966 5.317 6.0826 4.9231-2.2239
+                                            3.5447-.5234 8.074-4.3168 11.0279-.7848.5908-.654 2.9539-.3924 4.398.327
+                                            1.7723 1.1119 3.479 2.0275 4.9888.3924.5908 2.1583 1.1815 2.4853.8533
+                                            2.2894-2.0349 3.7284 0 6.2784 1.3785.589-.8533 1.308-1.9692 2.028-3.0195
+                                            1.766-2.5601 4.055-2.2975 6.605-1.3785 1.243.4595 2.617.3282
+                                            3.99.5251.85.1313 2.355.3282 2.355.5252 0 1.0502.065 2.6913-.589
+                                            3.1508-1.766 1.24718-2.289 2.23181-.981 4.13543.588.85335.458 2.10054.785
+                                            3.15081.719 2.428755 1.504 4.79187 2.485 7.74576-1.831 2.69132-4.317
+                                            6.1047-2.224 10.5684.197.4594-.327 1.3784-.785 1.9036-1.046 1.1815-2.289
+                                            2.2318-3.27 3.4133-2.616 3.2165-2.42 4.1355 1.178 6.1704 0 2.2975-.262
+                                            4.5949.065 6.8268.458 3.2164-1.504 4.9887-3.205 7.0893-.981 1.1815-1.504
+                                            2.8226-1.831 4.3324-.458 2.1661-.458 4.4636-.719 6.8267 1.831 1.1159 3.858
+                                            2.3631 5.82 3.5447 2.944-3.676 4.775-8.3365 10.138-9.2555.915-.197
+                                            1.635-1.838 2.42-2.8883.327-.4595.523-1.1815.915-1.3128 2.747-.919
+                                            4.513-2.6257 5.363-5.3827.131-.3282 2.224-.0656 4.186-.0656.785-.8533
+                                            2.486-2.1005 3.467-3.8072 1.504-2.6914 3.335-1.9036 4.578-.3939 3.008 3.7416
+                                            6.867 5.7109 11.38 6.5642 2.551.5252 2.485 1.9693 1.373 3.7416.981.7221
+                                            1.766 1.2472 2.093 1.4441 1.504-1.3128 2.878-2.3631 4.186-3.5446
+                                            1.831-1.6411 3.663-2.9539 6.409-1.9693.524.1969 2.224-1.3128
+                                            2.42-2.2318.654-3.8073 2.551-6.4329 6.017-8.0083-.981-3.5447.524-5.6452
+                                            4.055-4.7919 4.382 1.0503 8.568 2.9539 12.819 4.4637.589.1969 1.374.8533
+                                            1.701.6564 3.532-2.1662 4.186.5907 5.755 2.8226 2.878 4.0698 5.167 8.4678
+                                            8.437 12.4063 3.205 3.8072 6.671 6.4986 10.661 9.1242 3.074 1.9693 4.186
+                                            9.8463 2.878 13.6536-.851 2.3631-1.112 4.9231-1.308 7.4832-.197 2.7569-.72
+                                            5.8421.13 8.3365 1.178 3.3477 3.467 6.3016 5.363 9.4524 1.112 1.838 2.028
+                                            3.8073 3.532 5.2514 1.504 1.5097 3.336 2.8226 5.298 3.6098 1.831.788
+                                            3.989.788 6.409 1.248-2.616 2.757-1.766 5.054.131 7.089.523.591 1.439.985
+                                            2.224.985 3.205.131 5.232 2.954 4.186 5.973-.981 2.757-.72 6.236-5.625
+                                            6.499.327.393.719.722 1.046 1.116 1.047.393 2.028.787 3.336 1.247-1.374
+                                            1.838-2.747 3.676-3.99 5.382.393.526.458.788.654.919 2.878 1.444 4.709 3.479
+                                            2.486 6.565-1.832 2.56-1.178 5.382-.851 7.877.589 4.004-1.831 5.907-4.251
+                                            7.745-1.308 1.051-3.27 1.248-4.84 1.97-.85.393-1.504 1.181-2.158
+                                            1.903-.719.722-1.373 1.51-2.093 2.232-.785-.919-2.289-1.838-2.289-2.757
+                                            0-2.56-1.439-2.954-3.401-3.413-3.532-.788-6.932-1.051-10.268.919-.981.59-2.485.394-3.728.262-4.12-.394-8.175-.722-12.296.788-3.597
+                                            1.313-9.352-.656-10.857-3.02-5.101 1.116-10.268 2.101-15.238 3.414-4.579
+                                            1.247-8.634 3.348-9.484 8.861-.131.854-.915 1.642-1.439 2.429-.915 1.379-1.7
+                                            2.954-2.812 4.136-1.374 1.509-3.009 2.954-4.644 4.201-1.308.984-2.877
+                                            1.706.131 4.004-3.401.328-5.755.525-8.502.853.719 4.201 1.439 8.337 2.158
+                                            12.407.131.722.392 1.509.85 2.1 2.682 3.545 2.878 7.549 2.355
+                                            11.75-.066.788.654 1.904 1.308 2.56 2.42 2.363 4.905 4.529 7.587 6.958-4.317
+                                            3.939-2.813 8.008-1.505
+                                            12.406-1.831-1.969-3.662-3.938-5.494-5.907-.261.131-.523.262-.784.394.196
+                                            1.641.457 3.216.523
+                                            4.135-2.028-.985-4.317-2.101-6.606-3.216-.719-.329-1.831-.723-1.896-1.248-.066-.59.654-1.378
+                                            1.111-2.035.458-.656.981-1.312
+                                            1.112-2.363-.458.263-.915.525-1.439.788-.457-.788-.915-1.575-1.373-2.363-.196.066-.393.131-.589.197v2.035c-2.877-1.773-6.148-3.676-9.287-5.777-.85-.591-1.57-1.444-2.158-2.363-2.355-3.545-2.878-3.151-6.737-2.1-3.074.853-6.082
+                                            2.166-10.006.919-3.532-1.182-8.437-3.086-11.969
+                                            1.247-.654-.591-1.243-1.379-1.962-1.641-2.485-.854-1.439-1.97-.523-3.414.588-.919.981-2.035
+                                            1.177-3.15 1.046-5.186-1.243-10.831
+                                            2.224-15.755.523-.722.261-2.1.327-3.15-6.214-1.576-12.165-2.363-18.3132-1.182-1.1119.197-2.4853-1.05-3.5972-1.575-.2616.59-.5232
+                                            1.706-1.1772 2.166-3.1394 1.903-6.4749 3.61-10.0067 5.514 1.5043 1.575
+                                            2.5507 2.625 3.4664 3.676 1.635 1.903 2.7469 3.938 1.1772 6.564-3.0739
+                                            5.317-3.5317 10.962-2.6161 17.067.7848 5.186 1.7659 10.896-3.728
+                                            14.769-.3924.263-.9156.919-.9156 1.313.2616 6.958-5.5592 11.159-7.4559
+                                            17.133-.5886 1.706-.7195 3.61-1.1119 5.842-1.8312.656-2.6161 4.857-1.1772
+                                            9.19-2.8123 4.266-5.5593 8.336-8.1754 12.472-.2616.394.2616 1.378.5232
+                                            2.1.2617.854.5887 1.707.7195 2.166-1.5697.263-2.6815.394-3.8588.591.4578
+                                            1.379.9156 2.823 1.1119 3.414-1.1773 9.583-3.0086 18.511 2.9431 26.125-.654
+                                            1.904-1.4389 3.282-1.4389 4.595 0 .459 2.0275.919 3.401
+                                            1.444-.0654.263-.1962.853-.4579 1.904 1.9621-.985 3.4664-1.707 5.0361-2.495
+                                            2.9431-1.509 5.9516-3.282 9.2872-1.706 1.0464.459 1.8967 2.1 2.0929
+                                            3.282.7848 4.463 1.4388 8.993 1.7658 13.522.3271 4.135 2.4199 7.286 4.8398
+                                            10.371.9811 1.248 1.9621 2.429 3.401
+                                            3.545-.5886-1.838-1.1773-3.61-1.7659-5.711 2.8777 2.56 3.5972 4.661 3.4664
+                                            8.14-.0654.788 1.1772 1.641 1.4388 2.56 2.0275 8.139 3.9242 16.345 5.8863
+                                            24.484 0 .132 0 .263.0654.329 3.6629 4.332 5.6249 9.977 10.9219 12.997 2.813
+                                            1.641 5.363 3.216 8.699 2.625 2.027-.328 4.12-.59 6.148-.984 3.335-.657
+                                            6.082.065 7.979 3.15 2.158 3.414 4.447 6.762 6.606 10.109l6.082 5.12c2.551
+                                            1.313 2.878 4.727.654 7.221-1.373 1.575-3.139 2.691-2.747
+                                            5.514.131.919-2.812 2.297-4.316
+                                            3.479.196.197.457.328.654.525-1.243-.328-2.486-.591-4.317-1.05-.131-.328-.327-1.641-1.046-2.232-.916-.722-2.224-1.116-3.401-1.182-.981-.065-2.224.329-3.009.985-1.962
+                                            1.51-5.821.919-5.755 5.12 0 .854-1.962 1.707-3.009
+                                            2.56h-.654c-.588-1.181-.915-2.822-1.897-3.544-2.55-1.97-2.55-4.005.131-5.646.72-.459
+                                            1.308-1.706
+                                            1.308-2.625.131-1.773-.85-3.808-.196-5.252.916-2.231.066-2.494-1.635-2.56-2.027-.065-4.12
+                                            0-6.148
+                                            0-.261-1.116-.523-2.363-.785-3.61-.457-2.494-1.766-2.626-4.251-2.823-3.6624-.328-7.1288-2.297-10.6605-3.544-.2616-.066-.5232-.525-.5232-.788.2616-3.545-2.3545-3.085-4.382-3.479-.4578
+                                            2.888-.8503 5.58-1.3081
+                                            8.205-.3924-.065-.7194-.131-1.1118-.197v-3.282c-.8503.46-1.4389.788-1.8313
+                                            1.05-1.5697-1.903-2.8123-3.872-4.5128-5.448-1.8967-1.772-4.2512-3.151-6.2787-4.857-.327-.263.0654-1.379-.0654-2.035-.5886-2.363-.654-5.974-2.1583-6.827-2.5507-1.378-3.0085-2.626-2.0275-5.186l-.7848-.591c-1.4389.919-2.8123
+                                            1.904-3.9896 2.692-1.7004-5.711-2.7469-12.21-9.2872-16.87.1962 2.035.5232
+                                            3.479.5232 4.923-.0654 1.51-.4578 2.954-.7194 4.464-.3924
+                                            0-.7194.065-1.1118.065-.1962-2.035-.7195-4.135-.4578-6.104.2616-2.56-.7849-4.924-2.5508-4.595
+                                            1.4389-4.924
+                                            1.1119-5.58-3.7933-6.302-.7849-.131-1.5697-.394-1.8313-.459-.7848-3.02-1.5043-5.777-2.2237-8.665-.8502.591-1.5043
+                                            1.05-2.7469 1.903.7848-2.166 1.3734-3.676 1.9621-5.382-2.2891 1.181-4.6436
+                                            1.772-5.8863 3.216-1.3081 1.51-1.5043 3.939-2.2237
+                                            6.236-1.0464-.919-1.7005-1.444-2.3545-1.969-.1962.263-.3924.459-.654.722
+                                            1.1772 1.116 2.4199 2.232 3.6625 3.413-.3924.854-.9156 1.773-1.3734
+                                            2.823.654.788 1.2426 1.51 1.7004 1.969-1.308 1.576-2.4853 2.954-3.7279
+                                            4.398-.2616-.131-.5886-.197-.8502-.328-.1309-2.954-.1963-5.842-.3925-8.796-.1962-2.888.1308-5.908-.7848-8.533-2.2891-6.433-.3924-12.407
+                                            1.1118-18.446.2617-1.116-.4578-2.429-.4578-3.676.0654-2.232.327-4.398.4578-6.63
+                                            3.1394.394 2.8778-2.363 3.5318-4.069.5886-1.51.8502-3.151
+                                            1.3735-4.989.654.788 1.0464 1.313 1.4388
+                                            1.838.2616-.132.4578-.197.7195-.328-.4579-1.379-.8503-2.823-1.3081-4.201.7848-1.707
+                                            1.1118-3.676 1.3735-5.58.0654-.591.0654-1.247.2616-1.838 1.7658-3.807
+                                            3.7279-7.549 5.4284-11.356.981-2.166 1.6351-4.464
+                                            2.2237-6.696.3924-1.509.9156-3.347.327-4.595-1.1118-2.494-.1308-3.872
+                                            1.5043-5.316 1.8967-1.707 5.5592-1.838 5.2322-5.711
+                                            0-.132.2616-.329.4578-.394 3.728-1.904 6.3441-4.595 7.6522-8.665.5232-1.575
+                                            1.8312-2.888 2.6815-4.398 1.308-2.494 2.4853-5.054 3.8588-7.746 2.3545-.197
+                                            5.7554-4.463
+                                            4.7744-6.564-1.0465-2.232-2.2891-4.464-3.2702-6.761-.2616-.656.327-1.641.4578-2.494.0654-.263-.0654-.591-.1308-.985-.654.066-1.308.066-1.5042.066-.5233-1.838-1.1773-3.479-1.5043-5.186-.3924-2.298-.7194-4.661-.5886-6.958.1308-1.576.1962-2.495-1.5697-3.217-3.9242-1.641-5.4938-5.054-6.2133-9.124-.1962-1.181-.9156-2.297-1.1772-3.545-.3924-1.641-.5886-3.347-.8503-4.988
+                                            1.2427-.263 2.1583-.46
+                                            3.2048-.722-.1962-1.313-.654-2.364-.5232-3.414.9156-9.19-2.4199-17.067-7.2598-24.484-.1308-.263-.327-.525-.5886-.657-5.7554-3.085-11.1185-6.564-13.6692-13.062-.1308-.263-.4578-.394-.654-.657-2.6815-4.332-7.5213-7.417-7.7175-13.259-.0654-1.051-.1308-2.167-.4579-3.151-1.3734-5.186.6541-7.68
+                                            5.5593-7.352.327-.919.5232-2.232.981-2.298 1.3735-.262 2.8777-.131
+                                            4.7744-.131V101.55c1.2427-.985 2.4199-1.9694 3.2702-2.6915 1.635-.1313
+                                            3.9241.3282 4.3166-.3938 1.308-2.2319 2.0275-4.8575
+                                            2.6815-7.3519.1308-.5252-.654-1.7067-1.2427-1.9693-.5232-.1969-1.5696.2626-2.1583.7221-1.1772.919-2.2891
+                                            2.1005-2.9431
+                                            2.7569-2.4199-4.5293-4.8398-8.8616-7.0635-13.3253-.2616-.4595.0654-1.5098.4578-1.9693
+                                            1.7005-1.7723
+                                            1.3735-3.7415.1308-5.2513-2.8123-3.479-6.8019-5.8421-9.091-9.7807-.981-1.641-1.9621-3.2821-3.2047-4.6605-3.0085-3.2821-6.4749-6.1704-9.2872-9.5838-1.5697-1.9692-3.4664-5.0544-2.9432-6.958.6541-2.2975.9811-3.7416-.327-5.7765-.9156-1.4441-1.50423-3.0852-1.96205-4.7262-1.11185-3.8073-1.04645-3.8073-4.12038-1.9693C3.4734
+                                            25.799 1.96914 23.042.530273
+                                            20.2194c.261612-.6564.261612-1.1159.261612-1.5754z" fill="#fff"
+                                            fill-opacity=".5"></path>
+                                        <circle cx="49.97" cy="30.762" r="6.592" fill="#FEC85A" stroke="#fff"
+                                            stroke-width="2.19733"></circle>
+                                    </svg></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </amp-story-grid-layer></amp-story-page><amp-story-page id="7b7d7662-fb1f-46b5-94e0-b01029a666a5"
+            auto-advance-after="7s"><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-f627ed9a-ad82-4200-886b-f3268ebdf263","keyframes":{"opacity":[0,1]},"delay":650,"duration":600,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-cc292f0d-f1b8-4962-bc13-f28b354d251c","keyframes":{"transform":["translate3d(-127.63157%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":650,"duration":600,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-bac0441f-757b-4f1c-b969-ee0c673a2e9f","keyframes":{"opacity":[0,1]},"delay":700,"duration":600,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-40473607-434c-425b-97cf-0e5b76360546","keyframes":{"transform":["translate3d(-113.99999%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":700,"duration":600,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-de745feb-f5d3-41b6-a76d-1f49a695689d","keyframes":{"opacity":[0,1]},"delay":600,"duration":600,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-grid-layer template="vertical" aspect-ratio="412:618"
+                class="grid-layer">
+                <div class="page-fullbleed-area" style="background-color:#fff">
+                    <div class="page-safe-area">
+                        <div
+                            style="position:absolute;pointer-events:none;left:0;top:-9.25926%;width:100%;height:118.51852%;opacity:1">
+                            <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                class="mask" id="el-9012bef0-e5e3-4910-8412-a10ce18e23a6">
+                                <div class="fill" style="will-change:transform"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </amp-story-grid-layer><amp-story-grid-layer template="vertical" aspect-ratio="412:618"
+                class="grid-layer">
+                <div class="page-fullbleed-area">
+                    <div class="page-safe-area">
+                        <div
+                            style="position:absolute;pointer-events:none;left:10.19417%;top:61.65049%;width:36.8932%;height:16.82848%;opacity:1">
+                            <div id="anim-f627ed9a-ad82-4200-886b-f3268ebdf263" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                <div id="anim-cc292f0d-f1b8-4962-bc13-f28b354d251c" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-127.63157%,
+                                    0px, 0)">
+                                    <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                        id="el-3932eb5c-e456-43d8-988d-4aa01dd4a8bd">
+                                        <h2 class="fill text-wrapper"
+                                            style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:8.24473684210526%
+                                            0;font-family:&quot;Oswald&quot;,sans-serif;font-size:0.841424em;line-height:1;text-align:left;padding:0;color:#000000">
+                                            <span><span style="color: rgba(9, 66, 40, 1); text-transform:
+                                                    uppercase">Temple</span><span style="color: rgba(9, 66, 40, 1);
+                                                    text-transform: uppercase">Name</span></span></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:10.19417%;top:81.06796%;width:72.81553%;height:14.88673%;opacity:1">
+                            <div id="anim-bac0441f-757b-4f1c-b969-ee0c673a2e9f" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                <div id="anim-40473607-434c-425b-97cf-0e5b76360546" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-113.99999%,
+                                    0px, 0)">
+                                    <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                        id="el-bc7d8800-b421-4a19-9db0-f594e9b0bd8d">
+                                        <p class="fill text-wrapper"
+                                            style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:-0.06000000000000049%
+                                            0;font-family:&quot;Lora&quot;,serif;font-size:0.291262em;line-height:1.3;text-align:left;padding:0;color:#000000">
+                                            <span><span style="color: #094228">The courtyard around the 3 Kings
+                                                    Monument is the best place to give early morning Alms to the Monks
+                                                    in Central Chiang Mai.</span></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:0;top:-9.2233%;width:79.36893%;height:65.04854%;opacity:1">
+                            <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                class="mask" id="el-37a09535-568f-4dc6-a07d-57f3ac1c9d39">
+                                <div style="position:absolute;width:100%;height:122.01493%;left:0%;top:-19.99724%"
+                                    data-leaf-element="true"><amp-img layout="fill"
+                                        src="https://wp.stories.google/static/21/images/templates/experience-thailand/page7_image1.jpg"
+                                        alt="Close up of statue in 3 Kings Monument"
+                                        disable-inline-width="true"></amp-img></div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:58.00971%;top:41.58576%;width:21.35922%;height:14.23948%;opacity:1">
+                            <div id="anim-de745feb-f5d3-41b6-a76d-1f49a695689d" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0;background-clip:content-box;background-color:#000"
+                                    id="el-b6dd7e92-0951-4581-9436-29393593c5d3">
+                                    <p class="fill text-wrapper"
+                                        style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:5.4772727272727275%
+                                        0;font-family:&quot;Oswald&quot;,sans-serif;font-size:0.323625em;line-height:1;text-align:left;padding:32.95454545454545%
+                                        20.454545454545457%;color:#000000"><span><span style="font-weight: 500; color:
+                                                #fff; text-transform: uppercase">No. 3</span></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </amp-story-grid-layer></amp-story-page><amp-story-page id="1659f169-eb29-498a-bd00-6aea80d7ace7"
+            auto-advance-after="7s"><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-7e42fb3c-b5f6-4e14-9e04-39d8f499e6ed","keyframes":{"opacity":[0,1]},"delay":600,"duration":600,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-482a754f-7e03-4b31-a2e3-60b8e2161495","keyframes":{"transform":["translate3d(-120.51282%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":600,"duration":600,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-7434f64b-11c1-4a7e-9965-db700b48429a","keyframes":{"opacity":[0,1]},"delay":600,"duration":600,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-ec843df8-59bf-4a77-9944-a5d2aafd5f37","keyframes":{"transform":["translate3d(-116.40001%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":600,"duration":600,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-7e133a66-0cc1-4f3a-8dd0-e8784120220d","keyframes":{"opacity":[0,1]},"delay":600,"duration":600,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-grid-layer template="vertical" aspect-ratio="412:618"
+                class="grid-layer">
+                <div class="page-fullbleed-area" style="background-color:#37474e">
+                    <div class="page-safe-area">
+                        <div
+                            style="position:absolute;pointer-events:none;left:0;top:-9.25926%;width:100%;height:118.51852%;opacity:1">
+                            <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                class="mask" id="el-3f23fce9-2fb5-4f17-acec-f0f6f524967d">
+                                <div style="position:absolute;width:266.06198%;height:100%;left:-83.03099%;top:0%"
+                                    data-leaf-element="true"><amp-img layout="fill"
+                                        src="https://wp.stories.google/static/21/images/templates/experience-thailand/page8_bg.jpg"
+                                        alt="Boat with many passengers near island mountains"
+                                        disable-inline-width="true"></amp-img></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </amp-story-grid-layer><amp-story-grid-layer template="vertical" aspect-ratio="412:618"
+                class="grid-layer">
+                <div class="page-fullbleed-area">
+                    <div class="page-safe-area">
+                        <div
+                            style="position:absolute;pointer-events:none;left:0;top:-9.38511%;width:78.64078%;height:70.55016%;opacity:1">
+                            <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                class="mask" id="el-f60ae332-db13-481f-ace7-107885b1c202">
+                                <div class="fill"
+                                    style="background-color:rgba(159,208,255,0.5);will-change:transform"></div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:9.70874%;top:4.69256%;width:47.3301%;height:16.34304%;opacity:1">
+                            <div id="anim-7e42fb3c-b5f6-4e14-9e04-39d8f499e6ed" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                <div id="anim-482a754f-7e03-4b31-a2e3-60b8e2161495" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-120.51282%,
+                                    0px, 0)">
+                                    <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                        id="el-30716193-c4ff-4619-b485-8108d250c8b8">
+                                        <h2 class="fill text-wrapper"
+                                            style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:6.426666666666665%
+                                            0;font-family:&quot;Oswald&quot;,sans-serif;font-size:0.841424em;line-height:1;text-align:left;padding:0;color:#000000">
+                                            <span><span style="text-transform: uppercase">Island</span><span
+                                                    style="text-transform: uppercase">Hopping</span></span></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:9.95146%;top:24.59547%;width:60.67961%;height:22.3301%;opacity:1">
+                            <div id="anim-7434f64b-11c1-4a7e-9965-db700b48429a" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                <div id="anim-ec843df8-59bf-4a77-9944-a5d2aafd5f37" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-116.40001%,
+                                    0px, 0)">
+                                    <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                        id="el-41d3069f-61de-4998-8487-036ea86917a6">
+                                        <p class="fill text-wrapper"
+                                            style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:-0.0720000000000006%
+                                            0;font-family:&quot;Lora&quot;,serif;font-size:0.291262em;line-height:1.3;text-align:left;padding:0;color:#000000">
+                                            <span>The main island hopping hubs are Phuket, Krabi, Koh Phi Phi, and Koh
+                                                Lipe. Other favorites include Ko Tao, Ko Pha-Ngan, Ko Samui and Surat
+                                                Thani.</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:57.28155%;top:46.92557%;width:21.35922%;height:14.23948%;opacity:1">
+                            <div id="anim-7e133a66-0cc1-4f3a-8dd0-e8784120220d" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0;background-clip:content-box;background-color:#000"
+                                    id="el-88d486d7-a957-4c41-b4e9-11280585f13f">
+                                    <p class="fill text-wrapper"
+                                        style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:5.4772727272727275%
+                                        0;font-family:&quot;Oswald&quot;,sans-serif;font-size:0.323625em;line-height:1;text-align:left;padding:21.59090909090909%
+                                        20.454545454545457%;color:#000000"><span><span style="font-weight: 500; color:
+                                                #fff; text-transform: uppercase">Learn</span><span
+                                                style="font-weight: 500; color: #fff; text-transform:
+                                                uppercase">More</span></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </amp-story-grid-layer></amp-story-page><amp-story-page id="78da0e6c-6bc7-4680-90a8-2b6bf6e98aaa"
+            auto-advance-after="7s"><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-50b61f4f-7e8e-4b5f-a711-c6e7f504b760","keyframes":{"transform":["translate3d(-100%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":0,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-c4f67511-d611-4dec-86a0-73e714fda5ad","keyframes":{"opacity":[0,1]},"delay":0,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-bfa7ae38-8738-43ff-9fb9-ce3ba44b3947","keyframes":{"transform":["scale(0.15)","scale(1)"]},"delay":0,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"forwards"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-7b72ec9d-be4f-42ce-a0ff-23470546a3d9","keyframes":{"transform":["translate3d(-182.52428%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":0,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-0e284e51-6f4a-4f18-a6d1-6217c515ca40","keyframes":{"opacity":[0,1]},"delay":0,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-800ab951-9c07-48d3-bc15-540837f5a987","keyframes":{"transform":["scale(0.15)","scale(1)"]},"delay":0,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"forwards"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-bdaa07d8-1e26-4909-944a-5137f4ae4be5","keyframes":{"transform":["translate3d(-182.12561%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":0,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-cb4a666e-242b-4c65-aa5d-6e103e8ac835","keyframes":{"opacity":[0,1]},"delay":0,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-70a3f0b8-dbe1-47d4-b846-d8b23a5446c4","keyframes":{"transform":["scale(0.15)","scale(1)"]},"delay":0,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"forwards"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-79494652-baf7-4363-af1b-5d90b9256c4b","keyframes":{"transform":["translate3d(-100%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":200,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-e7e29258-c63b-49b7-a8a3-de89b1038bd6","keyframes":{"opacity":[0,1]},"delay":200,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-ddaf9c84-b5f3-460d-8604-bd0f3350f682","keyframes":{"transform":["scale(0.15)","scale(1)"]},"delay":200,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"forwards"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-9d177ded-5e0d-40da-8823-df379bb23fb0","keyframes":{"transform":["translate3d(-182.52428%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":200,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-6ffb61f1-56d1-45fa-9acb-c2650bf7ed41","keyframes":{"opacity":[0,1]},"delay":200,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-1e16633b-7e85-4214-91f1-8e0af17de7a8","keyframes":{"transform":["scale(0.15)","scale(1)"]},"delay":200,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"forwards"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-cd85bede-2598-4c66-8b09-c42694090a3c","keyframes":{"transform":["translate3d(-181.64251%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":200,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-930a8894-8a64-4e79-aa81-fac5334c69ac","keyframes":{"opacity":[0,1]},"delay":200,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-51c94c07-4b2e-423b-8138-ebaa67df68b7","keyframes":{"transform":["scale(0.15)","scale(1)"]},"delay":200,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"forwards"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-bc88de96-f114-4d42-907a-ef8f55f3ef8f","keyframes":{"transform":["translate3d(-100%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":400,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-fc797e39-3e89-4780-9966-c8042da011d4","keyframes":{"opacity":[0,1]},"delay":400,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-e6b85f71-041e-4f05-b118-1fa83fcc765c","keyframes":{"transform":["scale(0.15)","scale(1)"]},"delay":400,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"forwards"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-9306548a-da4e-4e40-9f56-48bc3be3eec2","keyframes":{"transform":["translate3d(-182.52428%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":400,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-a83b60a9-9137-4ba3-98cb-e0d48b58376d","keyframes":{"opacity":[0,1]},"delay":400,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-761aa839-d282-4a69-8531-7f8a6a186a84","keyframes":{"transform":["scale(0.15)","scale(1)"]},"delay":400,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"forwards"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-87af4638-3eb6-439e-a5cd-1e9a4122c026","keyframes":{"transform":["translate3d(-190.9091%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":400,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-83af3619-e512-4b2c-8cb1-e26db1df5a5b","keyframes":{"opacity":[0,1]},"delay":400,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-f48f84dd-2f4d-426d-b11a-6a7c12790170","keyframes":{"transform":["scale(0.15)","scale(1)"]},"delay":400,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"forwards"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-3310858f-ea4e-4412-9b81-c52a91de0015","keyframes":{"transform":["translate3d(-100%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":600,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-ed45a1f9-8aca-48f1-8eb3-020db2ed4cbc","keyframes":{"opacity":[0,1]},"delay":600,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-efc07a6a-b94d-4d4a-ab2a-a05df9ae8feb","keyframes":{"transform":["scale(0.15)","scale(1)"]},"delay":600,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"forwards"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-0abd4863-8fa4-46da-ab74-bd36a3d5bd76","keyframes":{"transform":["translate3d(-187.17949%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":600,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-5a223193-9c03-4f07-9f74-a4bbcbf5cd85","keyframes":{"opacity":[0,1]},"delay":600,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-bd330c3d-c224-4a6b-84fc-46c62783c144","keyframes":{"transform":["scale(0.15)","scale(1)"]},"delay":600,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"forwards"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-ffcc2bbe-32c8-4b90-aa0a-a04a262ee1f8","keyframes":{"transform":["translate3d(-191.44384%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":600,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-5837b397-bdf7-4a48-9951-9b62336d4b60","keyframes":{"opacity":[0,1]},"delay":600,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-bf247820-deb7-4f2e-94f0-d2267c83b606","keyframes":{"transform":["scale(0.15)","scale(1)"]},"delay":600,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"forwards"}]</script>
+            </amp-story-animation><amp-story-grid-layer template="vertical" aspect-ratio="412:618"
+                class="grid-layer">
+                <div class="page-fullbleed-area" style="background-color:#fff">
+                    <div class="page-safe-area">
+                        <div
+                            style="position:absolute;pointer-events:none;left:0;top:-9.25926%;width:100%;height:118.51852%;opacity:1">
+                            <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                class="mask" id="el-55fcd4fb-1af4-4540-ac57-a783f94f6864">
+                                <div class="fill" style="will-change:transform"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </amp-story-grid-layer><amp-story-grid-layer template="vertical" aspect-ratio="412:618"
+                class="grid-layer">
+                <div class="page-fullbleed-area">
+                    <div class="page-safe-area">
+                        <div
+                            style="position:absolute;pointer-events:none;left:-0.6068%;top:26.21359%;width:101.21359%;height:0.16181%;opacity:1">
+                            <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                class="mask" id="el-d90985a8-8ba6-45b1-8e8a-ef2fa073dac9">
+                                <div class="fill" style="background-color:#f1f1f1;will-change:transform"></div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:-0.6068%;top:50%;width:101.21359%;height:0.16181%;opacity:1">
+                            <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                class="mask" id="el-359fca2c-a5ab-448c-b9e6-11dd47517650">
+                                <div class="fill" style="background-color:#f1f1f1;will-change:transform"></div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:-0.24272%;top:73.46278%;width:101.21359%;height:0.16181%;opacity:1">
+                            <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                class="mask" id="el-2a391259-057a-4976-b90d-2c6140e2a222">
+                                <div class="fill" style="background-color:#f1f1f1;will-change:transform"></div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:41.26214%;top:9.54693%;width:50%;height:3.23625%;opacity:1">
+                            <div id="anim-7b72ec9d-be4f-42ce-a0ff-23470546a3d9" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-182.52428%,
+                                0px, 0)">
+                                <div id="anim-0e284e51-6f4a-4f18-a6d1-6217c515ca40" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                    <div id="anim-800ab951-9c07-48d3-bc15-540837f5a987" class="animation-wrapper"
+                                        style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:scale(0.15)">
+                                        <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                            id="el-5cb07f8c-750f-437b-981f-cc3228cdeffd">
+                                            <p class="fill text-wrapper"
+                                                style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:2.3398058252427187%
+                                                0;font-family:&quot;Oswald&quot;,sans-serif;font-size:0.323625em;line-height:1;text-align:left;padding:0;color:#000000">
+                                                <span><span style="color: rgba(9, 66, 40, 1); text-transform:
+                                                        uppercase">1. Phuket</span></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:41.26214%;top:14.40129%;width:50.24272%;height:3.72168%;opacity:1">
+                            <div id="anim-bdaa07d8-1e26-4909-944a-5137f4ae4be5" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-182.12561%,
+                                0px, 0)">
+                                <div id="anim-cb4a666e-242b-4c65-aa5d-6e103e8ac835" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                    <div id="anim-70a3f0b8-dbe1-47d4-b846-d8b23a5446c4" class="animation-wrapper"
+                                        style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:scale(0.15)">
+                                        <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                            id="el-adc642e3-a739-4349-9646-cb06d88f51a4">
+                                            <p class="fill text-wrapper"
+                                                style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:-0.08695652173913115%
+                                                0;font-family:&quot;Lora&quot;,serif;font-size:0.291262em;line-height:1.3;text-align:left;padding:0;color:#000000">
+                                                <span><span style="color: rgba(9, 66, 40, 1)">Start your journey
+                                                        here</span></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:0;top:2.75081%;width:33.98058%;height:23.6246%;opacity:1">
+                            <div id="anim-50b61f4f-7e8e-4b5f-a711-c6e7f504b760" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-100%,
+                                0px, 0)">
+                                <div id="anim-c4f67511-d611-4dec-86a0-73e714fda5ad" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                    <div id="anim-bfa7ae38-8738-43ff-9fb9-ce3ba44b3947" class="animation-wrapper"
+                                        style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:scale(0.15)">
+                                        <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                            class="mask" id="el-43b28f35-fdc3-4b59-b3da-ad9581cbeb8c">
+                                            <div style="position:absolute;width:292.00008%;height:210%;left:-157.60816%;top:-38.45865%"
+                                                data-leaf-element="true"><amp-img layout="fill"
+                                                    src="https://wp.stories.google/static/21/images/templates/experience-thailand/page9_image1.jpg"
+                                                    alt="Boat near beach in Phuket"
+                                                    disable-inline-width="true"></amp-img></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:41.26214%;top:33.17152%;width:50%;height:3.23625%;opacity:1">
+                            <div id="anim-9d177ded-5e0d-40da-8823-df379bb23fb0" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-182.52428%,
+                                0px, 0)">
+                                <div id="anim-6ffb61f1-56d1-45fa-9acb-c2650bf7ed41" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                    <div id="anim-1e16633b-7e85-4214-91f1-8e0af17de7a8" class="animation-wrapper"
+                                        style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:scale(0.15)">
+                                        <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                            id="el-840cd415-bf08-4186-9649-932beb2e6778">
+                                            <p class="fill text-wrapper"
+                                                style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:2.3398058252427187%
+                                                0;font-family:&quot;Oswald&quot;,sans-serif;font-size:0.323625em;line-height:1;text-align:left;padding:0;color:#000000">
+                                                <span><span style="color: #094228; text-transform: uppercase">2. Koh
+                                                        Phi Phi</span></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:41.01942%;top:38.02589%;width:50.24272%;height:3.72168%;opacity:1">
+                            <div id="anim-cd85bede-2598-4c66-8b09-c42694090a3c" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-181.64251%,
+                                0px, 0)">
+                                <div id="anim-930a8894-8a64-4e79-aa81-fac5334c69ac" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                    <div id="anim-51c94c07-4b2e-423b-8138-ebaa67df68b7" class="animation-wrapper"
+                                        style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:scale(0.15)">
+                                        <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                            id="el-919e9a80-e851-49fe-9660-c67937a14e13">
+                                            <p class="fill text-wrapper"
+                                                style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:-0.08695652173913115%
+                                                0;font-family:&quot;Lora&quot;,serif;font-size:0.291262em;line-height:1.3;text-align:left;padding:0;color:#000000">
+                                                <span><span style="color: rgba(9, 66, 40, 1)">Scoot around the
+                                                        island</span></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:0;top:26.53722%;width:33.98058%;height:23.6246%;opacity:1">
+                            <div id="anim-79494652-baf7-4363-af1b-5d90b9256c4b" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-100%,
+                                0px, 0)">
+                                <div id="anim-e7e29258-c63b-49b7-a8a3-de89b1038bd6" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                    <div id="anim-ddaf9c84-b5f3-460d-8604-bd0f3350f682" class="animation-wrapper"
+                                        style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:scale(0.15)">
+                                        <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                            class="mask" id="el-d16ef169-d80c-4e70-817a-9e3bf66d1428">
+                                            <div style="position:absolute;width:240.53002%;height:130%;left:-42.78779%;top:-15%"
+                                                data-leaf-element="true"><amp-img layout="fill"
+                                                    src="https://wp.stories.google/static/21/images/templates/experience-thailand/page9_image2.jpg"
+                                                    alt="Person riding a scooter on a road"
+                                                    disable-inline-width="true"></amp-img></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:41.26214%;top:56.79612%;width:50%;height:3.23625%;opacity:1">
+                            <div id="anim-9306548a-da4e-4e40-9f56-48bc3be3eec2" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-182.52428%,
+                                0px, 0)">
+                                <div id="anim-a83b60a9-9137-4ba3-98cb-e0d48b58376d" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                    <div id="anim-761aa839-d282-4a69-8531-7f8a6a186a84" class="animation-wrapper"
+                                        style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:scale(0.15)">
+                                        <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                            id="el-bbe6302e-87c0-49d2-b16b-ff787059c187">
+                                            <p class="fill text-wrapper"
+                                                style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:2.3398058252427187%
+                                                0;font-family:&quot;Oswald&quot;,sans-serif;font-size:0.323625em;line-height:1;text-align:left;padding:0;color:#000000">
+                                                <span><span style="color: #094228; text-transform: uppercase">3. Koh
+                                                        Lipe</span></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:41.26214%;top:61.65049%;width:45.38835%;height:3.72168%;opacity:1">
+                            <div id="anim-87af4638-3eb6-439e-a5cd-1e9a4122c026" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-190.9091%,
+                                0px, 0)">
+                                <div id="anim-83af3619-e512-4b2c-8cb1-e26db1df5a5b" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                    <div id="anim-f48f84dd-2f4d-426d-b11a-6a7c12790170" class="animation-wrapper"
+                                        style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:scale(0.15)">
+                                        <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                            id="el-63b0bbbf-6ef4-42c1-b017-d7db0db07039">
+                                            <p class="fill text-wrapper"
+                                                style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:-0.09625668449197941%
+                                                0;font-family:&quot;Lora&quot;,serif;font-size:0.291262em;line-height:1.3;text-align:left;padding:0;color:#000000">
+                                                <span><span style="color: rgba(9, 66, 40, 1)">Best red
+                                                        curry</span></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:0;top:49.83819%;width:33.98058%;height:23.6246%;opacity:1">
+                            <div id="anim-bc88de96-f114-4d42-907a-ef8f55f3ef8f" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-100%,
+                                0px, 0)">
+                                <div id="anim-fc797e39-3e89-4780-9966-c8042da011d4" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                    <div id="anim-e6b85f71-041e-4f05-b118-1fa83fcc765c" class="animation-wrapper"
+                                        style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:scale(0.15)">
+                                        <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                            class="mask" id="el-a7ca1ee4-5f88-45e3-aa3d-ea3cfda6b027">
+                                            <div style="position:absolute;width:171.68129%;height:110%;left:-14.89388%;top:-10%"
+                                                data-leaf-element="true"><amp-img layout="fill"
+                                                    src="https://wp.stories.google/static/21/images/templates/experience-thailand/page9_image4.jpg"
+                                                    alt="Close up of red curry dish"
+                                                    disable-inline-width="true"></amp-img></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:41.26214%;top:80.42071%;width:47.3301%;height:3.23625%;opacity:1">
+                            <div id="anim-0abd4863-8fa4-46da-ab74-bd36a3d5bd76" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-187.17949%,
+                                0px, 0)">
+                                <div id="anim-5a223193-9c03-4f07-9f74-a4bbcbf5cd85" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                    <div id="anim-bd330c3d-c224-4a6b-84fc-46c62783c144" class="animation-wrapper"
+                                        style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:scale(0.15)">
+                                        <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                            id="el-44db08e2-0900-40a6-9e52-3ab2325aeab2">
+                                            <p class="fill text-wrapper"
+                                                style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:2.471794871794872%
+                                                0;font-family:&quot;Oswald&quot;,sans-serif;font-size:0.323625em;line-height:1;text-align:left;padding:0;color:#000000">
+                                                <span><span style="color: #094228; text-transform: uppercase">4. Ko
+                                                        Samui</span></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:41.50485%;top:85.43689%;width:45.38835%;height:3.72168%;opacity:1">
+                            <div id="anim-ffcc2bbe-32c8-4b90-aa0a-a04a262ee1f8" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-191.44384%,
+                                0px, 0)">
+                                <div id="anim-5837b397-bdf7-4a48-9951-9b62336d4b60" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                    <div id="anim-bf247820-deb7-4f2e-94f0-d2267c83b606" class="animation-wrapper"
+                                        style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:scale(0.15)">
+                                        <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                            id="el-300c43cc-b0b0-45de-97ba-1775028d50bb">
+                                            <p class="fill text-wrapper"
+                                                style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:-0.09625668449197941%
+                                                0;font-family:&quot;Lora&quot;,serif;font-size:0.291262em;line-height:1.3;text-align:left;padding:0;color:#000000">
+                                                <span><span style="color: rgba(9, 66, 40, 1)">Semi-secluded
+                                                        island</span></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:0;top:73.46278%;width:33.98058%;height:23.6246%;opacity:1">
+                            <div id="anim-3310858f-ea4e-4412-9b81-c52a91de0015" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-100%,
+                                0px, 0)">
+                                <div id="anim-ed45a1f9-8aca-48f1-8eb3-020db2ed4cbc" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                    <div id="anim-efc07a6a-b94d-4d4a-ab2a-a05df9ae8feb" class="animation-wrapper"
+                                        style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:scale(0.15)">
+                                        <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                            class="mask" id="el-07155f07-19d8-4eca-8817-9b512fd3303f">
+                                            <div style="position:absolute;width:160%;height:230.13693%;left:-60%;top:-89.34637%"
+                                                data-leaf-element="true"><amp-img layout="fill"
+                                                    src="https://wp.stories.google/static/21/images/templates/experience-thailand/page9_image5.jpg"
+                                                    alt="Close up of palm branch"
+                                                    disable-inline-width="true"></amp-img></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </amp-story-grid-layer></amp-story-page><amp-story-page id="9a45a0b2-0261-4298-aef7-c08b99771787"
+            auto-advance-after="7s"><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-fa3018d0-9873-415e-820f-febd5204a136","keyframes":{"opacity":[0,1]},"delay":0,"duration":600,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-efd67a38-ff67-4e9c-b692-6b2e40b0cf51","keyframes":{"transform":["translate3d(-121.02565%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":0,"duration":600,"easing":"cubic-bezier(0.2, 0.6, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-de2fdbb2-8c58-4460-9321-45090cfa9584","keyframes":{"transform":["translate3d(-100%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":0,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-bea08811-6bff-4ba3-af6a-a36bbd411b92","keyframes":{"opacity":[0,1]},"delay":0,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-38a49d65-c1e6-46b0-98eb-2762e7e86aef","keyframes":{"transform":["scale(0.15)","scale(1)"]},"delay":0,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"forwards"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-d4753320-7995-4e61-97d8-74b62c0aab57","keyframes":{"transform":["translate3d(-441.97538%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":0,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-47de0d0e-5ded-4c8e-b1a4-05c5283b2767","keyframes":{"opacity":[0,1]},"delay":0,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-891a728a-7786-4a3f-9796-fe56c7ad23fc","keyframes":{"transform":["scale(0.15)","scale(1)"]},"delay":0,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"forwards"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-a64b9a79-28c8-4c0b-b81a-29758c14f919","keyframes":{"transform":["translate3d(-257.50001%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":0,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-e2d92635-bcf5-4cc8-927d-403c1ed20190","keyframes":{"opacity":[0,1]},"delay":0,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-df514883-04a0-4b16-8e93-ab1dc8a762a4","keyframes":{"transform":["scale(0.15)","scale(1)"]},"delay":0,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"forwards"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-5d26a07b-e20c-4300-847a-bcebf9265ab3","keyframes":{"transform":["translate3d(-100%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":700,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-d07f1aaf-b2c7-434d-81f0-a41921c6ef2c","keyframes":{"opacity":[0,1]},"delay":700,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-4db665e8-3727-48bb-9aaf-de50312539d6","keyframes":{"transform":["scale(0.15)","scale(1)"]},"delay":700,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"forwards"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-ef3e99ad-29f7-429c-9c8d-336eba95264b","keyframes":{"transform":["translate3d(-412.35958%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":700,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-ee172ad0-270d-4391-aa92-568b7be3d519","keyframes":{"opacity":[0,1]},"delay":700,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-5dd72b85-db33-41f3-b77d-bd40281fa80f","keyframes":{"transform":["scale(0.15)","scale(1)"]},"delay":700,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"forwards"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-db861250-4c30-41b8-8f1a-f6c05909f75a","keyframes":{"transform":["translate3d(-100%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":900,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-71f704cf-3b49-4466-9734-53814fa66131","keyframes":{"opacity":[0,1]},"delay":900,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-0308f0a6-d3a1-43c7-9167-9bafa81a9406","keyframes":{"transform":["scale(0.15)","scale(1)"]},"delay":900,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"forwards"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-2b8fa7e7-24f8-4729-a7d2-cfb4de3547e3","keyframes":{"transform":["translate3d(-414.77278%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":900,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-683907a6-efcc-46d5-b682-2f34d4ab72d8","keyframes":{"opacity":[0,1]},"delay":900,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-6374266d-dca7-45c9-aa8f-801ffb911c96","keyframes":{"transform":["scale(0.15)","scale(1)"]},"delay":900,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"forwards"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-23fb55aa-9eaa-4242-839a-6750d65be2fe","keyframes":{"transform":["translate3d(-257.50001%, 0px, 0)","translate3d(0px, 0px, 0)"]},"delay":900,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-5d1b0ffe-9552-45aa-9303-779f286babfc","keyframes":{"opacity":[0,1]},"delay":900,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"both"}]</script>
+            </amp-story-animation><amp-story-animation layout="nodisplay" trigger="visibility">
+                <script
+                    type="application/json">[{"selector":"#anim-6121aa1f-c65d-47af-b4ef-dea28ab3d9ff","keyframes":{"transform":["scale(0.15)","scale(1)"]},"delay":900,"duration":2000,"easing":"cubic-bezier(0.4, 0.4, 0.0, 1)","fill":"forwards"}]</script>
+            </amp-story-animation><amp-story-grid-layer template="vertical" aspect-ratio="412:618"
+                class="grid-layer">
+                <div class="page-fullbleed-area" style="background-color:#fff">
+                    <div class="page-safe-area">
+                        <div
+                            style="position:absolute;pointer-events:none;left:0;top:-9.25926%;width:100%;height:118.51852%;opacity:1">
+                            <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                class="mask" id="el-282588c3-fbc2-4b63-8260-2e58d0e63294">
+                                <div class="fill" style="will-change:transform"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </amp-story-grid-layer><amp-story-grid-layer template="vertical" aspect-ratio="412:618"
+                class="grid-layer">
+                <div class="page-fullbleed-area">
+                    <div class="page-safe-area">
+                        <div
+                            style="position:absolute;pointer-events:none;left:61.16505%;top:25.56634%;width:38.83495%;height:19.41748%;opacity:1">
+                            <div id="anim-a64b9a79-28c8-4c0b-b81a-29758c14f919" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-257.50001%,
+                                0px, 0)">
+                                <div id="anim-e2d92635-bcf5-4cc8-927d-403c1ed20190" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                    <div id="anim-df514883-04a0-4b16-8e93-ab1dc8a762a4" class="animation-wrapper"
+                                        style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:scale(0.15)">
+                                        <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                            class="mask" id="el-b542beff-39c1-4787-a8ad-a2a061c51a60">
+                                            <div class="fill"
+                                                style="background-color:#fec85a;will-change:transform"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:67.23301%;top:32.20065%;width:19.66019%;height:6.47249%;opacity:1">
+                            <div id="anim-d4753320-7995-4e61-97d8-74b62c0aab57" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-441.97538%,
+                                0px, 0)">
+                                <div id="anim-47de0d0e-5ded-4c8e-b1a4-05c5283b2767" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                    <div id="anim-891a728a-7786-4a3f-9796-fe56c7ad23fc" class="animation-wrapper"
+                                        style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:scale(0.15)">
+                                        <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                            id="el-7ea7ab1b-9bcd-45d6-941d-2c1143cadf0f">
+                                            <h3 class="fill text-wrapper"
+                                                style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:5.950617283950618%
+                                                0;font-family:&quot;Oswald&quot;,sans-serif;font-size:0.323625em;line-height:1;text-align:left;padding:0;color:#000000">
+                                                <span><span style="color: rgba(9, 66, 40, 1); text-transform:
+                                                        uppercase">5 Spiciest</span><span style="color: rgba(9, 66,
+                                                        40, 1); text-transform: uppercase">Dishes</span></span></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:0;top:25.56634%;width:61.16505%;height:19.41748%;opacity:1">
+                            <div id="anim-de2fdbb2-8c58-4460-9321-45090cfa9584" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-100%,
+                                0px, 0)">
+                                <div id="anim-bea08811-6bff-4ba3-af6a-a36bbd411b92" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                    <div id="anim-38a49d65-c1e6-46b0-98eb-2762e7e86aef" class="animation-wrapper"
+                                        style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:scale(0.15)">
+                                        <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                            class="mask" id="el-85439d79-2100-4dc8-9b20-e6e51d2064af">
+                                            <div style="position:absolute;width:230%;height:245.89086%;left:-56.45937%;top:-116.50264%"
+                                                data-leaf-element="true"><amp-img layout="fill"
+                                                    src="https://wp.stories.google/static/21/images/templates/experience-thailand/page10_image1.jpg"
+                                                    alt="Variety of peppers" disable-inline-width="true"></amp-img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:61.16505%;top:64.07767%;width:38.83495%;height:19.41748%;opacity:1">
+                            <div id="anim-23fb55aa-9eaa-4242-839a-6750d65be2fe" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-257.50001%,
+                                0px, 0)">
+                                <div id="anim-5d1b0ffe-9552-45aa-9303-779f286babfc" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                    <div id="anim-6121aa1f-c65d-47af-b4ef-dea28ab3d9ff" class="animation-wrapper"
+                                        style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:scale(0.15)">
+                                        <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                            class="mask" id="el-12b82d84-167c-49b1-8efd-afae77b857f0">
+                                            <div class="fill"
+                                                style="background-color:#ececec;will-change:transform"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:67.23301%;top:69.25566%;width:21.35922%;height:9.70874%;opacity:1">
+                            <div id="anim-2b8fa7e7-24f8-4729-a7d2-cfb4de3547e3" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-414.77278%,
+                                0px, 0)">
+                                <div id="anim-683907a6-efcc-46d5-b682-2f34d4ab72d8" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                    <div id="anim-6374266d-dca7-45c9-aa8f-801ffb911c96" class="animation-wrapper"
+                                        style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:scale(0.15)">
+                                        <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                            id="el-fcdc8182-cfb1-4010-82cd-91b5f235f0fc">
+                                            <h3 class="fill text-wrapper"
+                                                style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:5.4772727272727275%
+                                                0;font-family:&quot;Oswald&quot;,sans-serif;font-size:0.323625em;line-height:1;text-align:left;padding:0;color:#000000">
+                                                <span><span style="color: rgba(9, 66, 40, 1); text-transform:
+                                                        uppercase">Catch The Swimming Monkeys</span></span></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:0;top:64.23948%;width:61.16505%;height:19.41748%;opacity:1">
+                            <div id="anim-db861250-4c30-41b8-8f1a-f6c05909f75a" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-100%,
+                                0px, 0)">
+                                <div id="anim-71f704cf-3b49-4466-9734-53814fa66131" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                    <div id="anim-0308f0a6-d3a1-43c7-9167-9bafa81a9406" class="animation-wrapper"
+                                        style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:scale(0.15)">
+                                        <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                            class="mask" id="el-098c9143-7ca0-4b04-866f-02c5c48339d2">
+                                            <div style="position:absolute;width:110%;height:130.19997%;left:-10%;top:0%"
+                                                data-leaf-element="true"><amp-img layout="fill"
+                                                    src="https://wp.stories.google/static/21/images/templates/experience-thailand/page10_image3.jpg"
+                                                    alt="Two monkeys swimming"
+                                                    disable-inline-width="true"></amp-img></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:9.95146%;top:2.91262%;width:47.3301%;height:16.82848%;opacity:0.99">
+                            <div id="anim-fa3018d0-9873-415e-820f-febd5204a136" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                <div id="anim-efd67a38-ff67-4e9c-b692-6b2e40b0cf51" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-121.02565%,
+                                    0px, 0)">
+                                    <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                        id="el-e5272870-2b37-4bba-abcf-eab0ffc222a4">
+                                        <h2 class="fill text-wrapper"
+                                            style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:6.426666666666665%
+                                            0;font-family:&quot;Oswald&quot;,sans-serif;font-size:0.841424em;line-height:1;text-align:left;padding:0;color:#000000">
+                                            <span><span style="color: #094228; text-transform:
+                                                    uppercase">More</span><span style="color: #094228;
+                                                    text-transform: uppercase">Stories</span></span></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:67.47573%;top:49.83819%;width:21.60194%;height:9.70874%;opacity:1">
+                            <div id="anim-ef3e99ad-29f7-429c-9c8d-336eba95264b" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-412.35958%,
+                                0px, 0)">
+                                <div id="anim-ee172ad0-270d-4391-aa92-568b7be3d519" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                    <div id="anim-5dd72b85-db33-41f3-b77d-bd40281fa80f" class="animation-wrapper"
+                                        style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:scale(0.15)">
+                                        <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                            id="el-cb201d61-faec-476e-9d72-14caf813197b">
+                                            <h3 class="fill text-wrapper"
+                                                style="white-space:pre-line;overflow-wrap:break-word;word-break:break-word;margin:5.415730337078652%
+                                                0;font-family:&quot;Oswald&quot;,sans-serif;font-size:0.323625em;line-height:1;text-align:left;padding:0;color:#000000">
+                                                <span><span style="color: rgba(9, 66, 40, 1); text-transform:
+                                                        uppercase">Hikes Off The BeatenTrail</span></span></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:0;top:44.98382%;width:61.16505%;height:19.41748%;opacity:1">
+                            <div id="anim-5d26a07b-e20c-4300-847a-bcebf9265ab3" class="animation-wrapper"
+                                style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:translate3d(-100%,
+                                0px, 0)">
+                                <div id="anim-d07f1aaf-b2c7-434d-81f0-a41921c6ef2c" class="animation-wrapper"
+                                    style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:0;--initial-transform:none">
+                                    <div id="anim-4db665e8-3727-48bb-9aaf-de50312539d6" class="animation-wrapper"
+                                        style="width:100%;height:100%;display:block;position:absolute;top:0;left:0;--initial-opacity:1;--initial-transform:scale(0.15)">
+                                        <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                            class="mask" id="el-19fd443d-f580-436b-82b4-ef2938c55e89">
+                                            <div style="position:absolute;width:151.46302%;height:120%;left:-18.27333%;top:-0.17165%"
+                                                data-leaf-element="true"><amp-img layout="fill"
+                                                    src="https://wp.stories.google/static/21/images/templates/experience-thailand/page10_image2.jpg"
+                                                    alt="Person hiking during sunset"
+                                                    disable-inline-width="true"></amp-img></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:18.68932%;top:93.20388%;width:3.15534%;height:3.8835%;opacity:1">
+                            <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                id="el-c6a706c8-7f36-4b04-bb5c-3d3d9d30498a"><svg
+                                    style="display:block;position:absolute;top:0;height:100%;width:auto" viewBox="0 0
+                                    14 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <title>Facebook</title>
+                                    <path d="M8.68442
+                                        25.349V13.7867h3.74108l.5612-4.506H8.68442V6.40194c0-1.30378.35013-2.19452
+                                        2.15348-2.19452h2.2999V.176657C12.7397.121918 11.3751 0 9.78517 0 6.46854 0
+                                        4.19991 2.09998 4.19991 5.95657V9.2807H.449219v4.506H4.19991V25.349h4.48451z"
+                                        fill="#094228"></path>
+                                </svg></div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:35.67961%;top:93.20388%;width:6.06796%;height:4.04531%;opacity:1">
+                            <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                id="el-3e52ff79-b15b-4f2c-ba7d-daba7f967904"><svg
+                                    style="display:block;position:absolute;top:0;height:100%;width:auto" viewBox="0 0
+                                    27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <title>Instagram</title>
+                                    <path d="M18.6524 26.4359H8.03621c-4.06197
+                                        0-7.385819-3.3202-7.385819-7.3776V7.7585c0-4.05747 3.323849-7.377641
+                                        7.385819-7.377641H18.6524c4.062 0 7.3859 3.320171 7.3859 7.377641v11.2998c0
+                                        4.0574-3.3239 7.3776-7.3859 7.3776zm0-1.9482c1.4436 0 2.8054-.567 3.8354-1.5959
+                                        1.0301-1.029 1.5977-2.3893
+                                        1.5977-3.8312V7.7585c0-1.44193-.5676-2.8022-1.5977-3.83115-1.03-1.02895-2.3918-1.59592-3.8354-1.59592H8.03621c-1.44353
+                                        0-2.8053.56697-3.83539 1.59592s-1.5977 2.38922-1.5977 3.83115v11.2998c0
+                                        1.4419.56761 2.8022 1.5977 3.8311 1.03009 1.029 2.39186 1.5959 3.83539
+                                        1.5959H18.6524v.0024z" fill="#094228"></path>
+                                    <path d="M20.3738 13.3076c0 3.8568-3.13 6.9834-6.9911 6.9834-3.86107
+                                        0-6.99105-3.1266-6.99105-6.9834s3.12998-6.98332 6.99105-6.98332c3.8611 0 6.9911
+                                        3.12652 6.9911 6.98332zM13.35 8.7415c-2.5273 0-4.57816 2.0462-4.57816 4.5731 0
+                                        2.5269 2.04846 4.5731 4.57816 4.5731 2.5297 0 4.5782-2.0462 4.5782-4.5731
+                                        0-2.5269-2.0508-4.5731-4.5782-4.5731zM20.4862 7.87085c.9146 0 1.6561-.74063
+                                        1.6561-1.65424 0-.91361-.7415-1.65423-1.6561-1.65423-.9146 0-1.6561.74062-1.6561
+                                        1.65423 0 .91361.7415 1.65424 1.6561 1.65424z" fill="#094228"></path>
+                                </svg></div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:55.58252%;top:93.52751%;width:7.28155%;height:3.23625%;opacity:1">
+                            <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                id="el-276d0d4c-e1d1-47c9-99bf-fe3ebc86615d"><svg
+                                    style="display:block;position:absolute;top:0;height:100%;width:auto" viewBox="0 0
+                                    30 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <title>YouTube</title>
+                                    <path d="M21.9665.0332031H8.20109C.666016.0332031.666016 2.13357.666016
+                                        7.30199v5.05021c0 4.9158 1.067524 7.2688 7.535074 7.2688H21.9686c5.8411 0
+                                        7.535-1.3771
+                                        7.535-7.2688V7.30199c-.002-5.43937-.2871-7.2687869-7.5371-7.2687869zM12.1382
+                                        13.6663V5.73741l7.7723 3.9522-7.7723 3.97669z" fill="#094228"></path>
+                                </svg></div>
+                        </div>
+                        <div
+                            style="position:absolute;pointer-events:none;left:75%;top:93.68932%;width:6.31068%;height:3.39806%;opacity:1">
+                            <div style="pointer-events:initial;width:100%;height:100%;display:block;position:absolute;top:0;left:0;z-index:0"
+                                id="el-ce560b5f-13b9-4a5e-85ff-cbc41ea982e8"><svg
+                                    style="display:block;position:absolute;top:0;height:100%;width:auto" viewBox="0 0
+                                    28 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <title>Twitter</title>
+                                    <path d="M27.7837 3.04797c-1.0187.43934-2.1139.73673-3.2623.86966 1.1716-.68491
+                                        2.0722-1.76635 2.4982-3.057313-1.0974.633093-2.3129 1.092703-3.6072
+                                        1.340533C22.3751 1.12842 20.9003.457031 19.2657.457031c-3.1349 0-5.6794
+                                        2.473789-5.6794 5.526589 0 .43258.0509.85389.1481
+                                        1.25943-4.72087-.22981-8.90694-2.43098-11.70846-5.77442-.48853.81558-.76868
+                                        1.76634-.76868 2.77794 0 1.91729 1.00253 3.60929 2.526
+                                        4.60061-.93076-.02929-1.80594-.27712-2.5723-.69167v.06984c0 2.67885 1.95874
+                                        4.91155 4.55651 5.41845-.47695.1262-.97937.1938-1.49568.1938-.36582
+                                        0-.72238-.0338-1.06967-.0992.72237 2.1967 2.82004 3.7941 5.30667 3.8391-1.94485
+                                        1.4825-4.39213 2.3657-7.05473 2.3657-.458428
+                                        0-.909912-.0271-1.3544506-.0766C2.61403 21.4347 5.59845 22.3494 8.80515
+                                        22.3494c10.44665 0 16.16085-8.4217 16.16085-15.72593
+                                        0-.23881-.0047-.47763-.0162-.7142 1.109-.77953 2.0722-1.75282 2.8339-2.8613z"
+                                        fill="#094228"></path>
+                                </svg></div>
+                        </div>
+                    </div>
+                </div>
+            </amp-story-grid-layer></amp-story-page></amp-story></body>
+
+</html>"

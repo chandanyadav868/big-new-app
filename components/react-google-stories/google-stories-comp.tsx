@@ -3,6 +3,7 @@ declare global {
     interface IntrinsicElements {
       'amp-img': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
         src: string,
+        alt:string,
         width: string,
         height: string,
         layout: string,

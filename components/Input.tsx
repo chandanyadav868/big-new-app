@@ -1,15 +1,15 @@
 import React, { forwardRef } from 'react'
 import { FieldError} from 'react-hook-form'
 
-interface InputProps {
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     name:string,
-    className:string,
+    className?:string,
     placeholder:string,
     lableText:string,
     type?:string,
     inputname?:string,
     errors?:FieldError
-}
+} 
 
 const Input = forwardRef<HTMLInputElement,InputProps>(({className,name,errors,lableText,...props},ref)=>{
     return(

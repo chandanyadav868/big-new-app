@@ -9,7 +9,7 @@ interface AmpStoryPageProps {
 export const AmpStoryPage: React.FC<AmpStoryPageProps> = (props: AmpStoryPageProps) => {
   const { children, ...rest } = props
   return (
-  <amp-story-page {...rest}>
+  <amp-story-page  {...rest}>
     {children}
   </amp-story-page>
 )}
