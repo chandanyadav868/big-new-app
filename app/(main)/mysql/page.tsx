@@ -179,7 +179,7 @@ function page() {
                 </div>
 
                 {/* form title, desc, slug */}
-               <FormInputs control={control} handleSubmit={handleSubmit} newStories={newStories} />
+               <FormInput control={control} handleSubmit={handleSubmit} newStories={newStories} />
 
 
                 <div className='flex justify-around items-center flex-wrap gap-2'>
@@ -263,5 +263,3 @@ const FormInput = ({control,newStories,handleSubmit}:{control:Control<formStateP
     )
 
 }
-
-export const FormInputs =  React.memo(FormInput)
