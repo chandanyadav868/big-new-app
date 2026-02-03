@@ -55,28 +55,24 @@ function webStories() {
         const res = await fetch(`/api/mysql/allStories`);
         const dataJason = await res.json();
 
-        console.log({dataJason});
+        // console.log({dataJason});
         
-
         const dataPost: PostDataProps[] = dataJason?.data?.filter((v: PostDataProps, i: number) => v.post_content?.startsWith(`<!-- wp:web-stories/embed`));
 
-        console.log({dataPost});
+        // console.log({dataPost});
 
         const transformatedDataPost = dataPost?.map((v, i) => {
           const matchedData: RegExpMatchArray | null = v?.post_content?.match(/<!--\s*wp:web-stories\/embed\s*(\{[\s\S]*?\})\s*-->/);
 
           const jsonExtractedData: webStoriesProps = JSON.parse(matchedData?.[1] ?? '[]');
 
-          console.log({jsonExtractedData});
-          
+          // console.log({jsonExtractedData});
 
-          const newsModified = { ...jsonExtractedData, url: jsonExtractedData?.url?.replace('http://wordpress-p8ssocw08c44ck4goo0ogg0k.46.202.167.245.sslip.io', WEBSITE_URL) };
+          const newsModified = { ...jsonExtractedData, url: jsonExtractedData?.url?.replace('http://localhost:3000', WEBSITE_URL) };
 
-          console.log(newsModified);
-          
+          // console.log(newsModified);
 
           return newsModified
-
         })
 
         setStories((prev) => ([...transformatedDataPost??[], ...prev]))
