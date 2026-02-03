@@ -58,7 +58,7 @@ function webStories() {
         console.log({dataJason});
         
 
-        const dataPost: PostDataProps[] = dataJason?.data?.filter((v: PostDataProps, i: number) => v.post_content.startsWith(`<!-- wp:web-stories/embed`));
+        const dataPost: PostDataProps[] = dataJason?.data?.filter((v: PostDataProps, i: number) => v.post_content?.startsWith(`<!-- wp:web-stories/embed`));
 
         console.log({dataPost});
 
@@ -79,7 +79,7 @@ function webStories() {
 
         })
 
-        setStories((prev) => ([...transformatedDataPost, ...prev]))
+        setStories((prev) => ([...transformatedDataPost??[], ...prev]))
 
       } catch (error) {
         console.log("Error in Mysql connection:- ", error);
