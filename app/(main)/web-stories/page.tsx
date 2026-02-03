@@ -55,8 +55,8 @@ function webStories() {
         const res = await fetch(`/api/mysql/allStories`);
         const dataJason = await res.json();
 
-        console.log({dataJason});
-        
+        console.log({ dataJason });
+
         const dataPost: PostDataProps[] = dataJason?.data?.filter((v: PostDataProps, i: number) => v.post_content?.startsWith(`<!-- wp:web-stories/embed`));
 
         // console.log({dataPost});
@@ -67,15 +67,21 @@ function webStories() {
           const jsonExtractedData: webStoriesProps = JSON.parse(matchedData?.[1] ?? '[]');
 
           // console.log({jsonExtractedData});
+          const slug = jsonExtractedData.title
+            .trim()
+            .toLowerCase()
+            .replace(/\s+/g, "-");
 
-          const newsModified = { ...jsonExtractedData, url: jsonExtractedData?.url?.replace('http://localhost:3000', WEBSITE_URL) };
+          const newUrl = `${WEBSITE_URL}/web-stories/${slug}`;
+
+          const newsModified = { ...jsonExtractedData, url: newUrl};
 
           console.log(newsModified);
 
           return newsModified
         })
 
-        setStories((prev) => ([...transformatedDataPost??[], ...prev]))
+        setStories((prev) => ([...transformatedDataPost ?? [], ...prev]))
 
       } catch (error) {
         console.log("Error in Mysql connection:- ", error);
@@ -93,18 +99,18 @@ function webStories() {
       <h2 className='text-4xl font-bold text-center' style={{ lineHeight: "3.25rem" }}>Web Story</h2>
 
       <div className='p-2 flex flex-wrap gap-4'>
-         { processing && <span className='text-3xl font-bold text-center'>Loading...</span> }
+        {processing && <span className='text-3xl font-bold text-center'>Loading...</span>}
         {
           stories.length > 0 ? stories?.map((v, i) => (
             <div className='shadow-md outline outline-1 outline-orange-950 p-2 rounded-2xl hover:shadow-[2px_2px_28px_-14px_black]' key={i} style={{ maxWidth: `${v.width}px` }}>
               <Link href={`${v.url}`}>
                 <h2 className='text-3xl font-bold line-clamp-1' style={{ lineHeight: "3.25rem" }}>{v.title}</h2>
                 <Image decoding='async' quality={98} key={i} className='rounded-2xl shadow-md object-cover' src={v.poster
-                } alt={v.title} width={Number(v.width)} height={Number(v.height)} loading='lazy' style={{aspectRatio:"3/4"}}/>
+                } alt={v.title} width={Number(v.width)} height={Number(v.height)} loading='lazy' style={{ aspectRatio: "3/4" }} />
               </Link>
             </div>
-          )):
-          !processing && <span className='text-3xl font-bold text-center'>No Result</span>
+          )) :
+            !processing && <span className='text-3xl font-bold text-center'>No Result</span>
         }
       </div>
     </div>
