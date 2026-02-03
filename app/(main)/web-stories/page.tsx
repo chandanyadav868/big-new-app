@@ -55,7 +55,7 @@ function webStories() {
         const res = await fetch(`/api/mysql/allStories`);
         const dataJason = await res.json();
 
-        // console.log({dataJason});
+        console.log({dataJason});
         
         const dataPost: PostDataProps[] = dataJason?.data?.filter((v: PostDataProps, i: number) => v.post_content?.startsWith(`<!-- wp:web-stories/embed`));
 
@@ -70,7 +70,7 @@ function webStories() {
 
           const newsModified = { ...jsonExtractedData, url: jsonExtractedData?.url?.replace('http://localhost:3000', WEBSITE_URL) };
 
-          // console.log(newsModified);
+          console.log(newsModified);
 
           return newsModified
         })
