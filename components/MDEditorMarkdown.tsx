@@ -10,7 +10,12 @@ function MDEditorMarkdown({ content }: { content: string }) {
                     blockquote: ({ children }) => (
                         <blockquote style={{ color: 'black' }}>
                             {children}
-                        </blockquote>)
+                        </blockquote>),
+                    tr:({children})=>(
+                        <tr style={{background:"white",color:"black"}}>
+                            {children}
+                        </tr>
+                    ),
                 }
             }
         />

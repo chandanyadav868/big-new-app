@@ -8,7 +8,6 @@ import { SingleArticleLinkPage } from './SideContainer';
 
 interface BigContainerProps {
     blogImageUrl: string;
-    blogDate?: string;
     category: string;
     title: string;
     description: string;
@@ -20,7 +19,7 @@ interface BigContainerProps {
     _id: string;
 }
 
-function BigContainer({ width = "", height = "", className = "", blogImageUrl, category, blogDate, title, description, slug, _id, createdAt }: BigContainerProps) {
+function BigContainer({ width = "", height = "", className = "", blogImageUrl, category, title, description, slug, _id, createdAt }: BigContainerProps) {    
 
     return (
         <section className={`w-full lg:w-[${width}] h-[${height}] ${className}`}>
@@ -46,9 +45,9 @@ function BigContainer({ width = "", height = "", className = "", blogImageUrl, c
 
 
                 <div className='absolute right-0 bottom-0  w-full gradient-overlap-shortBlog bg-black/5 h-full' />
-
+                        
                 <div className='absolute right-0 bottom-0  w-full gradient-overlap-shortBlog h-[50%]'>
-                    <DateComponets blogDate={blogDate ?? ""} />
+                    <DateComponets blogDate={createdAt ?? ""} />
                     <CategoryButton category={category} />
                 </div>
 

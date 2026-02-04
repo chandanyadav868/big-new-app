@@ -55,7 +55,7 @@ function webStories() {
         const res = await fetch(`/api/mysql/allStories`);
         const dataJason = await res.json();
 
-        console.log({ dataJason });
+        // console.log({ dataJason });
 
         const dataPost: PostDataProps[] = dataJason?.data?.filter((v: PostDataProps, i: number) => v.post_content?.startsWith(`<!-- wp:web-stories/embed`));
 
@@ -66,19 +66,16 @@ function webStories() {
 
           const jsonExtractedData: webStoriesProps = JSON.parse(matchedData?.[1] ?? '[]');
 
-          // console.log({jsonExtractedData});
-          const slug = jsonExtractedData.title
-            .trim()
-            .toLowerCase()
-            .replace(/\s+/g, "-");
+          // console.log({jsonExtractedData}); replace(/\s+/g, "-");
+          const slug = jsonExtractedData.url.split("=")[1];
 
           const newUrl = `${WEBSITE_URL}/web-stories/${slug}`;
-
+          // console.log({newUrl});
+          
           const newsModified = { ...jsonExtractedData, url: newUrl};
+          // console.log(newsModified);
+          return newsModified;
 
-          console.log(newsModified);
-
-          return newsModified
         })
 
         setStories((prev) => ([...transformatedDataPost ?? [], ...prev]))
@@ -102,9 +99,13 @@ function webStories() {
         {processing && <span className='text-3xl font-bold text-center'>Loading...</span>}
         {
           stories.length > 0 ? stories?.map((v, i) => (
-            <div className='shadow-md outline outline-1 outline-orange-950 p-2 rounded-2xl hover:shadow-[2px_2px_28px_-14px_black]' key={i} style={{ maxWidth: `${v.width}px` }}>
+            <div className='shadow-md outline outline-1 outline-orange-950 p-0.1 rounded-2xl hover:shadow-[2px_2px_28px_-14px_black] relative overflow-hidden' key={i} style={{ maxWidth: `${v.width}px` }}>
               <Link href={`${v.url}`}>
-                <h2 className='text-3xl font-bold line-clamp-1' style={{ lineHeight: "3.25rem" }}>{v.title}</h2>
+
+                <h2 className='text-[1.2rem] font-bold line-clamp-2 absolute text-white bottom-2 p-2 z-10' style={{ lineHeight: "1.75rem" }}>{v.title}</h2>
+
+                <div className='w-full h-full absolute' style={{backgroundImage: "linear-gradient(360deg, #000000, transparent, transparent)"}}></div>
+
                 <Image decoding='async' quality={98} key={i} className='rounded-2xl shadow-md object-cover' src={v.poster
                 } alt={v.title} width={Number(v.width)} height={Number(v.height)} loading='lazy' style={{ aspectRatio: "3/4" }} />
               </Link>

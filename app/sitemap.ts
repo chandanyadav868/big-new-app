@@ -6,7 +6,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         cache: "no-store"
     });
     const jsonProduct = await productsData.json() as { data: [{ _id: string, slug: string, createdAt: string, updatedAt: string }] }
-
+    console.log(jsonProduct);
+    
     return [
         {
             url: `${WEBSITE_URL}`,
@@ -26,17 +27,51 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         {
             url: `${WEBSITE_URL}/web-stories`,
             lastModified: new Date(),
-            priority: 0.9
+            priority: 0.9,
+            changeFrequency:"hourly"
         },
         {
             url: `${WEBSITE_URL}/privacy-policy`,
             lastModified: new Date(),
-            priority: 0.5
+            priority: 0.5,
+            changeFrequency:"hourly"
         },
-        ...jsonProduct.data.map((product) => ({
-            url: `${WEBSITE_URL}/article/${product.slug}`,
-            lastModified: product.createdAt,
-            priority: 0.9
-        }))
+        {
+            url: `${WEBSITE_URL}/category/cricket`,
+            lastModified: new Date(),
+            priority: 0.5,
+            changeFrequency:"hourly"
+        },
+        {
+            url: `${WEBSITE_URL}/category/wwe`,
+            lastModified: new Date(),
+            priority: 0.5,
+            changeFrequency:"hourly"
+        },
+        {
+            url: `${WEBSITE_URL}/category/free-fire`,
+            lastModified: new Date(),
+            priority: 0.5,
+            changeFrequency:"hourly"
+        },
+        {
+            url: `${WEBSITE_URL}/category/football`,
+            lastModified: new Date(),
+            priority: 0.5,
+            changeFrequency:"hourly"
+        },
+        {
+            url: `${WEBSITE_URL}/category/aew`,
+            lastModified: new Date(),
+            priority: 0.5,
+            changeFrequency:"hourly"
+        },
+        ...jsonProduct.data.map((v,i)=>{
+            return {
+                url: `${WEBSITE_URL}/article/${v.slug}`,
+                lastModified: v.updatedAt,
+                priority: 0.8,
+            }
+        })
     ]
 }

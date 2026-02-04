@@ -90,6 +90,9 @@ const ArticleShowerComp = ({ _id, blogImageUrl, featuredImagealt, content, isLik
     }
   }
 
+  // console.log({blogImageUrl});
+  
+
   return (
     <main role='main content information' >
       <article className='max-w-screen-lg mx-auto p-2'>

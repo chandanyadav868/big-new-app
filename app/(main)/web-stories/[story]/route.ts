@@ -6,7 +6,7 @@ export async function GET(
   { params }: { params: Promise<{ story: string }> }
 ) {
   const { story } = await params;
-  console.log(story);
+  // console.log({story});
   
   const [rows]: any = await db.query(
     `
@@ -22,7 +22,7 @@ export async function GET(
 
   let html = rows[0]?.post_content ?? "";
 
-  // console.log(html);
+  // console.log({html});
 
   // ✅ Add DOCTYPE if missing
   if (!html.trim().toLowerCase().startsWith("<!doctype")) {
@@ -33,10 +33,10 @@ export async function GET(
   html = html.replace(
     /<link\s+[^>]*rel=["']canonical["'][^>]*>/gi,
     `
-<link rel="canonical" href="https://humantalking.com/web-stories/${story}/">
-<meta name="robots" content="index, follow">
-</head>
-`
+      <link rel="canonical" href="https://humantalking.com/web-stories/${story}/">
+      <meta name="robots" content="index, follow">
+      </head>
+    `
   );
 
   return new NextResponse(html, {

@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
     const slug = new URL(req.url).searchParams.get("post_name");
-    console.log({slug});
+    // console.log({slug});
 
   if (!slug) {
     return NextResponse.json(
