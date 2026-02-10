@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
+import { log } from 'node:util';
 
 export interface PostDataProps {
   ID: number
@@ -64,10 +65,15 @@ function webStories() {
         const transformatedDataPost = dataPost?.map((v, i) => {
           const matchedData: RegExpMatchArray | null = v?.post_content?.match(/<!--\s*wp:web-stories\/embed\s*(\{[\s\S]*?\})\s*-->/);
 
+          // console.log({matchedData})
+
           const jsonExtractedData: webStoriesProps = JSON.parse(matchedData?.[1] ?? '[]');
 
+          // console.log({jsonExtractedData});
+          
+
           // console.log({jsonExtractedData}); replace(/\s+/g, "-");
-          const slug = jsonExtractedData.url.split("=")[1];
+          const slug = jsonExtractedData.url.split("=")[1]??jsonExtractedData.url.slice(jsonExtractedData.url.lastIndexOf("/") + 1);
 
           const newUrl = `${WEBSITE_URL}/web-stories/${slug}`;
           // console.log({newUrl});
