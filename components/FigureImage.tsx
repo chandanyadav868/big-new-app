@@ -10,7 +10,7 @@ function FigureImage({ blogImageUrl, featuredImagealt }: FigureImageProps) {
     return (
         <figure className='relative'>
 
-            <Image alt={featuredImagealt} quality={100} loading='lazy'  src={blogImageUrl} width={1000} height={1000} className='w-full h-auto shadow-sm object-cover overflow-hidden py-1 ' placeholder="blur" blurDataURL='/images/blur_image.png' />
+            <Image alt={featuredImagealt} quality={100} loading='lazy'  src={blogImageUrl} width={1000} height={1000} className='w-full h-auto shadow-sm object-cover overflow-hidden py-1 ' placeholder="blur" blurDataURL='/images/blur_image.png' style={{aspectRatio:"16 / 9"}}/>
             
             <figcaption className='absolute bottom-0 text-cyan-50 font-bold block w-full z-10 max-md:line-clamp-1 max-md:text-sm' style={{backgroundImage: "linear-gradient(360deg, black, transparent)"}}>
                 <p className='p-2'>{featuredImagealt}</p>
