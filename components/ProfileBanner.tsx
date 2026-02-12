@@ -35,23 +35,21 @@ function ProfileBanner({ _id, fullname, Followeing, username,avatartUrl="https:/
 
     return (
         <>
-            <div className='px-4 py-2 flex justify-between flex-wrap '>
+            <div className='px-1 py-2 flex justify-between flex-wrap '>
                 <Link href={`/u/${username}`} aria-label='user profile link'>
-                    <div className='p-2 flex gap-2 items-center'>
-                        <Image src={avatartUrl} alt='avatar logo' width={100} height={100} className='w-12 h-12 object-cover rounded-full'/>
+                    <div className='flex gap-2 items-center max-md:text-sm'>
+                        <Image src={avatartUrl} alt='avatar logo' width={100} height={100} className='w-10 h-10 object-cover rounded-full'/>
                         <div className='flex flex-col font-bold' style={{lineHeight:"15px"}}>
-                            <span>{fullname}</span>
-                            <span className='text-[#02183d]'>@{username}</span>
+                            <span className='text-inherit'>{fullname}</span>
+                            <span className='text-inherit'>@{username}</span>
                         </div>
                     </div>
                 </Link>
 
                 {/* follow */}
-                <div className='flex flex-1 gap-2 justify-center min-[444px]:justify-end items-center'>
-                    <div>
-                        <button onClick={(e) => followFun(e)} className='px-7 py-3 bg-pink-400 font-bold rounded-md shadow-sm relative'>{stateFollower ? "Following" : "Follow"}
+                <div className='flex flex-1 gap-2 justify-end items-center'>
+                        <button onClick={(e) => followFun(e)} className='px-4 py-2 bg-pink-400 font-bold rounded-md shadow-sm relative'>{stateFollower ? "Following" : "Follow"}
                         </button>
-                    </div>
                 </div>
             </div>
 

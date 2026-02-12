@@ -13,26 +13,17 @@ interface FrontBlogContainer extends HeroSectionProps {
 
 const SideContainer = ({ className = "", blogImageUrl, category, description, title, createdAt, slug, _id, createdBy }: FrontBlogContainer) => {
     return (
-        <section className={`flex gap-4 rounded-md shadow-md p-2 flex-wrap ${className}`}>
-            <SingleArticleLinkPage createdAt={createdAt} slug={slug}>
-                <div className={`mx-auto min-[768px]:w-[100px] h-[100px] shrink-0 overflow-hidden rounded-md`}>
-                    <Image src={blogImageUrl ? blogImageUrl : "https://mannatthemes.com/blogloo/default/assets/images/widgets/sm-3.jpg"} alt='blog image' width={200} height={200} className='h-full object-cover w-full object-top  hoverScale' />
+        <SingleArticleLinkPage createdAt={createdAt} slug={slug}>
+            <section className={` grid grid-cols-2 max-sm:grid-cols-1 gap-4 rounded-md shadow-md p-2${className}`}>
+                <div className={`mx-auto shrink-1 overflow-hidden rounded-md h-[150px] w-full`}>
+                    <Image src={blogImageUrl ? blogImageUrl : "https://mannatthemes.com/blogloo/default/assets/images/widgets/sm-3.jpg"} alt='blog image' width={500} height={500} className='h-full object-cover w-full object-top  hoverScale' />
                 </div>
-            </SingleArticleLinkPage>
-            <div className='flex flex-col justify-between flex-1 gap-2 relative'>
-                <div className='flex flex-col gap-1'>
-                    <SingleArticleLinkPage title={title} createdAt={createdAt} slug={slug}>
-                        <div>
-                            <h2 className='font-bold text line-clamp-1 hover:underline'>{title && title}</h2>
-                            <p className='line-clamp-1'>{description && description} </p>
-                        </div>
-                    </SingleArticleLinkPage>
+                <div className='shrink-1 flex flex-col flex-1 relative leading-5'>
+                    <h2 className='font-bold text-2xl max-sm:text-xl line-clamp-2'>{title??"No title"}</h2>
+                    <p className='line-clamp-2 text-xl max-sm:text-sm'>{description?? "No description"} </p>
                 </div>
-                <div>
-                    <CreatedByComp createdBy={createdBy} />
-                </div>
-            </div>
-        </section>
+            </section>
+        </SingleArticleLinkPage>
     )
 }
 

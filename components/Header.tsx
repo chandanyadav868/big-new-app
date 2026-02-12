@@ -8,16 +8,16 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const Header = () => {
     const disPatch = useDispatch<AppDispatch>();
-    const {data,error,loading} = useSelector((state:RootState)=> state.auth);
-    
-    useEffect(()=>{
+    const { data, error, loading } = useSelector((state: RootState) => state.auth);
+
+    useEffect(() => {
         disPatch(AuthFetchingBackend())
-    },[])
+    }, [])
 
     const handleLogout = () => {
         disPatch(AuthLogOut()); // Dispatch the thunk action
     };
-    
+
     return (
         <>
             <header className='flex flex-col '>
@@ -27,17 +27,19 @@ const Header = () => {
                     </div>
 
                     <div className='p-2'>
-                        <span className='bg-white hover:bg-gray-50 font-bold rounded-md px-7 py-3 max-sm:px-3 max-sm:py-1'> 
-                            {data? (<><button onClick={handleLogout}>Log Out</button></>)
-                            :(<><Link href="/auth/login">Sign In</Link></>)}
-                            
+                        <span className='bg-white hover:bg-gray-50 font-bold rounded-md px-7 py-3 max-sm:px-3 max-sm:py-1'>
+                            {data ? (<><button onClick={handleLogout}>Log Out</button></>)
+                                : (<><Link href="/auth/login">Sign In</Link></>)}
+
                         </span>
                     </div>
                 </div>
 
             </header>
-            <nav className='flex justify-center gap-4 items-center py-3 bg-slate-300 sticky z-40 top-0 '>
-                <ul className=' flex gap-4 font-bold text-xl text-black overflow-x-auto px-2 '>
+
+            <nav className='flex justify-center gap-4 items-center py-3 bg-slate-300 sticky z-40 top-0'>
+
+                <ul className=' flex gap-4 font-bold text-xl text-black overflow-x-auto px-2 text-nowrap'>
                     <li><Link href="/category/cricket">Cricket</Link></li>
                     <li><Link href="/category/wwe">WWE</Link></li>
                     <li><Link href="/category/aew">AEW</Link></li>
@@ -46,6 +48,7 @@ const Header = () => {
                     <li><Link href="/web-stories">Web Stories</Link></li>
                 </ul>
             </nav>
+
         </>
     )
 }

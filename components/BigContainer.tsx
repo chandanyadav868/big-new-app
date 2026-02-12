@@ -46,15 +46,15 @@ function BigContainer({ width = "", height = "", className = "", blogImageUrl, c
 
                 <div className='absolute right-0 bottom-0  w-full gradient-overlap-shortBlog bg-black/5 h-full' />
                         
-                <div className='absolute right-0 bottom-0  w-full gradient-overlap-shortBlog h-[50%]'>
+                <div className='absolute right-0 bottom-0  w-full gradient-overlap-shortBlog h-full flex justify-between px-2 items-center gap-2 font-extrabold text-white max-sm:text-xs'>
                     <DateComponets blogDate={createdAt ?? ""} />
                     <CategoryButton category={category} />
                 </div>
 
                 <div className='absolute text-white font-bold w-full right-0 bottom-0 p-2'>
                     <SingleArticleLinkPage createdAt={createdAt} slug={slug} title={title}>
-                        <h1 className='text-4xl cursor-pointer hover:underline hover:underline-offset-2 line-clamp-2 leading-[50px] max-md:text-xl max-md:leading-[25px] max-md:line-clamp-1'>{title ? slugChangeIntoTitle(title) : "Popular admin template you can use for your business."}</h1>
-                        <p className='text-xl line-clamp-1   leading-snug max-md:text-[12px]'>{description && description}</p>
+                        <h1 className='text-4xl min-md:text-6xl max-sm:text-lg max-sm:leading-5 max-[325px]:text-[18px]'>{title ?? "No title"}</h1>
+                        <p className='line-clamp-1 text-xl max-sm:text-sm max-[325px]:text-[12px] max-[325px]:leading-5'>{description && description}</p>
                     </SingleArticleLinkPage>
                 </div>
 
