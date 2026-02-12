@@ -11,6 +11,10 @@ function MDEditorMarkdown({ content }: { content: string }) {
                         <blockquote style={{ color: 'black' }}>
                             {children}
                         </blockquote>),
+                    table: ({ children }) => (
+                        <table style={{overflow: "auto" }}>
+                            {children}
+                        </table>),
                     tr:({children})=>(
                         <tr style={{background:"white",color:"black"}}>
                             {children}
