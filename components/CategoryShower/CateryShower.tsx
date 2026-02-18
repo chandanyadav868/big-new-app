@@ -29,7 +29,7 @@ const CateryShower = ({ data }: { data: ArticlesProp | undefined }) => {
 
       <div className='grid gap-4 lg:grid-cols-1'>
         {data && data.articles.slice(3,).map((elem, index) =>
-          <BlogContainer index={index} {...elem} key={elem._id} className='shadow-md ' />
+          <BlogContainer adsShow={false} index={index} {...elem} key={elem._id} className='shadow-md ' />
         )}
       </div>
 

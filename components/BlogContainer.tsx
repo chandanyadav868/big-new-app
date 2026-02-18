@@ -7,14 +7,15 @@ import Banner_width_height_728_90 from './adsComponents/banner/adult/banner_widt
 interface BlogContainerProps extends HeroSectionProps {
     className: string;
     index:number;
+    adsShow:boolean;
 }
 
-const BlogContainer = ({ className = "", blogImageUrl, category, slug, createdAt, title, description, _id, createdBy, index }: BlogContainerProps) => {
+const BlogContainer = ({ className = "", blogImageUrl, category, slug, createdAt, title, description, _id, createdBy, index,adsShow=true }: Partial<Omit<BlogContainerProps,"index">> & {index:number}) => {
 
     return (
         <>
         {
-          index  % 3 === 0 ? <Banner_width_height_728_90 />: <></>
+          ((index  % 3 === 0) && adsShow) ? <Banner_width_height_728_90 />: <></>
         }
         
         <section className={`flex gap-4 border-1 rounded-md p-2 flex-wrap items-center shadow-2xl ${className}`}>

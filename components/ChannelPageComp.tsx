@@ -71,7 +71,7 @@ export function ChannelPageComp() {
             <div className='grid grid-cols-2 max-[444px]:grid-cols-1 gap-4'>
                 {dataFetching && dataFetching?.articles.map((data, index) => (
                     <div className='relative flex flex-col p-1 shadow-md rounded-md' key={index}>
-                        <BlogContainer {...data} key={data._id} className='' />
+                        <BlogContainer adsShow={false} index={index} {...data} key={data._id} className='' />
                         {
                             intialProfile.isYouOwner &&
 
