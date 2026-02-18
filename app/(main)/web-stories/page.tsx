@@ -61,6 +61,8 @@ function webStories() {
 
         // console.log({dataPost});
 
+        dataPost.sort((a,b)=> new Date(b.post_modified).getTime() - new Date(a.post_modified).getTime() );
+
         const transformatedDataPost = dataPost?.map((v, i) => {
           const matchedData: RegExpMatchArray | null = v?.post_content?.match(/<!--\s*wp:web-stories\/embed\s*(\{[\s\S]*?\})\s*-->/);
 
