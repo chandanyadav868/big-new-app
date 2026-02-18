@@ -24,7 +24,7 @@ function RelatedArticleFetch({ category }: { category: string }) {
             <h1 className='font-bold lg:text-4xl text-2xl text-center mb-2'>Related Articles {category.toUpperCase()}</h1>
 
             {data && data[category]?.articles?.map((elem, index) =>
-                <BlogContainer {...elem} key={index} className='shadow-md' />)}
+                <BlogContainer {...elem} index={index} key={index} className='shadow-md' />)}
 
             {data && data[category]?._id &&
                 ((data[category]?.totalSizeOfArticles ?? 0) > (data[category]?.articles?.length ?? 0)) &&

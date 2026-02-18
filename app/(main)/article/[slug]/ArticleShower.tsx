@@ -3,6 +3,7 @@ import React from 'react'
 import { SingleArticleProps } from '@/lib/readux/singleArticleFetched';
 import ArticleShowerComp from '@/components/ArticleShowerComponents/ArticleShowerComp';
 import RelatedArticleFetch from '@/components/RelatedArticleFetch';
+import Script from 'next/script';
 
 interface ArticleShowerProps {
     backendSendArticle: SingleArticleProps
@@ -14,6 +15,7 @@ function ArticleShower({ backendSendArticle }: ArticleShowerProps) {
         <>
           {/* article portion */}
             { backendSendArticle && <ArticleShowerComp key={backendSendArticle._id} {...backendSendArticle as SingleArticleProps} />}
+
 
             {/* related article portion */}
             {backendSendArticle?.category && <RelatedArticleFetch category={backendSendArticle.category}/>}

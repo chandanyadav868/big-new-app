@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Script from "next/script";
+
 
 export const metadata: Metadata = {
     title: "News Website - Human Talking",
@@ -53,8 +55,6 @@ export default function RootLayout({
                     gtag('config', 'G-SBKV8PB2QN');
                     `}
                 </script>
-                {/* add ad links popunder */}
-                <script src="https://pl28737362.effectivegatecpm.com/55/4b/2f/554b2f5e75a20557ce0819c7d34d1a79.js"></script>
 
             </head>
             <body>
@@ -67,20 +67,7 @@ export default function RootLayout({
                 {/* <!-- End Google Tag Manager (noscript) --> */}
 
                 {children}
-                
-                {/* banner  */}
-                <script>
-                    {`atOptions = {
-                    'key' : '7917478b2f088edfe6daeed9ef05f6cd',
-                    'format' : 'iframe',
-                    'height' : 90,
-                    'width' : 728,
-                    'params' : {}
-                    };`}
-                </script>
-                <script src="https://www.highperformanceformat.com/7917478b2f088edfe6daeed9ef05f6cd/invoke.js"></script>
-                {/* soocial bar ad */}
-                <script src="https://pl28737566.effectivegatecpm.com/7b/ce/44/7bce44372b81a880c31e685cb19940e4.js"></script>
+
             </body>
         </html>
     );

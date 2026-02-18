@@ -50,7 +50,7 @@ export const CreatedByComp = ({ createdBy }: { createdBy: CreatedAuthor }) => {
 
 export const SingleArticleLinkPage = ({ createdAt, slug, children, title }: { slug: string | undefined, createdAt: string | undefined, children: React.ReactNode, title?: string }) => {
     return (
-        <Link className='h-[100%]' aria-label={`Read more about ${title}`} href={articleSlug({ slug, createdAt })}>
+        <Link className='h-[100%] hover:underline underline-offset-1' aria-label={`Read more about ${title}`} href={articleSlug({ slug, createdAt })}>
             {children}
         </Link>
     )

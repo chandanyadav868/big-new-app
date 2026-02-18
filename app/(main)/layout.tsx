@@ -1,6 +1,7 @@
 import Footer from "../../components/Footer";
 import ReducerProvider from "../../components/ReducerProvider";
 import HeaderWrapper from "../../components/HeaderWrapper";
+import Banner_width_height_728_90 from "@/components/adsComponents/banner/adult/banner_width_height_728_90";
 
 export default async function RootLayout({
   children, params
@@ -14,6 +15,9 @@ export default async function RootLayout({
       <body >
         <ReducerProvider>
           <HeaderWrapper />
+          
+          <Banner_width_height_728_90/>
+
           {children}
           <Footer />
         </ReducerProvider>

@@ -29,7 +29,7 @@ const RootPage = () => {
 
             <div className='grid gap-4 lg:grid-cols-2'>
               {trending.slice(3, 5).map((elem, index) =>
-                <BlogContainer {...elem} key={index} className='' />
+                <BlogContainer index={index} {...elem} key={index} className='' />
               )}
 
             </div>

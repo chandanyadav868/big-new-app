@@ -9,6 +9,10 @@ import LineDivider from '@/components/LineDivider';
 import HeadingRender from '@/components/HeadingRender';
 import MDEditorMarkdown from '@/components/MDEditorMarkdown';
 import ProfileBanner from '@/components/ProfileBanner';
+import Script from 'next/script';
+import Native_banner_4_1 from '../adsComponents/nativeBanner/native_banner_4_1';
+import Banner_width_height_320_250 from '../adsComponents/banner/simple/banner_width_height_320_250';
+import Native_banner_3_1 from '../adsComponents/nativeBanner/native_banner_3_1';
 
 
 const ArticleShowerComp = ({ _id, blogImageUrl, featuredImagealt, content, isLiked, createdBy, likes, dislikes, isDisLiked, title, category }: SingleArticleProps) => {
@@ -91,54 +95,61 @@ const ArticleShowerComp = ({ _id, blogImageUrl, featuredImagealt, content, isLik
   }
 
   // console.log({blogImageUrl});
-  
+
 
   return (
     <main role='main content information' >
       <article className='max-w-screen-lg mx-auto p-2'>
 
-      <LineDivider className='my-0.5' />
-      <p className='font-bold text-lg text-center'>{category?.toUpperCase()}</p>
-      <LineDivider className='my-0.5' />
+        <LineDivider className='my-0.5' />
+        <p className='font-bold text-lg text-center'>{category?.toUpperCase()}</p>
+        <LineDivider className='my-0.5' />
 
-      {/* title shower */}
-      <HeadingRender title={title} />
+        {/* title shower */}
+        <HeadingRender title={title} />
 
-      {/* image shower */}
-      <div className='max-w-screen-lg px-3 mx-auto'>
-        <FigureImage blogImageUrl={blogImageUrl} featuredImagealt={featuredImagealt} />
-      </div>
-
-      <LineDivider className='my-2' />
-
-      {/* banner of follow name */}
-      {createdBy && <ProfileBanner _id={createdBy._id} fullname={createdBy.fullname} Followeing={createdBy.isFollowed}  username={createdBy.username} /> }
- 
-      {/* like and dislikes */}
-      <div className='flex px-4 py-2'>
-        <div className='flex gap-4'>
-
-          <button disabled={stateIsDisLiked ? true : false} onClick={(e) => likesFun(e)} className={`like-dislike-button ${stateIsLiked ? "bg-red-700" : "bg-red-100 relative"}`}>{`Likes ${increaseLikes}`}
-          </button>
-
-          <button disabled={stateIsLiked ? true : false} onClick={(e) => dislikesFun(e)} className={` like-dislike-button ${stateIsDisLiked ? "bg-red-700" : "bg-red-100 relative"}`}>{`Dislikes ${increaseDisLikes}`}
-          </button>
-
+        {/* image shower */}
+        <div className='max-w-screen-lg px-3 mx-auto'>
+          <FigureImage blogImageUrl={blogImageUrl} featuredImagealt={featuredImagealt} />
         </div>
-      </div>
 
-      {/* content shower */}
-      <article className='py-5'>
-        <MDEditorMarkdown content={content}/>
+        <LineDivider className='my-2' />
+
+        {/* banner of follow name */}
+        {createdBy && <ProfileBanner _id={createdBy._id} fullname={createdBy.fullname} Followeing={createdBy.isFollowed} username={createdBy.username} />}
+
+        {/* like and dislikes */}
+        <div className='flex px-4 py-2'>
+          <div className='flex gap-4'>
+
+            <button disabled={stateIsDisLiked ? true : false} onClick={(e) => likesFun(e)} className={`like-dislike-button ${stateIsLiked ? "bg-red-700" : "bg-red-100 relative"}`}>{`Likes ${increaseLikes}`}
+            </button>
+
+            <button disabled={stateIsLiked ? true : false} onClick={(e) => dislikesFun(e)} className={` like-dislike-button ${stateIsDisLiked ? "bg-red-700" : "bg-red-100 relative"}`}>{`Dislikes ${increaseDisLikes}`}
+            </button>
+
+          </div>
+        </div>
+
+        {/* content shower */}
+        <article className='py-5'>
+          <MDEditorMarkdown content={content} />
+        </article>
+
+        {/* ads showing native banner 4:1 */}
+        <Native_banner_4_1/>
+
+        {/* commenting features */}
+        <CommentComponents articleId={_id} />
+
+        {/* not logged in components */}
+        {/* {notloggedInDialogboxShow?.notLoggedIn &&
+        <NotLoggedInError button={notloggedInDialogboxShow} setNotloggedInDialogboxShow={setNotloggedInDialogboxShow} btnText={"Follow"} />} */}
+        
       </article>
 
-      {/* commenting features */}
-      <CommentComponents articleId={_id} />
 
-      {/* not logged in components */}
-      {/* {notloggedInDialogboxShow?.notLoggedIn &&
-        <NotLoggedInError button={notloggedInDialogboxShow} setNotloggedInDialogboxShow={setNotloggedInDialogboxShow} btnText={"Follow"} />} */}
-        </article>
+
     </main>
   )
 }

@@ -2,13 +2,21 @@ import Image from 'next/image'
 import React from 'react'
 import { HeroSectionProps } from './HeroSection'
 import { CreatedByComp, SingleArticleLinkPage } from './SideContainer'
+import Banner_width_height_728_90 from './adsComponents/banner/adult/banner_width_height_728_90'
 
 interface BlogContainerProps extends HeroSectionProps {
-    className: string
+    className: string;
+    index:number;
 }
 
-const BlogContainer = ({ className = "", blogImageUrl, category, slug, createdAt, title, description, _id, createdBy }: Partial<BlogContainerProps>) => {
+const BlogContainer = ({ className = "", blogImageUrl, category, slug, createdAt, title, description, _id, createdBy, index }: BlogContainerProps) => {
+
     return (
+        <>
+        {
+          index  % 3 === 0 ? <Banner_width_height_728_90 />: <></>
+        }
+        
         <section className={`flex gap-4 border-1 rounded-md p-2 flex-wrap items-center shadow-2xl ${className}`}>
             <div className={`w-full mx-auto min-[768px]:w-[200px] shrink-0 overflow-hidden rounded-md`}>
                 <SingleArticleLinkPage createdAt={createdAt} slug={slug} title={`blog image ${blogImageUrl}`}>
@@ -40,6 +48,7 @@ const BlogContainer = ({ className = "", blogImageUrl, category, slug, createdAt
                 </div>
             </article>
         </section>
+        </>
     )
 }
 
