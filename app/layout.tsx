@@ -56,6 +56,9 @@ export default function RootLayout({
                     `}
                 </script>
 
+                {/* popunder */}
+                {/* <script src="https://pl28737362.effectivegatecpm.com/55/4b/2f/554b2f5e75a20557ce0819c7d34d1a79.js"></script> */}
+
             </head>
             <body>
                 {/* <!-- Google Tag Manager (noscript) --> */}

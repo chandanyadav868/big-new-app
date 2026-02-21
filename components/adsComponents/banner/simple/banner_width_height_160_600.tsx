@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function Banner_width_height_160_600() {
   const adsRef = useRef<HTMLDivElement>(null);
+  const [adLoaded,setLoadedAds] = useState(false);
 
   useEffect(() => {
     if (!adsRef.current) return;
@@ -31,11 +32,22 @@ function Banner_width_height_160_600() {
 
     adsRef.current.appendChild(configScript);
     adsRef.current.appendChild(invokeScript);
+
+    const checkAds = setInterval(()=>{
+      const iframe = adsRef.current?.querySelector("iframe");
+      if (iframe) {
+        setLoadedAds(true);
+        clearInterval(checkAds)
+      }
+    },300);
+
+    return ()=>{
+      clearInterval(checkAds)
+    }
   }, []);
 
   return (
     <div
-      ref={adsRef}
       style={{
         maxWidth: "160px",
         height: "700px",
@@ -46,7 +58,36 @@ function Banner_width_height_160_600() {
         zIndex:60,
         top:"0px"
       }}
-    ></div>
+    >
+       {/* 🔄 Fallback UI */}
+      {!adLoaded && (
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "#f3f4f6",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: "14px",
+            color: "#6b7280",
+            borderRadius: "6px",
+          }}
+        >
+          Loading advertisement…
+        </div>
+      )}
+
+       {/* 📢 Ad container */}
+      <div
+        ref={adsRef}
+        style={{
+          width: "100%",
+          height: "100%",
+          overflow: "hidden",
+        }}
+      />
+    </div>
   );
 }
 
