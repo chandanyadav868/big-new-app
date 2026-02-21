@@ -28,8 +28,8 @@ const RootPage = () => {
               <HeroSection newArticle={trending.slice(0, 3)} />)}
 
             <div className='flex gap-4 max-md:flex-wrap '>
-              {trending.slice(3, 5).map((elem, index) =>
-                <BlogContainer index={index} {...elem} key={index} className='shadow-md flex-col outline-4 outline outline-gray-200 max-w-[300px] shrink max-sm:mx-auto' />
+              {trending.slice(3, 7).map((elem, index) =>
+                <BlogContainer index={index} {...elem} key={index} className='shadow-md flex-col outline-4 outline outline-gray-200 lg:max-w-[300px] max-md:grid max-md:grid-cols-2 shrink max-sm:mx-auto' />
               )}
 
             </div>

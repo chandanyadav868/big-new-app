@@ -37,8 +37,7 @@ const Header = () => {
 
             </header>
 
-            <nav className='flex justify-center gap-4 items-center py-3 bg-slate-300 sticky z-40 top-0'>
-
+            <nav className='flex justify-center gap-4 items-center py-3 backdrop-blur-md bg-white/20  sticky z-40 top-0'>
                 <ul className=' flex gap-4 font-bold text-xl text-black overflow-x-auto px-2 text-nowrap'>
                     <li><Link href="/category/cricket">Cricket</Link></li>
                     <li><Link href="/category/wwe">WWE</Link></li>

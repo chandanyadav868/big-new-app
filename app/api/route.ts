@@ -192,7 +192,7 @@ export async function GET(req: NextRequest) {
                   }
                 },
                 {
-                  $limit: 5
+                  $limit: 7
                 },
                 {
                   $project: {

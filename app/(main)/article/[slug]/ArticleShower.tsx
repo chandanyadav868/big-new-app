@@ -18,7 +18,7 @@ function ArticleShower({ backendSendArticle }: ArticleShowerProps) {
             {backendSendArticle && <ArticleShowerComp key={backendSendArticle._id} {...backendSendArticle as SingleArticleProps} />}
 
             {/* Ad */}
-            <AdsenseAd slot="1253980996" />
+            {/* <AdsenseAd slot="1253980996" /> */}
 
             {/* related article portion */}
             {backendSendArticle?.category && <RelatedArticleFetch category={backendSendArticle.category} />}
