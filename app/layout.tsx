@@ -59,6 +59,9 @@ export default function RootLayout({
                 {/* popunder */}
                 {/* <script src="https://pl28737362.effectivegatecpm.com/55/4b/2f/554b2f5e75a20557ce0819c7d34d1a79.js"></script> */}
 
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8992643519669296"
+                    crossOrigin="anonymous"></script>
+
             </head>
             <body>
                 {/* <!-- Google Tag Manager (noscript) --> */}
@@ -69,6 +72,14 @@ export default function RootLayout({
                 </noscript>
                 {/* <!-- End Google Tag Manager (noscript) --> */}
                 {children}
+
+                {/* Google AdSense Script */}
+                <Script
+                    async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8992643519669296"
+                    crossOrigin="anonymous"
+                    strategy="afterInteractive"
+                />
             </body>
         </html>
     );
