@@ -5,7 +5,17 @@
 body{
     width: 100%;
     min-height: 100vh;
+    display: grid;
+    margin: 0 auto; /* centers content */
+    grid-template-columns: 200px 1fr 200px;
     /* background-image: linear-gradient(90deg, #E8D6C2, #C0A685) */
+}
+
+
+@media not all and (min-width: 720px) {
+    body{
+        grid-template-columns: 1fr;
+    }
 }
 
 @layer utilities{

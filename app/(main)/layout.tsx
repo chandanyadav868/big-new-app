@@ -2,6 +2,7 @@ import Footer from "../../components/Footer";
 import ReducerProvider from "../../components/ReducerProvider";
 import HeaderWrapper from "../../components/HeaderWrapper";
 import Banner_width_height_728_90 from "@/components/adsComponents/banner/adult/banner_width_height_728_90";
+import Banner_width_height_160_600 from "@/components/adsComponents/banner/simple/banner_width_height_160_600";
 
 export default async function RootLayout({
   children, params
@@ -12,15 +13,25 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body >
-        <ReducerProvider>
-          <HeaderWrapper />
-          
-          <Banner_width_height_728_90/>
+      <body>
+        <div className="max-[720px]:hidden">
+          {/* ads */}
+          <Banner_width_height_160_600/>
+        </div>
+        <main>
+          {/*  */}
+          <Banner_width_height_728_90 />
+          <ReducerProvider>
+            <HeaderWrapper />
+            {children}
+            <Footer />
+          </ReducerProvider>
+        </main>
 
-          {children}
-          <Footer />
-        </ReducerProvider>
+        <div className="max-[720px]:hidden">
+          {/* ads */}
+          <Banner_width_height_160_600/>
+        </div>
       </body>
     </html>
   );

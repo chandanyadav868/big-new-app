@@ -41,9 +41,9 @@ function Banner_width_height_728_90() {
         height: "90px",
         margin: "16px auto",
         overflow: "hidden",
-        position:"sticky",
-        zIndex:60,
-        top:"0px"
+        // position:"sticky",
+        // zIndex:60,
+        // top:"0px"
       }}
     />
   );

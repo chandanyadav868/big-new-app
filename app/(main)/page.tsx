@@ -21,15 +21,15 @@ const RootPage = () => {
     <>
       {trending.length > 0 ?
         <>
-          <main className='lg:max-w-[80%] max-lg:w-[98%] mx-auto flex flex-col gap-4 py-4'>
+          <main className='mx-auto flex flex-col gap-4 py-4 px-2'>
 
             {/* Hero Section */}
             {trending.length > 0 && (
               <HeroSection newArticle={trending.slice(0, 3)} />)}
 
-            <div className='grid gap-4 lg:grid-cols-2'>
+            <div className='flex gap-4 max-md:flex-wrap '>
               {trending.slice(3, 5).map((elem, index) =>
-                <BlogContainer index={index} {...elem} key={index} className='' />
+                <BlogContainer index={index} {...elem} key={index} className='shadow-md flex-col outline-4 outline outline-gray-200 max-w-[300px] shrink max-sm:mx-auto' />
               )}
 
             </div>

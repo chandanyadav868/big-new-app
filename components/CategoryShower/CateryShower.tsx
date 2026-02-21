@@ -6,6 +6,9 @@ import { ArticlesProp } from '@/lib/readux/articleFetchSlice';
 import { useParams } from 'next/navigation';
 import { AppDispatch } from '@/lib/readux/store';
 import { useDispatch } from 'react-redux';
+import SideContainer from '../SideContainer';
+import BigContainer from '../BigContainer';
+import Banner_width_height_320_250 from '../adsComponents/banner/simple/banner_width_height_320_250';
 
 const CateryShower = ({ data }: { data: ArticlesProp | undefined }) => {
   const { articlecategory } = useParams();
@@ -20,16 +23,32 @@ const CateryShower = ({ data }: { data: ArticlesProp | undefined }) => {
 
   return (
     // <h1>Hello</h1>
-    <main className='lg:max-w-[80%] max-lg:w-[98%] mx-auto flex flex-col gap-4'>
+    <main className=' mx-auto flex flex-col gap-4 p-1'>
       {/* Header  */}
 
       {/* Hero Section */}
       {data && data.articles.length > 0 && (
-        <HeroSection newArticle={data.articles.slice(0, 3)} />)}
+        <HeroSection newArticle={data.articles.slice(0, 3)} />)
+      }
 
-      <div className='grid gap-4 lg:grid-cols-1'>
-        {data && data.articles.slice(3,).map((elem, index) =>
-          <BlogContainer adsShow={false} index={index} {...elem} key={elem._id} className='shadow-md ' />
+         <div className='grid grid-cols-2 gap-4 max-lg:grid-cols-1 '>
+        {/* big container */}
+        {data && data.articles.slice(3, 4).map((elem, index) =>
+          <BigContainer key={elem._id} className='' {...elem} />
+        )}
+
+        {/* small container */}
+        <div className='shrink-0 max-lg:w-full grid grid-cols-1 gap-2'>
+          {data && data.articles.slice(4,9).map((elem, index) =>
+            <SideContainer {...elem} className='' key={index} />
+          )}
+        </div>
+      </div>
+
+
+      <div className='flex gap-2 flex-wrap justify-center'>
+        {data && data.articles.slice(9,).map((elem, index) =>
+          <BlogContainer adsShow={true} index={index} {...elem} key={elem._id} className='shadow-md flex-col outline-4 outline outline-gray-200 max-w-[300px]' />
         )}
       </div>
 

@@ -1,3 +1,11 @@
+import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
+
+export const cn = (...inputs:string[]) => {
+  return twMerge(clsx(inputs));
+};
+
+
 export const dateformate = (date: string) => {
   return new Intl.DateTimeFormat("en-IN", {
     day: "2-digit",

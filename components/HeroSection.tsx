@@ -28,11 +28,11 @@ export interface HeroSectionProps {
 const HeroSection = ({ newArticle }: { newArticle: HeroSectionProps[] }) => {
     return (
 
-        <section className=' flex gap-4 max-lg:flex-wrap lg:h-[580px]'>
+        <section className='gap-2 grid grid-cols-2 max-lg:grid-cols-1'>
 
-            {newArticle[0] && <BigContainer {...newArticle[0]} _id={newArticle[0]._id} width='60' height='100' className='' />}
+            {newArticle[0] && <BigContainer {...newArticle[0]} _id={newArticle[0]._id} className='' />}
 
-            <div className='lg:shrink-0 grid max-lg:grid-cols-2 max-md:grid-cols-1  gap-4 max-lg:w-[100%] lg:w-[40%]'>
+            <div className='shrink-0 grid max-lg:grid-cols-2 max-md:grid-cols-1 gap-2 max-lg:w-[100%]'>
                 {newArticle.length > 1 && (newArticle.slice(1, 3).map((elem, index) =>
                     <FrontBlogContainer key={index} width='100px' height='240px' {...elem} />
                 ))}

@@ -9,7 +9,7 @@ import ProfileBanner from '@/components/ProfileBanner';
 import { ChannelPageComp } from '@/components/ChannelPageComp';
 
 function ProfilePage() {
-    const { profile, section } = useParams();
+    const { profile } = useParams();
     const dispatch = useDispatch<AppDispatch>();
     const { error, intialProfile, loading } = useSelector((state: RootState) => state.profileFetching);
     // console.log("intialProfile:- ", intialProfile);
@@ -28,7 +28,7 @@ function ProfilePage() {
     }, [profile]);
 
     return (
-        <div>
+        <div className='min-h-lvh'>
             { intialProfile._id &&
                 (<div className='p-2 m-auto max-w-[1280px]'>
                     {/* banner */}

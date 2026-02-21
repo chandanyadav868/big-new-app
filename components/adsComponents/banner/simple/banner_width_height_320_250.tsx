@@ -1,8 +1,9 @@
 "use client";
 
+import { cn } from '@/lib/utils';
 import React, { useEffect, useRef } from 'react'
 
-function Banner_width_height_320_250() {
+function Banner_width_height_320_250({classname}:{classname?:string}) {
   const adsRef = useRef<HTMLDivElement>(null);
   
     useEffect(() => {
@@ -40,9 +41,9 @@ function Banner_width_height_320_250() {
       style={{
         maxWidth: "300px",
         height: "250px",
-        margin: "16px auto",
-        overflow: "hidden"
+        overflow: "hidden",
       }}
+      className={cn(`rounded-md ${classname}`)}
     />
   );
 }

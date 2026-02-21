@@ -14,11 +14,19 @@ export function ChannelPageComp() {
     const dispatch = useDispatch<AppDispatch>();
     const router = useRouter();
     const { profile, section } = useParams();
-    const secCategory = typeof section === "string" ? section : section?.[0]
+    const secCategory = typeof section === "string" ? decodeURIComponent(section) : decodeURIComponent(section?.[0]??"")
 
     const { error, intialProfile, loading } = useSelector((state: RootState) => state.profileFetching);
 
+    console.log({intialProfile});
+    console.log({secCategory});
+    
+    
+
     const dataFetching = intialProfile.arrayOfArticles?.find((v,i)=> v._id === secCategory);
+
+    console.log({dataFetching});
+    
 
 
     const deleteArticle = useCallback(async (id: string) => {

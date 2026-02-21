@@ -12,17 +12,15 @@ interface BigContainerProps {
     title: string;
     description: string;
     createdAt: string;
-    width: string;
-    height: string;
     className: string;
     slug: string;
     _id: string;
 }
 
-function BigContainer({ width = "", height = "", className = "", blogImageUrl, category, title, description, slug, _id, createdAt }: BigContainerProps) {    
+function BigContainer({className = "", blogImageUrl, category, title, description, slug, _id, createdAt }: BigContainerProps) {    
 
     return (
-        <section className={`w-full lg:w-[${width}] h-[${height}] ${className}`}>
+        <section className={`w-full h-full ${className}`}>
             <section className={`w-full lg:w-full h-full rounded-md overflow-hidden relative shortCardHover`}>
                 <SingleArticleLinkPage createdAt={createdAt} slug={slug} title={title}>
                     <Image
@@ -53,8 +51,8 @@ function BigContainer({ width = "", height = "", className = "", blogImageUrl, c
 
                 <div className='absolute text-white font-bold w-full right-0 bottom-0 p-2'>
                     <SingleArticleLinkPage createdAt={createdAt} slug={slug} title={title}>
-                        <h1 className='text-4xl min-md:text-6xl max-sm:text-lg max-sm:leading-5 max-[325px]:text-[18px]'>{title ?? "No title"}</h1>
-                        <p className='line-clamp-1 text-xl max-sm:text-sm max-[325px]:text-[12px] max-[325px]:leading-5'>{description && description}</p>
+                        <h1 className='text-4xl min-md:text-6xl max-sm:text-lg max-sm:leading-5 max-[325px]:text-[18px] line-clamp-3'>{title ?? "No title"}</h1>
+                        {/* <p className='line-clamp-1 text-xl max-sm:text-sm max-[325px]:text-[12px] max-[325px]:leading-5'>{description && description}</p> */}
                     </SingleArticleLinkPage>
                 </div>
 

@@ -14,13 +14,13 @@ interface FrontBlogContainer extends HeroSectionProps {
 const SideContainer = ({ className = "", blogImageUrl, category, description, title, createdAt, slug, _id, createdBy }: FrontBlogContainer) => {
     return (
         <SingleArticleLinkPage createdAt={createdAt} slug={slug}>
-            <section className={` grid grid-cols-2 max-sm:grid-cols-1 gap-4 rounded-md shadow-md p-2${className}`}>
-                <div className={`mx-auto shrink-1 overflow-hidden rounded-md h-[150px] w-full`}>
-                    <Image src={blogImageUrl ? blogImageUrl : "https://mannatthemes.com/blogloo/default/assets/images/widgets/sm-3.jpg"} alt='blog image' width={500} height={500} className='h-full object-cover w-full object-top  hoverScale' />
-                </div>
-                <div className='shrink-1 flex flex-col flex-1 relative leading-5'>
-                    <h2 className='font-bold text-2xl max-sm:text-xl line-clamp-2'>{title??"No title"}</h2>
-                    <p className='line-clamp-2 text-xl max-sm:text-sm'>{description?? "No description"} </p>
+            <section className={`grid max-sm:grid-cols-1 gap-2 rounded-md shadow-md p-1 outline outline-2 outline-gray-300 ${className}`} style={{gridTemplateColumns:'100px 1fr'}}>
+                
+                    <Image src={blogImageUrl ? blogImageUrl : "https://mannatthemes.com/blogloo/default/assets/images/widgets/sm-3.jpg"} alt='blog image' width={100} height={100} className='h-[100px] object-cover w-[100px] object-top  hoverScale rounded-md' />
+                
+                <div className='flex flex-col leading-5 '>
+                    <h2 className='font-bold text-base max-sm:text-xl line-clamp-3'>{title??"No title"}</h2>
+                    <p className='line-clamp-2 max-sm:text-sm'>{description?? "No description"} </p>
                 </div>
             </section>
         </SingleArticleLinkPage>
