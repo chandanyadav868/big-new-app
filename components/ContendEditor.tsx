@@ -226,7 +226,7 @@ const ContentEditor = ({ blogImageUrl, category, slug, content, title, descripti
 
     return (
         <>
-            <div className="flex gap-2 flex-wrap">
+            <div className="flex gap-2 flex-wrap p-2">
                 <input className="w-4 cursor-pointer" type="checkbox" value={String(storyShow)} onClick={() => setStoriesShow(prev => !prev)} />
                 <span className="font-bold">Story Active</span>
             </div>

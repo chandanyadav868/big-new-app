@@ -193,8 +193,7 @@ function WebStory({ setStories }: { setStories: React.Dispatch<React.SetStateAct
     return (
         <div className='flex min-h-full'>
             <div className='p-2'>
-
-                <div className="flex justify-between px-1 gap-2 mb-2">
+                <div className="flex px-1 gap-2 mb-2 flex-wrap justify-center">
                     <input
                         className='outline outline-2 outline-red-300 p-2 rounded-md'
                         ref={articleSearchRef}
@@ -225,7 +224,7 @@ function WebStory({ setStories }: { setStories: React.Dispatch<React.SetStateAct
 
                 <textarea placeholder='Enter your prompts...' className='h-[100px] rounded-md shadow-md w-full p-2 resize-none bg-slate-100 ' value={cutomeInstruction} onChange={(e) => setCutomeInstruction(e.target.value)}></textarea>
 
-                <div className='border border-1 border-red-300 m-2 rounded-md max-[426px]:w-full' style={{ maxHeight: "100vh", overflow: "auto", maxWidth: 450 }}>
+                <div className='border border-1 border-red-300 rounded-md max-[426px]:w-full p-1' style={{ maxHeight: "100vh", overflow: "auto", maxWidth: 450 }}>
                     <Editor
                         value={mandatoryPartCode}
                         onValueChange={code => setMandatoryPartCode((prev) => (code))}
