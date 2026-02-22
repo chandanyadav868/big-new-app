@@ -2,60 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
     width: 100%;
     min-height: 100vh;
-    display: grid;
-    margin: 0 auto; /* centers content */
-    grid-template-columns: 200px 1fr 200px;
+    margin: 0 auto;
+    /* centers content */
     /* background-image: linear-gradient(90deg, #E8D6C2, #C0A685) */
 }
-    
 
-@media not all and (min-width: 720px) {
-    body{
-        grid-template-columns: 1fr;
+
+@media not all and (max-width: 720px) {
+    body {
+        display: grid;
+        grid-template-columns: 200px 1fr 200px;
+        /* grid-template-columns: 1fr; */
     }
 }
 
-@layer utilities{
-    .lg-label-padding{
+@layer utilities {
+    .lg-label-padding {
         @apply max-lg:py-1 max-lg:px-2
     }
 }
 
-.hoverScale{
+.sideContainer {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 100px 1fr;
+}
+
+
+@media not all and (min-width: 426px) {
+    .sideContainer {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
+
+.hoverScale {
     transform: scale(1);
     transition: transform .2s ease-in-out;
 }
-.hoverScale:hover{
+
+.hoverScale:hover {
     transform: scale(1.1);
 }
 
 
 
-.shortCardHover:hover .hoverScale{
+.shortCardHover:hover .hoverScale {
     transform: scale(1.1);
 }
 
-.gradient-overlap-shortBlog{
-    background-image: linear-gradient(to top ,black 20%, rgba(0, 0, 0, 0) 40%);
+.gradient-overlap-shortBlog {
+    background-image: linear-gradient(to top, black 20%, rgba(0, 0, 0, 0) 40%);
 }
 
 
-.overflow-auto{
+.overflow-auto {
     overflow: auto;
 }
 
-.markdown-content{
+.markdown-content {
     padding: 15px;
     font-size: 18px;
 }
 
-.markdown-content :where(ol>li>p){
+.markdown-content :where(ol>li>p) {
     display: inline;
 }
-.markdown-content :where(ol>li::marker){
+
+.markdown-content :where(ol>li::marker) {
     color: red;
     font-size: larger;
     font-weight: 500;
@@ -63,7 +79,7 @@ body{
 }
 
 
-.markdown-content :where(pre){
+.markdown-content :where(pre) {
     background-color: #151414;
     overflow-x: auto;
     padding: 10px;
@@ -72,83 +88,95 @@ body{
     font-size: 1.1em;
 }
 
-.markdown-content :where(p,h1,h2,h3,h4,h5,h6){
+.markdown-content :where(p, h1, h2, h3, h4, h5, h6) {
     margin-top: 1em;
 }
 
-.markdown-content :where(ul li){
+.markdown-content :where(ul li) {
     margin-top: .5em;
     list-style: disc;
     font-size: 1em;
     list-style-position: inside;
 }
-.markdown-content :where(ol li){
+
+.markdown-content :where(ol li) {
     margin-top: .5em;
     font-size: 1em;
     list-style: decimal;
     list-style-position: inside;
 }
 
-.markdown-content :where(p){
+.markdown-content :where(p) {
     font-size: 1em;
 }
-.markdown-content :where(h1){
+
+.markdown-content :where(h1) {
     font-weight: 900;
     font-size: 2em;
 }
-.markdown-content :where(h2){
+
+.markdown-content :where(h2) {
     font-weight: 800;
     font-size: 1.8em;
 }
-.markdown-content :where(h3){
+
+.markdown-content :where(h3) {
     font-weight: 900;
     font-size: 1.6em;
 }
-.markdown-content :where(h4){
+
+.markdown-content :where(h4) {
     font-size: 1.5em;
     font-weight: 900;
     font-size: x-large;
 }
-.markdown-content :where(h5,h6){
+
+.markdown-content :where(h5, h6) {
     font-weight: 900;
     font-size: x-large;
 }
 
-textarea::-webkit-scrollbar{
+textarea::-webkit-scrollbar {
     width: 10px;
     padding: 5px;
 }
-textarea::-webkit-scrollbar-track{
+
+textarea::-webkit-scrollbar-track {
     background: #fff;
 }
-textarea::-webkit-scrollbar-thumb{
+
+textarea::-webkit-scrollbar-thumb {
     background: #888;
 }
 
 
 .overflow-auto::-webkit-scrollbar {
-    width: 10px; /* Set the width of the scrollbar */
+    width: 10px;
+    /* Set the width of the scrollbar */
     padding: 5px;
-  }
-  
-  .overflow-auto::-webkit-scrollbar-track {
-    background: #fff; /* Set the background color of the scrollbar track */
-  }
-  
-  .overflow-auto::-webkit-scrollbar-thumb {
-    background: #888; /* Set the background color of the scrollbar thumb */
-  }
-  
-  .overflow-auto::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Set the background color of the scrollbar thumb on hover */
-  }
+}
 
-.markdown-content :where(p):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+.overflow-auto::-webkit-scrollbar-track {
+    background: #fff;
+    /* Set the background color of the scrollbar track */
+}
+
+.overflow-auto::-webkit-scrollbar-thumb {
+    background: #888;
+    /* Set the background color of the scrollbar thumb */
+}
+
+.overflow-auto::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    /* Set the background color of the scrollbar thumb on hover */
+}
+
+.markdown-content :where(p):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
     margin-top: 0.5em;
     margin-bottom: 1em;
 }
 
-.markdown-content :where(ul>li, ol>li):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+.markdown-content :where(ul>li, ol>li):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
     margin-top: 0.5em;
     margin-bottom: 1em;
 }
@@ -217,17 +245,17 @@ textarea::-webkit-scrollbar-thumb{
 
 
 
-.markdown-content :where(h3,h4,h5):not(:where([class~="not-prose"],[class~="not-prose"]*)){
+.markdown-content :where(h3, h4, h5):not(:where([class~="not-prose"], [class~="not-prose"]*)) {
     font-weight: 700;
     font-size: large;
 }
 
 /* like to dislikes button comman styling */
-@layer base{
-    .like-dislike-button{
+@layer base {
+    .like-dislike-button {
         @apply bg-pink-400 font-bold p-1 rounded-md;
     }
-    
+
 }
 
 

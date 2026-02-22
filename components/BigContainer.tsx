@@ -20,8 +20,8 @@ interface BigContainerProps {
 function BigContainer({className = "", blogImageUrl, category, title, description, slug, _id, createdAt }: BigContainerProps) {    
 
     return (
-        <section className={`w-full h-full ${className}`}>
-            <section className={`w-full lg:w-full h-full rounded-md overflow-hidden relative shortCardHover`}>
+        <section className={`w-full ${className}`}>
+            <section className={`w-full h-full rounded-md overflow-hidden relative shortCardHover`}>
                 <SingleArticleLinkPage createdAt={createdAt} slug={slug} title={title}>
                     <Image
                         src={

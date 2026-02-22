@@ -17,7 +17,7 @@ const BlogContainer = ({ className = "", blogImageUrl, category, slug, createdAt
 
     return (
         <>    
-        { (adsShow && index % 5 === 0) && <Banner_width_height_320_250 classname='shrink-0 max-sm:mx-auto'/>}   
+        { (adsShow && index % 5 === 0) && <Banner_width_height_320_250 classname='shrink-0 max-sm:mx-auto max-[426px]:w-full'/>}   
 
         <section className={cn(`flex gap-4 border-1 rounded-md p-2 flex-wrap items-center shadow-2xl ${className}`)}>
             <div className={`w-full mx-auto min-[768px]:w-[200px] shrink-0 overflow-hidden rounded-md`}>

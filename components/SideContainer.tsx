@@ -2,27 +2,27 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { HeroSectionProps } from './HeroSection'
-import { articleSlug } from '@/lib/utils'
+import { articleSlug, cn } from '@/lib/utils'
 import { CreatedAuthor } from '@/lib/readux/articleFetchSlice'
 
 interface FrontBlogContainer extends HeroSectionProps {
     width?: string,
     height?: string,
-    className: string
+    className: string,
+    style?:React.CSSProperties | undefined
 }
 
-const SideContainer = ({ className = "", blogImageUrl, category, description, title, createdAt, slug, _id, createdBy }: FrontBlogContainer) => {
+const SideContainer = ({ className = "", blogImageUrl, category, description, title, createdAt, slug, _id, createdBy,style }: FrontBlogContainer) => {
     return (
         <SingleArticleLinkPage createdAt={createdAt} slug={slug}>
-            <section className={`grid max-sm:grid-cols-1 gap-2 rounded-md shadow-md p-1 outline outline-2 outline-gray-300 ${className}`} style={{gridTemplateColumns:'100px 1fr'}}>
+            <div className={cn(`rounded-md shadow-md p-1 outline outline-2 outline-gray-300 ${className}`)} style={style}>
+                    <Image src={blogImageUrl ? blogImageUrl : "https://mannatthemes.com/blogloo/default/assets/images/widgets/sm-3.jpg"} alt='blog image' width={100} height={100} className='aspect-square object-cover w-[150px] object-top  hoverScale rounded-md mx-auto max-[426px]:w-full max-md:h-[150px]' />
                 
-                    <Image src={blogImageUrl ? blogImageUrl : "https://mannatthemes.com/blogloo/default/assets/images/widgets/sm-3.jpg"} alt='blog image' width={100} height={100} className='h-[100px] object-cover w-[100px] object-top  hoverScale rounded-md' />
-                
-                <div className='flex flex-col leading-5 '>
-                    <h2 className='font-bold text-base max-sm:text-xl line-clamp-3'>{title??"No title"}</h2>
+                <div className='flex flex-col leading-5 shrink'>
+                    <h2 className='font-bold text-base max-sm:text-xl line-clamp-2'>{title??"No title"}</h2>
                     <p className='line-clamp-2 max-sm:text-sm'>{description?? "No description"} </p>
                 </div>
-            </section>
+            </div>
         </SingleArticleLinkPage>
     )
 }
@@ -50,7 +50,7 @@ export const CreatedByComp = ({ createdBy }: { createdBy: CreatedAuthor }) => {
 
 export const SingleArticleLinkPage = ({ createdAt, slug, children, title }: { slug: string | undefined, createdAt: string | undefined, children: React.ReactNode, title?: string }) => {
     return (
-        <Link className='h-[100%] hover:underline underline-offset-1' aria-label={`Read more about ${title}`} href={articleSlug({ slug, createdAt })}>
+        <Link className='hover:underline underline-offset-1' aria-label={`Read more about ${title}`} href={articleSlug({ slug, createdAt })}>
             {children}
         </Link>
     )

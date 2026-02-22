@@ -28,18 +28,20 @@ function HeroBelowComponents({ category }: HeroBelowComponentsProps) {
   return (
     <>
       <div className='shadow-md rounded-md bg-slate-500 mb-4 bg-gradient-to-r to-red-300 from-red-500'>
+
         <h1 className='text-center text-white text-4xl font-bold p-2 max-md:text-2xl'>{category.toUpperCase()}</h1>
       </div>
-      <div className='grid grid-cols-2 gap-4 max-lg:grid-cols-1 '>
+
+      <div className='grid grid-cols-2 gap-4 max-[640px]:grid-cols-1 '>
         {/* big container */}
         {filteredValued && filteredValued.articles.slice(0, 1).map((elem, index) =>
           <BigContainer key={elem._id} className='' {...elem} />
         )}
 
         {/* small container */}
-        <div className='shrink-0 max-lg:w-full grid grid-cols-1 gap-2'>
+        <div className='max-lg:w-full grid grid-cols-1 gap-2'>
           {filteredValued && filteredValued.articles.slice(1).map((elem, index) =>
-            <SideContainer {...elem} className='' key={index} />
+            <SideContainer {...elem} className='sideContainer' key={index} />
           )}
         </div>
       </div>

@@ -38,7 +38,7 @@ const CateryShower = ({ data }: { data: ArticlesProp | undefined }) => {
         )}
 
         {/* small container */}
-        <div className='shrink-0 max-lg:w-full grid grid-cols-1 gap-2'>
+        <div className='shrink-0 grid grid-cols-2 gap-2 max-[426px]:grid-cols-1'>
           {data && data.articles.slice(4,9).map((elem, index) =>
             <SideContainer {...elem} className='' key={index} />
           )}
