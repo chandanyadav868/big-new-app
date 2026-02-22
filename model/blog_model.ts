@@ -3,7 +3,7 @@ import mongoose, { models } from "mongoose";
 const BlogModel = new mongoose.Schema({
     title: { type: String, required:true },
     description: { type: String, required:true },
-    createdBy: { type: String, required:true },
+    createdBy: { type: mongoose.Schema.Types.ObjectId, ref:"BlogUser", required:true },
     blogImageUrl: { type: String, required: true },
     featuredImagealt: { type: String, required: true },
     category: { type: String, required: true },

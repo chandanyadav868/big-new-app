@@ -58,6 +58,22 @@ Create a catchy and keyword-rich title that clearly communicates the content's s
 Ensure the title length is appropriate for SEO (around 50-60 characters).
 Description:
 
+====================
+SLUG RULES
+====================
+
+Generate a concise, descriptive, lowercase SEO slug
+
+Use hyphens (-) only, never underscores
+
+Include primary and secondary keywords naturally
+
+Avoid stop words unless required for clarity
+
+Slug must reflect topic + user intent
+
+Length should resemble long-tail SEO slugs used by top publishers
+
 Write a compelling meta description (120-160 characters).
 Highlight the main idea of the content and include relevant keywords.
 Output Format:
@@ -65,7 +81,10 @@ Output Format:
 Return the response in a valid JSON object format, with proper opening and closing curly brackets.
 Use this structure for the response do not try to give reponse modify in other format:
 
+
+
 {
+  "slug":"",
   "title": "",
   "description": ""
 }

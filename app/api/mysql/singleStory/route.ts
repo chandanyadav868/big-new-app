@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
     const slug = new URL(req.url).searchParams.get("post_name");
-    // console.log({slug});
+    console.log({slug});
 
   if (!slug) {
     return NextResponse.json(
@@ -13,15 +13,24 @@ export async function GET(req: NextRequest) {
   }
     
     try {
-        const [rows] = await db.query(
+        const [webStoryRows] = await db.query(
             `
             SELECT * FROM wp_posts
             WHERE post_name = ?
-                AND post_status = "publish" AND post_type = "web-story"
+               AND post_type = "web-story"
             `,
             [slug]
         );
-        return NextResponse.json({ status: 200, data: rows });
+        const [postRows] = await db.query(
+            `
+            SELECT * FROM wp_posts
+            WHERE post_name = ?
+               AND post_type = "post"
+            `,
+            [slug]
+        );
+        
+        return NextResponse.json({ status: 200, data: [webStoryRows, postRows]  });
     } catch (error) {
         console.log("Error:- ", error);
         return NextResponse.json({ status: 500, error: JSON.stringify((error as any).message) })
