@@ -429,15 +429,20 @@ const ContentEditor = ({ blogImageUrl, category, slug, content, title, descripti
                                     maxHeight="600px"
                                     minHeight="600px"
                                     theme={"dark"}
+                                    width="100%"
+                                    enablePreview={false}
                                     previewProps={{
                                         style: {
-                                            backgroundColor: "white",
-                                        }
+                                            backgroundColor: "red",
+                                            width:"100%",
+                                        },
+                                        className:"bg-red-600"
                                     }}
                                     style={{
                                         border: "1px solid #ccc",
                                         borderRadius: "8px",
                                         padding: "2px",
+                                        // width:"0px"
                                     }}
                                     value={field.value}
                                     onChange={(value) => {
@@ -446,10 +451,12 @@ const ContentEditor = ({ blogImageUrl, category, slug, content, title, descripti
                                     }}
                                     />
                                 {error && <span className="font-bold text-red-500">{error.message}</span>}
+                                <MarkdownEditor.Markdown source={field.value} style={{backgroundColor:"white"}}/>
                                 </>
                             )
                         }
                         />
+
 
                         <div className="flex gap-2 flex-wrap justify-center">
                             <span
