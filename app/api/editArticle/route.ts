@@ -29,10 +29,18 @@ export async function POST(req: NextRequest) {
   try {
     const updateFields: Record<string, unknown> = {};
 
-    for (const key in data){ updateFields[key] = data[key] };
+    for (const key in data){ 
+      if (data[key] === undefined || data[key] === null) {
+        return NextResponse.json({ status: 400, message: `Please provide field:- ${key}` });
+      }
+      updateFields[key] = data[key]
+     };
+
+    console.log({updateFields});
+    
 
     const response = await ArticleModel.updateOne(
-      { _id: data._id }, // Filter by id
+      { slug: data.slug }, // Filter by id
       { $set: updateFields }, // Update only the fields in updateFields
     );
 

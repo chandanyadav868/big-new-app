@@ -29,16 +29,18 @@ export function ChannelPageComp() {
     
 
 
-    const deleteArticle = useCallback(async (id: string) => {
+    const deleteArticle = async (id: string) => {
         try {
             console.log("deleting articleId:- ", id);
-            const response = await fetch(`/api/articleDelete?deleteId=${id}`);
+            const response = await fetch(`/api/articleDelete?deleteId=${id}`,{
+                method:"GET"
+            });
             const responseJson = await response.json();
             console.log("responseJson:- ", responseJson);
         } catch (error) {
             console.log("Error in the deleteArticle");
         }
-    }, []);
+    };
 
     // collect category
     const category = useMemo(() => {

@@ -4,7 +4,8 @@ import { useForm, Controller } from "react-hook-form";
 import Button from "./Button";
 import { PropsContentEdit } from "../app/(main)/edit/[content]/page";
 import AiButton from "./AiButton";
-import MDEditor from "@uiw/react-md-editor";
+// import MDEditor from "@uiw/react-md-editor";
+import MarkdownEditor from '@uiw/react-markdown-editor';
 import "@uiw/react-md-editor/markdown-editor.css";
 import { SYSTEM_PROMPTS, TITLE_SLUG_DESCRIPTION_PROMPTS } from "../lib/constants";
 import Groq from "groq-sdk";
@@ -12,6 +13,7 @@ import Image from "next/image";
 import { BadgeCheck, CircleX } from "lucide-react";
 import WebStory from "./WebStory";
 import PreviewStory from "./PreviewStory";
+import { error } from "console";
 
 
 interface DataPropsSubmission {
@@ -232,10 +234,10 @@ const ContentEditor = ({ blogImageUrl, category, slug, content, title, descripti
             </div>
 
             {storyShow && <WebStory setStories={setStories} />}
-            {storyShow && <PreviewStory  stories={stories} />}
+            {storyShow && <PreviewStory stories={stories} />}
 
             {!storyShow && <section>
-                <div className="w-[80%] mx-auto flex gap-4 flex-col outline outline-1 rounded-md p-2 mt-2">
+                <div className="md:w-[80%] w-[99%] mx-auto flex gap-4 flex-col outline outline-1 rounded-md p-2 mt-2">
                     <h1 className="font-bold text-2xl text-center ">Article </h1>
 
                     <div className="flex justify-end gap-4">
@@ -418,25 +420,36 @@ const ContentEditor = ({ blogImageUrl, category, slug, content, title, descripti
                         <Controller
                             name="content"
                             control={control}
-                            defaultValue={content}
-                            render={({ field }) => (
-                                <MDEditor
-                                    data-color-mode="light"
+                            rules={{required:"Please write contents",}}
+                            render={({ field,fieldState:{error} }) => (
+                                <>
+                                <MarkdownEditor
+                                className="md:max-w-[720px] w-full mx-auto"
+                                    maxHeight="600px"
+                                    minHeight="600px"
+                                    theme={"dark"}
+                                    previewProps={{
+                                        style: {
+                                            backgroundColor: "white",
+                                        }
+                                    }}
                                     style={{
                                         border: "1px solid #ccc",
                                         borderRadius: "8px",
-                                        padding: "10px",
-                                        minHeight: "444px",
+                                        padding: "2px",
                                     }}
-                                    {...field}
-                                    value={newContent}
+                                    value={field.value}
                                     onChange={(value) => {
-                                        setNewContent(value || "");
+                                        setNewContent(value);
                                         field.onChange(value);
                                     }}
-                                />
-                            )}
+                                    />
+                                {error && <span className="font-bold text-red-500">{error.message}</span>}
+                                </>
+                            )
+                        }
                         />
+
                         <div className="flex gap-2 flex-wrap justify-center">
                             <span
                                 onClick={() => newArticle()}
