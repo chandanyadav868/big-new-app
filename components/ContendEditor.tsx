@@ -419,6 +419,7 @@ const ContentEditor = ({ blogImageUrl, category, slug, content, title, descripti
 
                         <Controller
                             name="content"
+                            defaultValue={content}
                             control={control}
                             rules={{required:"Please write contents",}}
                             render={({ field,fieldState:{error} }) => (
