@@ -10,10 +10,11 @@ import "@uiw/react-md-editor/markdown-editor.css";
 import { SYSTEM_PROMPTS, TITLE_SLUG_DESCRIPTION_PROMPTS } from "../lib/constants";
 import Groq from "groq-sdk";
 import Image from "next/image";
-import { BadgeCheck, CircleX } from "lucide-react";
+import { BadgeCheck, CircleX, Eye, EyeOff } from "lucide-react";
 import WebStory from "./WebStory";
 import PreviewStory from "./PreviewStory";
 import { error } from "console";
+import { Commands } from "@uiw/react-markdown-editor/cjs/components/ToolBar";
 
 
 interface DataPropsSubmission {
@@ -226,6 +227,19 @@ const ContentEditor = ({ blogImageUrl, category, slug, content, title, descripti
     const [stories, setStories] = useState("");
     const [storyShow, setStoriesShow] = useState(false);
 
+    const [preview,setPreview] = useState(false)
+    const title2 = {
+        name: 'title2',
+        keyCommand: 'title2',
+        button: { 'aria-label': 'Add title text' },
+        icon: (
+            <> {preview ? <Eye />: <EyeOff />} </>
+        ),
+        execute: () => {
+            setPreview((prev)=> !prev)
+        },
+    };
+
     return (
         <>
             <div className="flex gap-2 flex-wrap p-2">
@@ -417,59 +431,65 @@ const ContentEditor = ({ blogImageUrl, category, slug, content, title, descripti
                             <AiButton onClick={aiWriter} animation={animation} />
                         </div>
 
-                        <Controller
-                            name="content"
-                            defaultValue={content}
-                            control={control}
-                            rules={{required:"Please write contents",}}
-                            render={({ field,fieldState:{error} }) => (
-                                <>
-                                <MarkdownEditor
-                                className="md:max-w-[720px] w-full mx-auto"
-                                    maxHeight="600px"
-                                    minHeight="600px"
-                                    theme={"dark"}
-                                    width="100%"
-                                    enablePreview={false}
-                                    previewProps={{
-                                        style: {
-                                            backgroundColor: "red",
-                                            width:"100%",
-                                        },
-                                        className:"bg-red-600"
-                                    }}
-                                    style={{
-                                        border: "1px solid #ccc",
-                                        borderRadius: "8px",
-                                        padding: "2px",
-                                        // width:"0px"
-                                    }}
-                                    value={field.value}
-                                    onChange={(value) => {
-                                        setNewContent(value);
-                                        field.onChange(value);
-                                    }}
-                                    />
-                                {error && <span className="font-bold text-red-500">{error.message}</span>}
-                                <MarkdownEditor.Markdown source={field.value} style={{backgroundColor:"white"}}/>
-                                </>
-                            )
-                        }
-                        />
-
-
-                        <div className="flex gap-2 flex-wrap justify-center">
+                         <div className="flex gap-2 flex-wrap justify-center">
                             <span
                                 onClick={() => newArticle()}
-                                className="bg-blue-400 px-7 py-3 rounded-md shadow-md font-bold text-xl hover:bg-blue-600 cursor-pointer"
+                                className="bg-blue-400 px-2 py-2 text-base rounded-md shadow-md font-bold  hover:bg-blue-600 cursor-pointer"
                             >{newArticleCreating ? "Creating..." : "New Create"}</span>
                             <Button
                                 submission={submission}
                                 type="submit"
                                 text={"Update"}
-                                className="bg-blue-400 px-7 py-3 rounded-md shadow-md font-bold text-xl hover:bg-blue-600"
+                                className="bg-blue-400 px-2 py-2 text-base rounded-md shadow-md font-bold hover:bg-blue-600"
                             />
                         </div>
+
+                        <Controller
+                            name="content"
+                            defaultValue={content}
+                            control={control}
+                            rules={{ required: "Please write contents", }}
+                            render={({ field, fieldState: { error } }) => (
+                                <>
+                                    <MarkdownEditor
+                                        className="md:max-w-[720px] w-full mx-auto"
+                                        maxHeight="600px"
+                                        minHeight="600px"
+                                        theme={"dark"}
+                                        width="100%"
+                                        enablePreview={false}
+                                        toolbars={[
+                                            "undo" , "redo" , "bold" , "italic" , "header" , "strike" , "underline" , "quote" , "olist" , "ulist" , "todo" , "link" , "image" , "code" , "codeBlock", title2
+                                        ]}
+                                        previewProps={{
+                                            style: {
+                                                backgroundColor: "red",
+                                                width: "100%",
+                                            },
+                                            className: "bg-red-600"
+                                        }}
+                                        style={{
+                                            border: "1px solid #ccc",
+                                            borderRadius: "8px",
+                                            padding: "2px",
+                                            // width:"0px"
+                                        }}
+                                        value={field.value}
+                                        onChange={(value) => {
+                                            setNewContent(value);
+                                            field.onChange(value);
+                                        }}
+                                    />
+                                    {error && <span className="font-bold text-red-500">{error.message}</span>}
+                                    {preview && <MarkdownEditor.Markdown source={field.value} style={{ backgroundColor: "white" }} /> }
+                                </>
+                            )
+                            }
+                        />
+
+
+                       
+
                     </form>
                 </div>
             </section>

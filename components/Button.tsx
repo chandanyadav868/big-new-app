@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils';
 import React from 'react';
 
 interface  ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
@@ -11,7 +12,7 @@ interface  ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
 
 function Button({className,type,text,submission,...props}:ButtonProps) {
   return (
-    <button {...props} type={type} className={`px-7 py-3 rounded-full shadow-sm ${className}`}>{submission?"Loading":text}</button>
+    <button {...props} type={type} className={cn(`px-7 py-3 rounded-full shadow-sm ${className}`)}>{submission?"Loading":text}</button>
   )
 }
 
