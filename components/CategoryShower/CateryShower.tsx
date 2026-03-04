@@ -53,7 +53,7 @@ const CateryShower = ({ data }: { data: ArticlesProp | undefined }) => {
       </div>
 
       {data && data._id &&
-        ((data.totalSizeOfArticles ?? 0) > (data.articles?.length ?? 0)) &&
+        ((data.sizeOfArticles ?? 0) > (data.articles?.length ?? 0)) &&
         <div className='text-center p-2 mt-4'>
           <span onClick={() => moreArticle(data.articles?.length)} className='text-white bg-black p-2 rounded-md mt-4 cursor-pointer'>
             {fetchingMoreArticle?"Loading":"More Article"}

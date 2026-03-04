@@ -27,7 +27,7 @@ function RelatedArticleFetch({ category }: { category: string }) {
                 <BlogContainer {...elem} index={index} key={index} className='shadow-md' />)}
 
             {data && data[category]?._id &&
-                ((data[category]?.totalSizeOfArticles ?? 0) > (data[category]?.articles?.length ?? 0)) &&
+                ((data[category]?.sizeOfArticles ?? 0) > (data[category]?.articles?.length ?? 0)) &&
                 <div className='text-center p-2 mt-4'>
                     <span onClick={() => moreArticle(data[category].articles?.length)} className='text-white bg-black p-2 rounded-md mt-4 cursor-pointer'>More Article</span>
                 </div>
