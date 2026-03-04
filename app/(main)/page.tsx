@@ -11,7 +11,7 @@ import LoaderComponents from '../../components/LoaderComponents';
 
 const RootPage = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const { trending } = useSelector((state: RootState) => state.article);
+  const { trending, article } = useSelector((state: RootState) => state.article);
 
   useEffect(() => {
     dispatch(articleAsyncFetching());
@@ -36,24 +36,13 @@ const RootPage = () => {
 
             <>
               {/* below hero section wweSection */}
-              <div>
-                <HeroBelowComponents category={"wwe"} />
-              </div>
 
-              {/* below hero section cricketSection */}
-              <div>
-                <HeroBelowComponents category={"cricket"} />
-              </div>
+              {article?.slice(0).sort((a, b) => new Date(b.articles?.[0].createdAt).getTime() - new Date(a.articles?.[0].createdAt).getTime()).map((v, i) => (
+                v.sizeOfArticles > 5 && <div key={v._id}>
+                  <HeroBelowComponents category={v._id} />
+                </div>
+              ))}
 
-              {/* below hero section aewSection */}
-              <div>
-                <HeroBelowComponents category={"aew"} />
-              </div>
-
-              {/* below hero section free-fireSection */}
-              <div>
-                <HeroBelowComponents category={"free-fire"} />
-              </div>
             </>
 
           </main>

@@ -28,7 +28,6 @@ function HeroBelowComponents({ category }: HeroBelowComponentsProps) {
   return (
     <>
       <div className='shadow-md rounded-md bg-slate-500 mb-4 bg-gradient-to-r to-red-300 from-red-500'>
-
         <h1 className='text-center text-white text-4xl font-bold p-2 max-md:text-2xl'>{category.toUpperCase()}</h1>
       </div>
 

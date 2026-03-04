@@ -30,8 +30,8 @@ function BigContainer({className = "", blogImageUrl, category, title, descriptio
                                 : 'https://mannatthemes.com/blogloo/default/assets/images/blogs/4.jpg'
                         }
                         alt="Short blog image"
-                        width={700}
-                        height={393}
+                        width={1000}
+                        height={1000}
                         quality={65}
                         loading='lazy'
                         fetchPriority='high'

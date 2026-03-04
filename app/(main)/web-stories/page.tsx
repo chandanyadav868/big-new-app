@@ -61,7 +61,7 @@ function webStories() {
 
         // console.log({dataPost});
 
-        dataPost.sort((a,b)=> new Date(b.post_modified).getTime() - new Date(a.post_modified).getTime() );
+        dataPost.sort((a, b) => new Date(b.post_modified).getTime() - new Date(a.post_modified).getTime());
 
         const transformatedDataPost = dataPost?.map((v, i) => {
           const matchedData: RegExpMatchArray | null = v?.post_content?.match(/<!--\s*wp:web-stories\/embed\s*(\{[\s\S]*?\})\s*-->/);
@@ -71,15 +71,15 @@ function webStories() {
           const jsonExtractedData: webStoriesProps = JSON.parse(matchedData?.[1] ?? '[]');
 
           // console.log({jsonExtractedData});
-          
+
 
           // console.log({jsonExtractedData}); replace(/\s+/g, "-");
-          const slug = jsonExtractedData.url.split("=")[1]??jsonExtractedData.url.slice(jsonExtractedData.url.lastIndexOf("/") + 1);
+          const slug = jsonExtractedData.url.split("=")[1] ?? jsonExtractedData.url.slice(jsonExtractedData.url.lastIndexOf("/") + 1);
 
           const newUrl = `${WEBSITE_URL}/web-stories/${slug}`;
           // console.log({newUrl});
-          
-          const newsModified = { ...jsonExtractedData, url: newUrl};
+
+          const newsModified = { ...jsonExtractedData, url: newUrl };
           // console.log(newsModified);
           return newsModified;
 
@@ -107,21 +107,25 @@ function webStories() {
       justify-items-center
       gap-4'>
         {processing && <>
-          {[1,2,3,4].map((v,i)=>(
-             <div className='shadow-md outline outline-1 outline-orange-950 p-0.1 rounded-2xl hover:shadow-[2px_2px_28px_-14px_black] animate-pulse bg-slate-500' key={i} style={{ width: "320px", height:"450px" }}></div>
+          {[1, 2, 3, 4].map((v, i) => (
+            <div className='shadow-md outline outline-1 outline-orange-950 p-0.1 rounded-2xl hover:shadow-[2px_2px_28px_-14px_black] animate-pulse bg-slate-500' key={i} style={{ width: "320px", height: "450px" }}></div>
           ))}
-          </>}
+        </>}
         {
           stories.length > 0 ? stories?.map((v, i) => (
-            <div className='shadow-md outline outline-1 outline-orange-950 p-0.1 rounded-2xl hover:shadow-[2px_2px_28px_-14px_black] relative overflow-hidden' key={i} style={{ maxWidth: "360px" }}>
+            <div className='shadow-md outline outline-2 outline-gray-400 p-0.1 rounded-2xl hover:shadow-[2px_2px_28px_-14px_black] relative overflow-hidden' key={i} style={{ maxWidth: "360px" }}>
               <Link href={`${v.url}`}>
 
-                <h2 className='text-[1.2rem] font-bold line-clamp-2 absolute text-white bottom-2 p-2 z-10' style={{ lineHeight: "1.75rem" }}>{v.title}</h2>
+                <h2 className='text-[1.2rem] font-bold absolute text-black bottom-2 p-2 z-10 mx-2 rounded-2xl bg-white' style={{ lineHeight: "1.75rem" }}>{v.title}</h2>
 
-                <div className='w-full h-full absolute' style={{backgroundImage: "linear-gradient(360deg, #000000, transparent, transparent)"}}></div>
+                <div className='w-full h-full absolute' style={{ backgroundImage: "linear-gradient(360deg, #000000, transparent, transparent)" }}></div>
 
-                <Image decoding='async' quality={98} key={i} className='rounded-2xl shadow-md object-cover' src={v.poster
-                } alt={v.title} width={360} height={600} loading='lazy' style={{ aspectRatio: "3/4" }} />
+                <Image
+                  decoding='async' quality={100}
+                  key={i}
+                  className='rounded-2xl shadow-md object-cover'
+                  src={v.poster}
+                  alt={v.title} width={1000} height={1000} loading='lazy' style={{ aspectRatio: "3/4.5" }} />
               </Link>
             </div>
           )) :

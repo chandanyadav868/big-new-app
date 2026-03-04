@@ -54,6 +54,8 @@ function Banner_width_height_320_250({classname}:{classname?:string}) {
         maxWidth: "300px",
         height: "250px",
         overflow: "hidden",
+        margin: "10px auto"
+
       }}
       className={cn(`rounded-md ${classname}`)}
     >

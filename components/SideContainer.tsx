@@ -16,10 +16,10 @@ const SideContainer = ({ className = "", blogImageUrl, category, description, ti
     return (
         <SingleArticleLinkPage createdAt={createdAt} slug={slug}>
             <div className={cn(`rounded-md shadow-md p-1 outline outline-2 outline-gray-300 ${className}`)} style={style}>
-                    <Image src={blogImageUrl ? blogImageUrl : "https://mannatthemes.com/blogloo/default/assets/images/widgets/sm-3.jpg"} alt='blog image' width={100} height={100} className='aspect-square object-cover w-[150px] object-top  hoverScale rounded-md mx-auto max-[426px]:w-full max-md:h-[150px]' />
+                    <Image src={blogImageUrl ? blogImageUrl : "https://mannatthemes.com/blogloo/default/assets/images/widgets/sm-3.jpg"} alt='blog image' width={1000} height={1000} quality={65} className='aspect-square object-cover w-[150px] object-top  hoverScale rounded-md mx-auto max-[426px]:w-full max-md:h-[150px]' style={{aspectRatio:"4/3"}} />
                 
                 <div className='flex flex-col leading-5 shrink'>
-                    <h2 className='font-bold text-base max-sm:text-xl line-clamp-2'>{title??"No title"}</h2>
+                    <h2 className='font-bold text-base max-sm:text-xl line-clamp-1'>{title??"No title"}</h2>
                     <p className='line-clamp-2 max-sm:text-sm'>{description?? "No description"} </p>
                 </div>
             </div>

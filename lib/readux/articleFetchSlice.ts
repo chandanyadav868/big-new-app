@@ -29,7 +29,7 @@ export interface Article {
 export interface ArticlesProp {
     _id:string;
     articles:Article[];
-    totalSizeOfArticles:number;
+    sizeOfArticles:number;
 }
 
 
