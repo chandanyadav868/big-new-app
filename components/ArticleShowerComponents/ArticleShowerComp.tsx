@@ -9,10 +9,10 @@ import LineDivider from '@/components/LineDivider';
 import HeadingRender from '@/components/HeadingRender';
 import MDEditorMarkdown from '@/components/MDEditorMarkdown';
 import ProfileBanner from '@/components/ProfileBanner';
-import Script from 'next/script';
 import Native_banner_4_1 from '../adsComponents/nativeBanner/native_banner_4_1';
 import Banner_width_height_320_250 from '../adsComponents/banner/simple/banner_width_height_320_250';
 import Native_banner_3_1 from '../adsComponents/nativeBanner/native_banner_3_1';
+import NotLoggedInError from '@/components/NotLoggedInError';
 
 
 const ArticleShowerComp = ({ _id, blogImageUrl, featuredImagealt, content, isLiked, createdBy, likes, dislikes, isDisLiked, title, category }: SingleArticleProps) => {
@@ -143,8 +143,8 @@ const ArticleShowerComp = ({ _id, blogImageUrl, featuredImagealt, content, isLik
         <CommentComponents articleId={_id} />
 
         {/* not logged in components */}
-        {/* {notloggedInDialogboxShow?.notLoggedIn &&
-        <NotLoggedInError button={notloggedInDialogboxShow} setNotloggedInDialogboxShow={setNotloggedInDialogboxShow} btnText={"Follow"} />} */}
+        {notloggedInDialogboxShow?.notLoggedIn &&
+        <NotLoggedInError button={notloggedInDialogboxShow} setNotloggedInDialogboxShow={setNotloggedInDialogboxShow} btnText={"Follow"} />}
         
       </article>
 

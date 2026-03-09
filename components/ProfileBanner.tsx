@@ -5,6 +5,7 @@ import React, { useState } from 'react'
 import { NotloggedInDialogboxShowProp } from '@/components/CommentComponents';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/readux/store';
+import NotLoggedInError from '@/components/NotLoggedInError';
 
 interface ProfileBannerProp {
     _id: string
@@ -54,8 +55,8 @@ function ProfileBanner({ _id, fullname, Followeing, username,avatartUrl="https:/
             </div>
 
             {/* not logged in components */}
-            {/* {notloggedInDialogboxShow?.notLoggedIn &&
-                <NotLoggedInError button={notloggedInDialogboxShow} setNotloggedInDialogboxShow={setNotloggedInDialogboxShow} btnText={"Follow"} />} */}
+            {notloggedInDialogboxShow?.notLoggedIn &&
+                <NotLoggedInError button={notloggedInDialogboxShow} setNotloggedInDialogboxShow={setNotloggedInDialogboxShow} btnText={"Follow"} />}
         </>
     )
 }
