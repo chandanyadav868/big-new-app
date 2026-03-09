@@ -6,6 +6,7 @@ import React, { useEffect, useRef, useState } from 'react'
 // import NotLoggedInError from '@/components/NotLoggedInError';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/lib/readux/store';
+import PopUpError from './PopUpError';
 
 interface CommentComponentsProps {
     articleId: string
@@ -231,7 +232,7 @@ function CommentComponents({ articleId }: CommentComponentsProps) {
                         <SendIcon color='white' />
                     </button>
                 </form>
-                {/* {notloggedInDialogboxShow?.notLoggedIn && <NotLoggedInError button={notloggedInDialogboxShow} setNotloggedInDialogboxShow={setNotloggedInDialogboxShow} btnText={"Comment on"} />} */}
+                {notloggedInDialogboxShow?.notLoggedIn && <PopUpError button={notloggedInDialogboxShow} setNotloggedInDialogboxShow={setNotloggedInDialogboxShow} btnText={"Comment on"} />}
             </div>
         </div>
     )
