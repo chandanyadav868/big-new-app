@@ -16,11 +16,11 @@ export default async function RootLayout({
       <body>
         <div className="max-[720px]:hidden">
           {/* ads */}
-          <Banner_width_height_160_600/>
+          {/* <Banner_width_height_160_600/> */}
         </div>
         <main>
           {/*  */}
-          <Banner_width_height_728_90 />
+          {/* <Banner_width_height_728_90 /> */}
           <ReducerProvider>
             <HeaderWrapper />
             {children}
@@ -30,7 +30,7 @@ export default async function RootLayout({
 
         <div className="max-[720px]:hidden">
           {/* ads */}
-          <Banner_width_height_160_600/>
+          {/* <Banner_width_height_160_600/> */}
         </div>
       </body>
     </html>

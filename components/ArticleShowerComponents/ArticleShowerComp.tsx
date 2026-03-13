@@ -9,7 +9,7 @@ import LineDivider from '@/components/LineDivider';
 import HeadingRender from '@/components/HeadingRender';
 import MDEditorMarkdown from '@/components/MDEditorMarkdown';
 import ProfileBanner from '@/components/ProfileBanner';
-import Native_banner_4_1 from '../adsComponents/nativeBanner/native_banner_4_1';
+// import Native_banner_4_1 from '../adsComponents/nativeBanner/native_banner_4_1';
 import Banner_width_height_320_250 from '../adsComponents/banner/simple/banner_width_height_320_250';
 import Native_banner_3_1 from '../adsComponents/nativeBanner/native_banner_3_1';
 import PopUpError from '../PopUpError';
@@ -137,7 +137,7 @@ const ArticleShowerComp = ({ _id, blogImageUrl, featuredImagealt, content, isLik
         </article>
 
         {/* ads showing native banner 4:1 */}
-        <Native_banner_4_1/>
+        {/* <Native_banner_4_1/> */}
 
         {/* commenting features */}
         <CommentComponents articleId={_id} />

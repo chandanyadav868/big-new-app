@@ -8,7 +8,7 @@ import { AppDispatch } from '@/lib/readux/store';
 import { useDispatch } from 'react-redux';
 import SideContainer from '../SideContainer';
 import BigContainer from '../BigContainer';
-import Banner_width_height_320_250 from '../adsComponents/banner/simple/banner_width_height_320_250';
+// import Banner_width_height_320_250 from '../adsComponents/banner/simple/banner_width_height_320_250';
 
 const CateryShower = ({ data }: { data: ArticlesProp | undefined }) => {
   const { articlecategory } = useParams();
