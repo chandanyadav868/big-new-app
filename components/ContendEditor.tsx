@@ -30,7 +30,17 @@ interface DataPropsSubmission {
 }
 
 const ContentEditor = ({ blogImageUrl, category, slug, content, title, description, featuredImagealt, _id }: PropsContentEdit) => {
-    const { control, handleSubmit, watch, setValue, getValues } = useForm<DataPropsSubmission>();
+    const { control, handleSubmit, watch, setValue, getValues } = useForm<DataPropsSubmission>({
+        defaultValues: {
+            blogImageUrl,
+            category,
+            slug,
+            content,
+            title,
+            description,
+            featuredImagealt
+        }
+    });
     const [newContent, setNewContent] = useState<string>(content ?? "");
     const [animation, setAnimation] = useState(false);
     const [slugAnimation, setslugAnimation] = useState(false);
@@ -127,6 +137,8 @@ const ContentEditor = ({ blogImageUrl, category, slug, content, title, descripti
         try {
             const markdownValue = watch("content");
             setAnimation(true);
+            console.log({ markdownValue });
+
 
             const stream = await groq.chat.completions.create({
                 messages: [
@@ -150,8 +162,13 @@ const ContentEditor = ({ blogImageUrl, category, slug, content, title, descripti
             for await (const chunk of stream) {
                 if (chunk.choices && chunk.choices.length > 0) {
                     const newContent = chunk.choices[0].delta.content;
+                    console.log({ newContent });
+
                     if (newContent === undefined) continue
-                    setNewContent((prevState) => prevState + newContent);
+                    setNewContent((prev) => {
+                        const updated = prev + newContent;
+                        return updated;
+                    });
                 }
             }
 
@@ -227,16 +244,16 @@ const ContentEditor = ({ blogImageUrl, category, slug, content, title, descripti
     const [stories, setStories] = useState("");
     const [storyShow, setStoriesShow] = useState(false);
 
-    const [preview,setPreview] = useState(false)
+    const [preview, setPreview] = useState(false)
     const title2 = {
         name: 'title2',
         keyCommand: 'title2',
         button: { 'aria-label': 'Add title text' },
         icon: (
-            <> {preview ? <Eye />: <EyeOff />} </>
+            <> {preview ? <Eye /> : <EyeOff />} </>
         ),
         execute: () => {
-            setPreview((prev)=> !prev)
+            setPreview((prev) => !prev)
         },
     };
 
@@ -431,7 +448,7 @@ const ContentEditor = ({ blogImageUrl, category, slug, content, title, descripti
                             <AiButton onClick={aiWriter} animation={animation} />
                         </div>
 
-                         <div className="flex gap-2 flex-wrap justify-center">
+                        <div className="flex gap-2 flex-wrap justify-center">
                             <span
                                 onClick={() => newArticle()}
                                 className="bg-blue-400 px-2 py-2 text-base rounded-md shadow-md font-bold  hover:bg-blue-600 cursor-pointer"
@@ -446,7 +463,6 @@ const ContentEditor = ({ blogImageUrl, category, slug, content, title, descripti
 
                         <Controller
                             name="content"
-                            defaultValue={content}
                             control={control}
                             rules={{ required: "Please write contents", }}
                             render={({ field, fieldState: { error } }) => (
@@ -459,7 +475,7 @@ const ContentEditor = ({ blogImageUrl, category, slug, content, title, descripti
                                         width="100%"
                                         enablePreview={false}
                                         toolbars={[
-                                            "undo" , "redo" , "bold" , "italic" , "header" , "strike" , "underline" , "quote" , "olist" , "ulist" , "todo" , "link" , "image" , "code" , "codeBlock", title2
+                                            "undo", "redo", "bold", "italic", "header", "strike", "underline", "quote", "olist", "ulist", "todo", "link", "image", "code", "codeBlock", title2
                                         ]}
                                         previewProps={{
                                             style: {
@@ -474,21 +490,21 @@ const ContentEditor = ({ blogImageUrl, category, slug, content, title, descripti
                                             padding: "2px",
                                             // width:"0px"
                                         }}
-                                        value={field.value}
+                                        value={newContent}
                                         onChange={(value) => {
-                                            setNewContent(value);
-                                            field.onChange(value);
+                                            setNewContent(value); // locale state
+                                            field.onChange(value); // react-hook-form update
                                         }}
                                     />
                                     {error && <span className="font-bold text-red-500">{error.message}</span>}
-                                    {preview && <MarkdownEditor.Markdown source={field.value} style={{ backgroundColor: "white" }} /> }
+                                    {preview && <MarkdownEditor.Markdown source={newContent} style={{ backgroundColor: "white" }} />}
                                 </>
                             )
                             }
                         />
 
 
-                       
+
 
                     </form>
                 </div>
