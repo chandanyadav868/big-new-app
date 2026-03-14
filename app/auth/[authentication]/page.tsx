@@ -30,7 +30,8 @@ function Authentication() {
 
   const formSubmission = async (data: FormProps) => {
     let apiPath = "";
-    setsubmitData(true)
+    setsubmitData(true);
+    setError("");
 
     switch (authentication) {
       case "signup":
@@ -57,9 +58,9 @@ function Authentication() {
       });
 
       const responseJson = await response.json();
-      // console.log("JsonConverted", responseJson);
+      // console.log("JsonsConverted", responseJson);
       // console.log(authentication === "login");
-      
+      setError(responseJson.message)
       if (authentication === "login" && responseJson.status === 200) {
         console.log("login router");
         router.push("/")
@@ -73,7 +74,7 @@ function Authentication() {
   }
 
   return (
-    <div className='w-full h-screen flex justify-center items-center flex-col'>
+    <div style={{gridColumnStart: 2}} className='w-full h-screen flex justify-center items-center flex-col'>
       <div className='p-2'>
         {authentication === "login" && <h1 className='font-extrabold text-2xl text-center'> Login Form </h1>}
         {authentication === "signup" && <h1 className='font-extrabold text-2xl text-center'>Registration Form </h1>}

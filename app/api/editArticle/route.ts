@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
       updateFields[key] = data[key]
      };
 
-    console.log({updateFields});
+    // console.log({updateFields});
     
 
     const response = await ArticleModel.updateOne(
