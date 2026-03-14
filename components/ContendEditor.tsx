@@ -137,7 +137,7 @@ const ContentEditor = ({ blogImageUrl, category, slug, content, title, descripti
         try {
             const markdownValue = watch("content");
             setAnimation(true);
-            console.log({ markdownValue });
+            // console.log({ markdownValue });
 
 
             const stream = await groq.chat.completions.create({
@@ -162,7 +162,7 @@ const ContentEditor = ({ blogImageUrl, category, slug, content, title, descripti
             for await (const chunk of stream) {
                 if (chunk.choices && chunk.choices.length > 0) {
                     const newContent = chunk.choices[0].delta.content;
-                    console.log({ newContent });
+                    // console.log({ newContent });
 
                     if (newContent === undefined) continue
                     setNewContent((prev) => {
