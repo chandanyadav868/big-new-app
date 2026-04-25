@@ -190,49 +190,90 @@ function CommentComponents({ articleId }: CommentComponentsProps) {
     }
 
     return (
-        <div role='comment holder div' className='p-4 bg-gray-700'>
-            <h1 className='text-2xl font-bold text-center  text-white p-2'>Comments</h1>
-            <div>
-                <div className='h-[444px] shadow-inner overflow-y-auto comment_overflow'>
-                    {comments.map((comment, index) => (
-                        <div className='p-2 bg-black text-white mb-2 rounded-md' key={index}>
-                            <div className='flex gap-2 items-center'>
-                                <Link href={`/${comment?.user?.username}`}>
-                                    <span>
-                                        <Image src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&s"} width={100} height={100} alt='avatar image' className='w-8 h-8 rounded-full object-cover' />
-                                    </span>
-                                    <span>@{comment?.user?.username}</span>
-                                </Link>
-                            </div>
-                            <h1 className='font-bold text-xl mb-2'>{comment?.text}</h1>
-                            <div className='flex gap-2 items-center'>
-                                <span className='flex gap-2 items-center justify-center'>
-                                    <ThumbsUp 
-                                    color={comment?.likes.includes(data?._id??"")?"blue":"white"}
-                                    onClick={() => commentLikeButton(comment?._id as string)} 
-                                    className={`hover:text-blue-600 cursor-pointer`}/>
-                                    <span className='font-bold text-blue-500'>{comment?.likes.length}</span>
-                                </span>
-                                <span className='flex gap-2 items-center justify-center'>
-                                    <ThumbsDown 
-                                    color={comment?.dislikes.includes(data?._id??"")?"red":"white"}
-                                    onClick={() => commentDisLikeButton(comment?._id as string)} 
-                                    className={`hover:text-red-600 cursor-pointer `} 
+        <div role='comment holder div' className='mt-8 pt-8 border-t border-[var(--color-divider)]'>
+            <h2 className='text-2xl font-bold mb-6 text-[var(--color-headline)]'>Comments ({comments.length})</h2>
+            
+            <div className='flex flex-col gap-6'>
+                {/* Commenting Input */}
+                <form onSubmit={commentingButton} className='flex gap-3 items-center bg-gray-50 dark:bg-gray-800/50 p-2 pl-4 rounded-full border border-[var(--color-divider)] focus-within:border-gray-400 transition-colors'>
+                    <input 
+                        ref={commentInputRef} 
+                        type="text" 
+                        className='w-full bg-transparent outline-none text-sm text-[var(--color-headline)] placeholder-gray-500' 
+                        placeholder='Add a comment...' 
+                    />
+                    <button 
+                        type='submit' 
+                        role='use for commenting on article' 
+                        aria-label='commenting button'
+                        className='p-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full hover:opacity-90 transition-opacity'
+                    >
+                        <SendIcon size={18} />
+                    </button>
+                </form>
+
+                {/* Comments List */}
+                <div className='flex flex-col gap-4 max-h-[600px] overflow-y-auto pr-2 scrollbar-hide'>
+                    {comments.map((comment) => (
+                        <div className='p-4 news-card shadow-sm hover:shadow-md transition-shadow' key={comment._id}>
+                            <div className='flex items-center gap-3 mb-2'>
+                                <Link href={`/u/${comment?.user?.username}`} className="shrink-0">
+                                    <Image 
+                                        src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&s"} 
+                                        width={40} 
+                                        height={40} 
+                                        alt='avatar' 
+                                        className='w-10 h-10 rounded-full object-cover border border-gray-200 dark:border-gray-700' 
                                     />
-                                    <span className='font-bold text-red-500 mb-2'>{comment?.dislikes.length}</span>
-                                </span>
+                                </Link>
+                                <div className="flex flex-col">
+                                    <Link href={`/u/${comment?.user?.username}`} className="text-sm font-bold text-[var(--color-headline)] hover:underline">
+                                        {comment?.user?.fullname || comment?.user?.username}
+                                    </Link>
+                                    <span className="text-xs text-[var(--color-meta)]">@{comment?.user?.username}</span>
+                                </div>
+                            </div>
+                            
+                            <p className='text-sm text-[var(--color-headline)] mt-1 mb-3 leading-relaxed'>
+                                {comment?.text}
+                            </p>
+                            
+                            <div className='flex gap-4 items-center'>
+                                <button 
+                                    onClick={() => commentLikeButton(comment?._id as string)}
+                                    className={`flex gap-1.5 items-center text-sm font-medium transition-colors ${
+                                        comment?.likes.includes(data?._id ?? "") 
+                                        ? "text-blue-600 dark:text-blue-500" 
+                                        : "text-gray-500 hover:text-gray-900 dark:hover:text-gray-300"
+                                    }`}
+                                >
+                                    <ThumbsUp size={16} className={comment?.likes.includes(data?._id ?? "") ? "fill-current" : ""} />
+                                    <span>{comment?.likes.length || 0}</span>
+                                </button>
+                                
+                                <button 
+                                    onClick={() => commentDisLikeButton(comment?._id as string)}
+                                    className={`flex gap-1.5 items-center text-sm font-medium transition-colors ${
+                                        comment?.dislikes.includes(data?._id ?? "") 
+                                        ? "text-red-600 dark:text-red-500" 
+                                        : "text-gray-500 hover:text-gray-900 dark:hover:text-gray-300"
+                                    }`}
+                                >
+                                    <ThumbsDown size={16} className={comment?.dislikes.includes(data?._id ?? "") ? "fill-current" : ""} />
+                                    <span>{comment?.dislikes.length || 0}</span>
+                                </button>
                             </div>
                         </div>
                     ))}
                 </div>
-                {/* commenting input */}
-                <form onSubmit={(e) => commentingButton(e)} className='flex gap-2 mt-2'>
-                    <input ref={commentInputRef} type="text" className='w-full shadow-md px-4 py-4 rounded-md outline-none' placeholder='message...' />
-                    <button type='submit' role='use for commenting on article' aria-label='commenting button'>
-                        <SendIcon color='white' />
-                    </button>
-                </form>
-                {notloggedInDialogboxShow?.notLoggedIn && <PopUpError button={notloggedInDialogboxShow} setNotloggedInDialogboxShow={setNotloggedInDialogboxShow} btnText={"Comment on"} />}
+
+                {notloggedInDialogboxShow?.notLoggedIn && (
+                    <PopUpError 
+                        button={notloggedInDialogboxShow} 
+                        setNotloggedInDialogboxShow={setNotloggedInDialogboxShow} 
+                        btnText={"Comment on"} 
+                    />
+                )}
             </div>
         </div>
     )

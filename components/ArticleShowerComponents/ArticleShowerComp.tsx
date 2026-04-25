@@ -99,9 +99,7 @@ const ArticleShowerComp = ({ _id, blogImageUrl, featuredImagealt, content, isLik
 
   return (
     <main role='main content information' >
-      <article className='max-w-screen-lg mx-auto p-2'>
-
-        <LineDivider className='my-0.5' />
+      <article className='max-w-screen-lg mx-auto p-4 md:p-8 news-card shadow-sm'>
         <p className='font-bold text-lg text-center'>{category?.toUpperCase()}</p>
         <LineDivider className='my-0.5' />
 
@@ -119,13 +117,31 @@ const ArticleShowerComp = ({ _id, blogImageUrl, featuredImagealt, content, isLik
         {createdBy && <ProfileBanner _id={createdBy._id} fullname={createdBy.fullname} Followeing={createdBy.isFollowed} username={createdBy.username} />}
 
         {/* like and dislikes */}
-        <div className='flex px-4 py-2'>
-          <div className='flex gap-4'>
+        <div className='flex px-4 py-4 mt-2'>
+          <div className='flex gap-3'>
 
-            <button disabled={stateIsDisLiked ? true : false} onClick={(e) => likesFun(e)} className={`like-dislike-button ${stateIsLiked ? "bg-red-700" : "bg-red-100 relative"}`}>{`Likes ${increaseLikes}`}
+            <button 
+              disabled={stateIsDisLiked} 
+              onClick={likesFun} 
+              className={`px-4 py-2 font-semibold rounded-full shadow-sm transition-colors border ${
+                stateIsLiked 
+                  ? "bg-gray-900 text-white dark:bg-white dark:text-gray-900 border-transparent" 
+                  : "bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100 border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
+              }`}
+            >
+              {`Likes ${increaseLikes}`}
             </button>
 
-            <button disabled={stateIsLiked ? true : false} onClick={(e) => dislikesFun(e)} className={` like-dislike-button ${stateIsDisLiked ? "bg-red-700" : "bg-red-100 relative"}`}>{`Dislikes ${increaseDisLikes}`}
+            <button 
+              disabled={stateIsLiked} 
+              onClick={dislikesFun} 
+              className={`px-4 py-2 font-semibold rounded-full shadow-sm transition-colors border ${
+                stateIsDisLiked 
+                  ? "bg-gray-900 text-white dark:bg-white dark:text-gray-900 border-transparent" 
+                  : "bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100 border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
+              }`}
+            >
+              {`Dislikes ${increaseDisLikes}`}
             </button>
 
           </div>

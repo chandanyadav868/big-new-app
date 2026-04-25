@@ -5,7 +5,7 @@ import { AppDispatch, RootState } from '@/lib/readux/store';
 import { useParams,useRouter } from 'next/navigation';
 import React, { useCallback, useMemo, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import BlogContainer from './BlogContainer';
+import ArticleCard from './ui/ArticleCard';
 import Link from 'next/link';
 import { FilePenLine, Trash2 } from 'lucide-react';
 
@@ -67,44 +67,64 @@ export function ChannelPageComp() {
     }
 
     return (
-        <>
-            {/* category scrollbar */}
-            <div className='bg-gray-900 text-white flex p-2 gap-2 overflow-x-auto rounded-md'>
+        <div className="mt-6">
+            {/* category tabs */}
+            <div className='flex gap-6 overflow-x-auto border-b border-[var(--color-divider)] scrollbar-hide mb-6'>
                 {category?.map((data, index) => (
-                    <div onClick={() => {
-                        router.push(`/u/${profile}/${data}`)
-                    }}
-                        className={`inline px-4 py-1.5 rounded-md shadow-md cursor-pointer hover:bg-red-500 whitespace-nowrap ${secCategory === data ? "bg-red-900" : "bg-red-400"}`} key={data}>{data}</div>
-                ))}
-            </div>
-            {/* category below part */}
-            <div className='grid grid-cols-2 max-[444px]:grid-cols-1 gap-4'>
-                {dataFetching && dataFetching?.articles.map((data, index) => (
-                    <div className='relative flex flex-col p-1 shadow-md rounded-md' key={index}>
-                        <BlogContainer adsShow={false} index={index} {...data} key={data._id} className='' />
-                        {
-                            intialProfile.isYouOwner &&
-
-                            <div className='flex justify-end gap-4'>
-                                <span className='cursor-pointer'>
-                                    <Link href={`/edit/${data._id}`}>
-                                        <FilePenLine className='hover:text-blue-500' />
-                                    </Link>
-                                </span>
-                                <span className='cursor-pointer' onClick={() => deleteArticle(data?._id)}><Trash2 className='hover:text-red-500' /></span>
-                            </div>
-                        }
+                    <div 
+                        onClick={() => router.push(`/u/${profile}/${data}`)}
+                        className={`pb-3 cursor-pointer whitespace-nowrap font-semibold transition-colors text-sm ${
+                            secCategory === data 
+                            ? "text-red-600 border-b-2 border-red-600" 
+                            : "text-[var(--color-meta)] hover:text-[var(--color-headline)]"
+                        }`} 
+                        key={data}
+                    >
+                        {data.toUpperCase()}
                     </div>
                 ))}
             </div>
-            {/* more article */}
+            
+            {/* Articles Grid */}
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+                {dataFetching && dataFetching?.articles.map((data, index) => (
+                    <div className='relative flex flex-col news-card h-full transition-shadow hover:shadow-md' key={index}>
+                        <div className="flex-1 p-3 pb-0">
+                            <ArticleCard variant="featured" {...data} key={data._id} />
+                        </div>
+                        
+                        {intialProfile.isYouOwner && (
+                            <div className='flex justify-end gap-3 px-4 pb-4 mt-auto border-t border-[var(--color-divider)] pt-3'>
+                                <Link 
+                                    href={`/edit/${data._id}`}
+                                    className="flex items-center justify-center p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-600 transition-colors"
+                                >
+                                    <FilePenLine size={18} />
+                                </Link>
+                                <button 
+                                    onClick={() => deleteArticle(data?._id)}
+                                    className="flex items-center justify-center p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-red-100 dark:hover:bg-red-900/30 hover:text-red-600 transition-colors"
+                                >
+                                    <Trash2 size={18} />
+                                </button>
+                            </div>
+                        )}
+                    </div>
+                ))}
+            </div>
+
+            {/* Load more button */}
             {secCategory &&
                 ((dataFetching?.totalSizeOfArticles ?? 0) > (dataFetching?.articles?.length ?? 0)) &&
-                <div className='text-center p-2 mt-4'>
-                    <span onClick={() => moreArticle()} className='text-white bg-black p-2 rounded-md mt-4 cursor-pointer '>
-                        {moreArticlesFetching?"Loading...":"More Article"}
-                        </span>
+                <div className='flex justify-center mt-8'>
+                    <button 
+                        onClick={() => moreArticle()} 
+                        disabled={moreArticlesFetching}
+                        className="px-6 py-2.5 bg-gray-100 dark:bg-gray-800 text-[var(--color-headline)] hover:bg-gray-200 dark:hover:bg-gray-700 font-semibold rounded-full transition-colors disabled:opacity-50"
+                    >
+                        {moreArticlesFetching ? "Loading..." : "Load More Articles"}
+                    </button>
                 </div>}
-        </>
+        </div>
     )
 }

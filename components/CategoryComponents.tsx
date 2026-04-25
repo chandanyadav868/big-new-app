@@ -1,51 +1,87 @@
-import React, { useEffect, useState } from 'react'
-import BigContainer from './BigContainer'
-import SideContainer from './SideContainer'
-import { useSelector } from 'react-redux'
-import { RootState } from '@/lib/readux/store';
-import { HeroSectionProps } from './HeroSection';
-import { Article, ArticlesProp } from '@/lib/readux/articleFetchSlice';
+"use client";
 
-interface HeroBelowComponentsProps {
+/**
+ * CategoryComponents — renders a topic/category cluster section on the homepage.
+ *
+ * Layout per category:
+ *  Left  (1/2): 1 FeaturedCard (the newest article in this category)
+ *  Right (1/2): stacked CompactCards for the remaining articles
+ *
+ * Receives `category` — the category ID string (e.g. "cricket").
+ * Reads filtered articles from Redux store.
+ *
+ * Only shown when the category has > 5 articles (controlled by the parent page).
+ */
+
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import type { RootState } from '@/lib/readux/store';
+import type { ArticlesProp } from '@/lib/readux/articleFetchSlice';
+import ArticleCard from './ui/ArticleCard';
+import SectionHeading from './ui/SectionHeading';
+
+interface CategorySectionProps {
+  /** The category slug/ID to display (e.g. "cricket") */
   category: string;
 }
 
-function HeroBelowComponents({ category }: HeroBelowComponentsProps) {
-  const [filteredValued, setfilteredValued] = useState<ArticlesProp | undefined>();
-  const { article, error, loading } = useSelector((state: RootState) => state.article);
-  // console.log({article});
-
+const CategorySection = ({ category }: CategorySectionProps) => {
+  // Find this category's articles from the global Redux article store
+  const { article } = useSelector((state: RootState) => state.article);
+  const [filtered, setFiltered] = useState<ArticlesProp | undefined>();
 
   useEffect(() => {
     if (article) {
-      const filteredValued = article.find((filter) => filter._id === category);
-      // console.log("Filtered value of cricket",filteredValued);
-      setfilteredValued(filteredValued)
+      const match = article.find((item) => item._id === category);
+      setFiltered(match);
     }
+  }, [article, category]);
 
-  }, [article]);
+  // Don't render if there are no articles for this category
+  if (!filtered || filtered.articles.length === 0) return null;
+
+  const [featuredArticle, ...restArticles] = filtered.articles;
 
   return (
-    <>
-      <div className='shadow-md rounded-md bg-slate-500 mb-4 bg-gradient-to-r to-red-300 from-red-500'>
-        <h1 className='text-center text-white text-4xl font-bold p-2 max-md:text-2xl'>{category.toUpperCase()}</h1>
-      </div>
+    <section className="flex flex-col gap-3">
+      {/* Section heading with "See all" link */}
+      <SectionHeading
+        title={category.replace(/-/g, ' ')}
+        seeAllHref={`/category/${category}`}
+        seeAllLabel="See all"
+      />
 
-      <div className='grid grid-cols-2 gap-4 max-[640px]:grid-cols-1 '>
-        {/* big container */}
-        {filteredValued && filteredValued.articles.slice(0, 1).map((elem, index) =>
-          <BigContainer key={elem._id} className='' {...elem} />
-        )}
+      {/* Two-column grid: featured left, compact list right */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-        {/* small container */}
-        <div className='max-lg:w-full grid grid-cols-1 gap-2'>
-          {filteredValued && filteredValued.articles.slice(1).map((elem, index) =>
-            <SideContainer {...elem} className='sideContainer' key={index} />
-          )}
+        {/* Featured article — large image */}
+        <ArticleCard
+          variant="featured"
+          title={featuredArticle.title}
+          slug={featuredArticle.slug}
+          createdAt={featuredArticle.createdAt}
+          blogImageUrl={featuredArticle.blogImageUrl}
+          category={featuredArticle.category}
+          description={featuredArticle.description}
+        />
+
+        {/* Compact list of remaining articles */}
+        <div className="news-card px-3 py-1">
+          {restArticles.slice(0, 4).map((art) => (
+            <ArticleCard
+              key={art._id}
+              variant="compact"
+              title={art.title}
+              slug={art.slug}
+              createdAt={art.createdAt}
+              blogImageUrl={art.blogImageUrl}
+              category={art.category}
+            />
+          ))}
         </div>
       </div>
-    </>
-  )
-}
+    </section>
+  );
+};
 
-export default HeroBelowComponents
+export default CategorySection;

@@ -49,8 +49,16 @@ function ProfileBanner({ _id, fullname, Followeing, username,avatartUrl="https:/
 
                 {/* follow */}
                 <div className='flex flex-1 gap-2 justify-end items-center'>
-                        <button onClick={(e) => followFun(e)} className='px-4 py-2 bg-pink-400 font-bold rounded-md shadow-sm relative'>{stateFollower ? "Following" : "Follow"}
-                        </button>
+                    <button 
+                        onClick={followFun} 
+                        className={`px-5 py-2 font-semibold rounded-full shadow-sm transition-colors border ${
+                            stateFollower
+                            ? "bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100 border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700"
+                            : "bg-gray-900 text-white dark:bg-white dark:text-gray-900 border-transparent hover:bg-gray-800 dark:hover:bg-gray-200"
+                        }`}
+                    >
+                        {stateFollower ? "Following" : "Follow"}
+                    </button>
                 </div>
             </div>
 

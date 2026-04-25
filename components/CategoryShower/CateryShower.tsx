@@ -1,67 +1,108 @@
 import { categoryFetchedData, fetchCategories } from '@/lib/readux/categoryFetching'
 import React, { useState } from 'react'
-import BlogContainer from '../BlogContainer';
-import HeroSection from '../HeroSection';
-import { ArticlesProp } from '@/lib/readux/articleFetchSlice';
+import type { ArticlesProp } from '@/lib/readux/articleFetchSlice';
 import { useParams } from 'next/navigation';
 import { AppDispatch } from '@/lib/readux/store';
 import { useDispatch } from 'react-redux';
-import SideContainer from '../SideContainer';
-import BigContainer from '../BigContainer';
-// import Banner_width_height_320_250 from '../adsComponents/banner/simple/banner_width_height_320_250';
+import ArticleCard from '../ui/ArticleCard';
+import SectionHeading from '../ui/SectionHeading';
+import LoaderComponents from '../LoaderComponents';
 
 const CateryShower = ({ data }: { data: ArticlesProp | undefined }) => {
   const { articlecategory } = useParams();
   const dispatch = useDispatch<AppDispatch>();
-  const [fetchingMoreArticle,setFetchingMoreArticle] = useState(false)
-  
+  const [fetchingMoreArticle, setFetchingMoreArticle] = useState(false);
+
   const moreArticle = async (fetchedArticleLength: number) => {
-    setFetchingMoreArticle(true)
-     dispatch(fetchCategories({ category: `${articlecategory}`, fetchedArticleLength: fetchedArticleLength }));
-    setFetchingMoreArticle(false)
+    setFetchingMoreArticle(true);
+    await dispatch(fetchCategories({ category: `${articlecategory}`, fetchedArticleLength: fetchedArticleLength }));
+    setFetchingMoreArticle(false);
   };
 
+  if (!data || data.articles.length === 0) {
+    return <LoaderComponents />;
+  }
+
+  const [featured, ...rest] = data.articles;
+
+  console.log('featured', data);
+
   return (
-    // <h1>Hello</h1>
-    <main className=' mx-auto flex flex-col gap-4 p-1'>
-      {/* Header  */}
+    <main className="max-w-[1280px] mx-auto px-4 py-6 flex flex-col gap-8">
+      <SectionHeading title={`${articlecategory} News`.toUpperCase()} />
 
-      {/* Hero Section */}
-      {data && data.articles.length > 0 && (
-        <HeroSection newArticle={data.articles.slice(0, 3)} />)
-      }
+      {/* Hero Section for Category */}
+      <section className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6">
 
-         <div className='grid grid-cols-2 gap-4 max-lg:grid-cols-1 '>
-        {/* big container */}
-        {data && data.articles.slice(3, 4).map((elem, index) =>
-          <BigContainer key={elem._id} className='' {...elem} />
-        )}
+        {/* Left Column: Featured + Top List */}
+        <div className="flex flex-col gap-4">
+          <ArticleCard
+            variant="featured"
+            title={featured.title}
+            slug={featured.slug}
+            createdAt={featured.createdAt}
+            blogImageUrl={featured.blogImageUrl}
+            category={featured.category}
+            description={featured.description}
+          />
 
-        {/* small container */}
-        <div className='shrink-0 grid grid-cols-2 gap-2 max-[426px]:grid-cols-1'>
-          {data && data.articles.slice(4,9).map((elem, index) =>
-            <SideContainer {...elem} className='' key={index} />
-          )}
+          <div className="news-card px-3 py-1">
+            {rest.slice(0, 3).map((elem) => (
+              <ArticleCard
+                key={elem._id}
+                variant="compact"
+                {...elem}
+              />
+            ))}
+          </div>
         </div>
-      </div>
 
+        {/* Right Column: More Articles List */}
+        <aside className="flex flex-col gap-3">
+          <div className="news-card px-3 py-1 h-full">
+            {rest.slice(3, 10).map((elem) => (
+              <ArticleCard
+                key={elem._id}
+                variant="horizontal"
+                {...elem}
+              />
+            ))}
+          </div>
+        </aside>
 
-      <div className='flex gap-2 flex-wrap justify-center'>
-        {data && data.articles.slice(9,).map((elem, index) =>
-          <BlogContainer adsShow={true} index={index} {...elem} key={elem._id} className='shadow-md flex-col outline-4 outline outline-gray-200 max-w-[300px]' />
-        )}
-      </div>
+      </section>
 
-      {data && data._id &&
-        ((data.sizeOfArticles ?? 0) > (data.articles?.length ?? 0)) &&
-        <div className='text-center p-2 mt-4'>
-          <span onClick={() => moreArticle(data.articles?.length)} className='text-white bg-black p-2 rounded-md mt-4 cursor-pointer'>
-            {fetchingMoreArticle?"Loading":"More Article"}
-            </span>
+      {/* Remaining Grid for deeper scroll */}
+      {rest.length > 10 && (
+        <div className="flex flex-col gap-6 pt-6 border-t border-[var(--color-divider)]">
+          <SectionHeading title="More Articles" />
+          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {rest.slice(10).map((elem) => (
+              <div key={elem._id} className="news-card px-3 py-3 h-full">
+                <ArticleCard
+                  variant="compact"
+                  {...elem}
+                />
+              </div>
+            ))}
+          </section>
         </div>
-      }
+      )}
+
+      {/* Load More Button */}
+      {data._id && ((data.sizeOfArticles ?? data.totalSizeOfArticles ?? 0) > (data.articles?.length ?? 0)) && (
+        <div className="flex justify-center mt-6">
+          <button
+            onClick={() => moreArticle(data.articles?.length || 0)}
+            disabled={fetchingMoreArticle}
+            className="px-6 py-2.5 bg-gray-100 dark:bg-gray-800 text-[var(--color-headline)] hover:bg-gray-200 dark:hover:bg-gray-700 font-semibold rounded-full transition-colors disabled:opacity-50"
+          >
+            {fetchingMoreArticle ? "Loading..." : "Load More Articles"}
+          </button>
+        </div>
+      )}
     </main>
-  )
+  );
 }
 
-export default CateryShower
+export default CateryShower;

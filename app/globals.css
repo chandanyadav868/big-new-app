@@ -1,27 +1,73 @@
+/* ─── Google Fonts: Inter ────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Design Tokens ──────────────────────────────────────────────────────── */
+:root {
+  --color-headline: #202124;
+  --color-meta:     #5f6368;
+  --color-divider:  #dadce0;
+  --color-accent:   #dc2626; /* red-600 */
+  --color-bg:       #f8f9fa;
+  --color-card-bg:  #ffffff;
+}
+
+.dark {
+  --color-headline: #ffffff;
+  --color-meta:     #d1d5db;
+  --color-divider:  #374151;
+  --color-accent:   #ef4444; /* red-500 */
+  --color-bg:       #111827;
+  --color-card-bg:  #1f2937;
+}
+
+/* ─── Base font ──────────────────────────────────────────────────────────── */
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-headline);
+}
+
+/* ─── Layout ────────────────────────────────────────────────────────────── */
 body {
     width: 100%;
     min-height: 100vh;
     margin: 0 auto;
-    /* centers content */
-    /* background-image: linear-gradient(90deg, #E8D6C2, #C0A685) */
 }
 
-
+/* On wider screens the body uses a 3-column grid with space for sidebar ads */
 @media not all and (max-width: 720px) {
     body {
         display: grid;
-        grid-template-columns: 200px 1fr 200px;
-        /* grid-template-columns: 1fr; */
+        grid-template-columns: 1fr;
     }
 }
 
 @layer utilities {
+    /* Hide scrollbar while keeping scroll functionality */
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Tab nav active underline — added by JS className */
+    .tab-active {
+        @apply text-red-600 border-b-2 border-red-600;
+    }
+
+    /* Google News style card border */
+    .news-card {
+        @apply bg-[var(--color-card-bg)] rounded-xl border border-[var(--color-divider)];
+    }
+
     .lg-label-padding {
-        @apply max-lg:py-1 max-lg:px-2
+        @apply max-lg:py-1 max-lg:px-2;
     }
 }
 

@@ -74,14 +74,22 @@ function Authentication() {
   }
 
   return (
-    <div style={{gridColumnStart: 2}} className='w-full h-screen flex justify-center items-center flex-col'>
-      <div className='p-2'>
-        {authentication === "login" && <h1 className='font-extrabold text-2xl text-center'> Login Form </h1>}
-        {authentication === "signup" && <h1 className='font-extrabold text-2xl text-center'>Registration Form </h1>}
-        {authentication === "resetpassword" && <h1 className='font-extrabold text-2xl text-center'>Reset-Password Form </h1>}
-      </div>
+    <div className='min-h-[calc(100vh-80px)] w-full flex justify-center items-center p-4'>
+      <div className='w-full max-w-md news-card shadow-lg p-8'>
+        <div className='mb-8'>
+          <h1 className='font-extrabold text-3xl text-center text-[var(--color-headline)]'>
+            {authentication === "login" && "Welcome Back"}
+            {authentication === "signup" && "Create Account"}
+            {authentication === "resetpassword" && "Reset Password"}
+          </h1>
+          <p className="text-center text-[var(--color-meta)] mt-2">
+            {authentication === "login" && "Sign in to interact with articles"}
+            {authentication === "signup" && "Join our community today"}
+            {authentication === "resetpassword" && "Enter your email to reset password"}
+          </p>
+        </div>
 
-      <form className='flex flex-col gap-4 max-w-[444px] mx-auto shadow-md p-2 rounded-md' onSubmit={handleSubmit(formSubmission)}>
+        <form className='flex flex-col gap-5' onSubmit={handleSubmit(formSubmission)}>
         {authentication === "signup" && (<>
             <Controller
               name='username'
@@ -169,25 +177,33 @@ function Authentication() {
             }
           />
 
-          <p className='flex justify-end'>
-            <Link className='font-bold hover:underline text-blue-700' href='/auth/resetpassword'>Forget Password</Link>
-          </p>
+          <div className='flex justify-end mt-[-10px]'>
+            <Link className='text-sm font-semibold hover:underline text-[var(--color-headline)]' href='/auth/resetpassword'>Forgot Password?</Link>
+          </div>
 
         </>)
         }
-        <Button submission={submitData} text='Submit' className='bg-blue-400 hover:bg-blue-500 w-fit mx-auto rounded-md font-bold' />
+        
+        <button 
+          type="submit" 
+          disabled={submitData}
+          className='w-full py-3 mt-2 bg-gray-900 text-white dark:bg-white dark:text-gray-900 font-bold rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50'
+        >
+          {submitData ? "Processing..." : "Submit"}
+        </button>
 
         <div>
-          {error && (<p className='font-bold text-center text-red-400'>{error}</p>)}
+          {error && (<p className='font-bold text-center text-red-500 bg-red-50 dark:bg-red-900/20 p-3 rounded-lg text-sm'>{error}</p>)}
         </div>
 
-        <div>
+        <div className="mt-4 text-center border-t border-[var(--color-divider)] pt-6">
           {authentication === "login" ?
-            (<p className='text-center'>If You have not Created account <Link className='font-bold hover:underline' href='/auth/signup'>Sign Up</Link></p>)
+            (<p className='text-sm text-[var(--color-meta)]'>Don't have an account? <Link className='font-bold text-[var(--color-headline)] hover:underline ml-1' href='/auth/signup'>Sign Up</Link></p>)
             :
-            (<p className='text-center'>If You have Created account <Link className='font-bold hover:underline' href='/auth/login'>Login</Link></p>)}
+            (<p className='text-sm text-[var(--color-meta)]'>Already have an account? <Link className='font-bold text-[var(--color-headline)] hover:underline ml-1' href='/auth/login'>Sign In</Link></p>)}
         </div>
       </form>
+      </div>
     </div>
   )
 }

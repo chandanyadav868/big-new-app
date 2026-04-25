@@ -28,19 +28,29 @@ function ProfilePage() {
     }, [profile]);
 
     return (
-        <div className='min-h-lvh'>
-            { intialProfile._id &&
-                (<div className='p-2 m-auto max-w-[1280px]'>
+        <div className='min-h-screen pb-12'>
+            {intialProfile._id &&
+                (<main className='m-auto max-w-screen-xl'>
                     {/* banner */}
-                    <div className='max-w-[1280px] bg-purple-300'>
+                    <div className='w-full bg-gray-100 dark:bg-gray-800 rounded-b-2xl overflow-hidden shadow-sm'>
                         <Banner banner='/images/defaultbanner.jpg' />
                     </div>
-                    {/* profile */}
-                    <div className='p-2'>
-                        <ProfileBanner _id={intialProfile._id ?? ""} fullname={intialProfile.fullname ?? ""} Followeing={intialProfile.isFollowing ?? false} username={intialProfile.username ?? ""} />
+                    
+                    {/* profile details */}
+                    <div className='px-4 md:px-8 mt-4'>
+                        <ProfileBanner 
+                            _id={intialProfile._id ?? ""} 
+                            fullname={intialProfile.fullname ?? ""} 
+                            Followeing={intialProfile.isFollowing ?? false} 
+                            username={intialProfile.username ?? ""} 
+                        />
                     </div>
-                    <ChannelPageComp />
-                </div>
+                    
+                    {/* category and articles */}
+                    <div className='px-4 md:px-8 mt-6'>
+                        <ChannelPageComp />
+                    </div>
+                </main>
                 )}
         </div>
     )

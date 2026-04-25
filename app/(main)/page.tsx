@@ -1,80 +1,113 @@
 "use client";
 
-import BlogContainer from '../../components/BlogContainer';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import type { AppDispatch, RootState } from '@/lib/readux/store';
+import { articleAsyncFetching } from '@/lib/readux/articleFetchSlice';
+import type { HeroSectionProps } from '@/lib/types';
 import HeroSection from '../../components/HeroSection';
-import HeroBelowComponents from '../../components/CategoryComponents';
-import React, { useEffect } from "react";
-import { AppDispatch, RootState } from "@/lib/readux/store";
-import { useDispatch, useSelector } from "react-redux";
-import { articleAsyncFetching } from "@/lib/readux/articleFetchSlice";
+import CategorySection from '../../components/CategoryComponents';
 import LoaderComponents from '../../components/LoaderComponents';
+import ArticleCard from '../../components/ui/ArticleCard';
+import SectionHeading from '../../components/ui/SectionHeading';
 
+// ─── "For You" Section ────────────────────────────────────────────────────────
+/**
+ * ForYouSection — a horizontally scrollable row of compact cards.
+ * Populated from trending articles (index 4–11) since true personalisation
+ * isn't available without a user preference API.
+ */
+const ForYouSection = ({ articles }: { articles: HeroSectionProps[] }) => {
+  if (!articles || articles.length === 0) return null;
+
+  return (
+    <section className="flex flex-col gap-3">
+      <SectionHeading title="For You" />
+
+      {/* Horizontally scrollable card strip */}
+      <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide -mx-1 px-1">
+        {articles.map((art) => (
+          <div
+            key={art._id}
+            className="shrink-0 w-64 news-card overflow-hidden hover:shadow-md transition-shadow"
+          >
+            <ArticleCard
+              variant="featured"
+              title={art.title}
+              slug={art.slug}
+              createdAt={art.createdAt}
+              blogImageUrl={art.blogImageUrl}
+              category={art.category}
+            />
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+// ─── Root Page ────────────────────────────────────────────────────────────────
 const RootPage = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const { trending, article } = useSelector((state: RootState) => state.article);
 
+  // Pull both trending (for hero + for-you) and article (for category sections)
+  const { trending, article, loading } = useSelector(
+    (state: RootState) => state.article
+  );
+
+  // Fetch all articles once on mount
   useEffect(() => {
     dispatch(articleAsyncFetching());
   }, [dispatch]);
 
+  // ── Loading state ──────────────────────────────────────────────────────────
+  if (loading || trending.length === 0) {
+    return <LoaderComponents />;
+  }
+
+  // ── Sorted categories — newest article first ──────────────────────────────
+  const sortedCategories = article
+    ?.slice()
+    .sort(
+      (a, b) =>
+        new Date(b.articles?.[0]?.createdAt ?? 0).getTime() -
+        new Date(a.articles?.[0]?.createdAt ?? 0).getTime()
+    ) ?? [];
+
   return (
-    <>
-      {trending.length > 0 ?
-        <>
-          <main className='mx-auto flex flex-col gap-4 py-4 px-2'>
+    <main className="max-w-[1280px] mx-auto px-4 py-6 flex flex-col gap-10">
 
-            {/* Hero Section */}
-            {trending.length > 0 && (
-              <HeroSection newArticle={trending.slice(0, 3)} />)}
+      {/* ── 1. Hero: Top Stories + Local News ─────────────────────────── */}
+      {trending.length > 0 && (
+        <HeroSection newArticle={trending.slice(0, 9)} />
+      )}
 
-            <div className='flex gap-4 max-md:flex-wrap '>
-              {trending.slice(3, 7).map((elem, index) =>
-                <BlogContainer index={index} {...elem} key={index} className='shadow-md flex-col outline-4 outline outline-gray-200 lg:max-w-[300px] max-md:grid max-md:grid-cols-2 max-sm:flex max-sm:flex-wrap shrink max-sm:mx-auto' />
-              )}
+      {/* ── Divider ───────────────────────────────────────────────────── */}
+      <hr className="border-[var(--color-divider)]" />
 
-            </div>
+      {/* ── 2. For You — horizontal scroll strip ──────────────────────── */}
+      {trending.length > 4 && (
+        <ForYouSection articles={trending.slice(4, 12)} />
+      )}
 
-            <>
-              {/* below hero section wweSection */}
+      {/* ── Divider ───────────────────────────────────────────────────── */}
+      <hr className="border-[var(--color-divider)]" />
 
-              {article?.slice(0).sort((a, b) => new Date(b.articles?.[0].createdAt).getTime() - new Date(a.articles?.[0].createdAt).getTime()).map((v, i) => (
-                v.sizeOfArticles > 5 && <div key={v._id}>
-                  <HeroBelowComponents category={v._id} />
-                </div>
-              ))}
+      {/* ── 3. Category topic clusters ────────────────────────────────── */}
+      <section className="flex flex-col gap-10">
+        {sortedCategories.map((cat) =>
+          // Only render categories that have enough articles to fill the section
+          cat.sizeOfArticles > 5 ? (
+            <React.Fragment key={cat._id}>
+              <CategorySection category={cat._id} />
+              <hr className="border-[var(--color-divider)]" />
+            </React.Fragment>
+          ) : null
+        )}
+      </section>
 
-            </>
+    </main>
+  );
+};
 
-          </main>
-
-        </>
-        :
-        <>
-          <LoaderComponents />
-        </>}
-
-    </>
-  )
-}
-
-export default RootPage
-
-
-
-
-
-
-
-
-
-
-
-{/* <div>RootPage
-<ShortBlogContainer/>
-</div> */}
-
-{/* blogshowing Card */ }
-{/* <section className='grid p-6 gap-4'>
-<BlogContainer/>
-<BlogContainer/>
-</section> */}
+export default RootPage;

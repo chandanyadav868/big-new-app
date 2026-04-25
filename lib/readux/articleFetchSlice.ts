@@ -30,6 +30,7 @@ export interface ArticlesProp {
     _id:string;
     articles:Article[];
     sizeOfArticles:number;
+    totalSizeOfArticles?:number;
 }
 
 

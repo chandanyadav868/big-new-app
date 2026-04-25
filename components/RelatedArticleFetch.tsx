@@ -2,7 +2,7 @@ import { fetchCategories } from '@/lib/readux/categoryFetching';
 import { AppDispatch, RootState } from '@/lib/readux/store';
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import BlogContainer from './BlogContainer';
+import ArticleCard from './ui/ArticleCard';
 
 function RelatedArticleFetch({ category }: { category: string }) {
     const dispatch = useDispatch<AppDispatch>();
@@ -21,10 +21,13 @@ function RelatedArticleFetch({ category }: { category: string }) {
     return (
         <aside role='related article container' className='max-w-screen-lg mx-auto px-3 mt-2'>
 
-            <h1 className='font-bold lg:text-4xl text-2xl text-center mb-2'>Related Articles {category.toUpperCase()}</h1>
+            <h1 className='font-bold lg:text-2xl text-xl mb-4 text-[var(--color-headline)] border-b border-[var(--color-divider)] pb-2'>Related {category.toUpperCase()}</h1>
 
-            {data && data[category]?.articles?.map((elem, index) =>
-                <BlogContainer {...elem} index={index} key={index} className='shadow-md' />)}
+            <div className="flex flex-col gap-1">
+                {data && data[category]?.articles?.map((elem) => (
+                    <ArticleCard key={elem._id} variant="horizontal" {...elem} />
+                ))}
+            </div>
 
             {data && data[category]?._id &&
                 ((data[category]?.sizeOfArticles ?? 0) > (data[category]?.articles?.length ?? 0)) &&

@@ -1,60 +1,115 @@
-"use client"
-import Image from 'next/image'
-import React from 'react'
-import FrontBlogContainer from './FrontBlogContainer'
-// import BlogContainer from './BlogContainer'
-import BigContainer from './BigContainer'
-import { CreatedAuthor } from '@/lib/readux/articleFetchSlice'
+"use client";
 
-export interface HeroSectionProps {
-    createdAt: string;
-    updatedAt: string;
-    createdBy: CreatedAuthor;
-    blogImageUrl: string;
-    featuredImagealt: string;
-    title: string;
-    description: string;
-    category: string;
-    views?: number;
-    likes?: number[];
-    dislikes?: number[];
-    public?: boolean;
-    slug: string;
-    content?: string;
-    _id: string;
+/**
+ * HeroSection — the top two-column section of the homepage.
+ *
+ * Layout (desktop):
+ *  Left  (2/3): "Top Stories" — 1 featured article + 2–3 compact article cards
+ *  Right (1/3): "Local News"  — 4 compact horizontal cards in a panel
+ *
+ * On mobile both columns stack vertically.
+ *
+ * Receives `newArticle` — the first 7 trending articles from Redux state.
+ * Articles [0]    → featured (left panel hero)
+ * Articles [1-3]  → compact list (left panel below hero)
+ * Articles [4-7]  → local news right panel
+ */
+
+import React from 'react';
+import ArticleCard from './ui/ArticleCard';
+import SectionHeading from './ui/SectionHeading';
+import type { HeroSectionProps } from '@/lib/types';
+
+// Re-export for backward compatibility (SideContainer, BlogContainer still import from './HeroSection')
+export type { HeroSectionProps };
+
+interface HeroProps {
+  newArticle: HeroSectionProps[];
 }
 
+// ─── Left panel: Top Stories ──────────────────────────────────────────────────
+/**
+ * Shows the biggest/featured article at the top, then a compact list below.
+ */
+const TopStoriesPanel = ({ articles }: { articles: HeroSectionProps[] }) => {
+  const featured = articles[0];
+  const list     = articles.slice(1, 4);
 
-const HeroSection = ({ newArticle }: { newArticle: HeroSectionProps[] }) => {
-    return (
+  return (
+    <section className="flex flex-col gap-3">
+      <SectionHeading title="Top Stories" />
 
-        <section className='gap-2 grid grid-cols-2 max-lg:grid-cols-1'>
+      {/* Featured article — large image + title */}
+      {featured && (
+        <ArticleCard
+          variant="featured"
+          title={featured.title}
+          slug={featured.slug}
+          createdAt={featured.createdAt}
+          blogImageUrl={featured.blogImageUrl}
+          category={featured.category}
+          description={featured.description}
+        />
+      )}
 
-            {newArticle[0] && <BigContainer {...newArticle[0]} _id={newArticle[0]._id} className='' />}
+      {/* Compact list below the hero image */}
+      <div className="news-card px-3 py-1">
+        {list.map((art) => (
+          <ArticleCard
+            key={art._id}
+            variant="compact"
+            title={art.title}
+            slug={art.slug}
+            createdAt={art.createdAt}
+            blogImageUrl={art.blogImageUrl}
+            category={art.category}
+          />
+        ))}
+      </div>
+    </section>
+  );
+};
 
-            <div className='shrink-0 grid max-lg:grid-cols-2 max-md:grid-cols-1 gap-2 max-lg:w-[100%]'>
-                {newArticle.length > 1 && (newArticle.slice(1, 3).map((elem, index) =>
-                    <FrontBlogContainer key={index} width='100px' height='240px' {...elem} />
-                ))}
-            </div>
+// ─── Right panel: Local News ──────────────────────────────────────────────────
+/**
+ * A narrower sidebar panel showing 4 horizontal cards.
+ * Visually separated from the left column by a thin border.
+ */
+const LocalNewsPanel = ({ articles }: { articles: HeroSectionProps[] }) => {
+  return (
+    <aside className="flex flex-col gap-3">
+      <SectionHeading title="Local News" />
 
-        </section>
+      <div className="news-card px-3 py-1">
+        {articles.slice(0, 5).map((art) => (
+          <ArticleCard
+            key={art._id}
+            variant="horizontal"
+            title={art.title}
+            slug={art.slug}
+            createdAt={art.createdAt}
+            blogImageUrl={art.blogImageUrl}
+            category={art.category}
+          />
+        ))}
+      </div>
+    </aside>
+  );
+};
 
-    )
-}
+// ─── HeroSection ─────────────────────────────────────────────────────────────
+const HeroSection = ({ newArticle }: HeroProps) => {
+  if (!newArticle || newArticle.length === 0) return null;
 
-export default HeroSection
+  return (
+    <section className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6">
+      {/* Left: Top Stories */}
+      <TopStoriesPanel articles={newArticle.slice(0, 4)} />
 
+      {/* Right: Local News sidebar */}
+      <LocalNewsPanel articles={newArticle.slice(4, 9)} />
+    </section>
+  );
+};
 
-
-
-
-
-
-
-
-
-
-
-{/* <FrontBlogContainer width='100' height='240px' src='https://mannatthemes.com/blogloo/default/assets/images/blogs/s-1.jpg' />
-<FrontBlogContainer width='100' height='240px' src='https://mannatthemes.com/blogloo/default/assets/images/blogs/s-2.jpg' /> */}
+export default HeroSection;
