@@ -10,6 +10,7 @@ interface USERAUTHPROPS {
     createdAt: string;
     updatedAt: string;
     __v: number;
+    profileImage?: string;
 }
 
 // AsyncThunk for fetching authentication data from the backend
