@@ -19,6 +19,12 @@ import React from 'react';
 import ArticleCard from './ui/ArticleCard';
 import SectionHeading from './ui/SectionHeading';
 import type { HeroSectionProps } from '@/lib/types';
+import Link from 'next/link';
+import Image from 'next/image';
+import TimeAgo from './ui/TimeAgo';
+import { articleSlug } from '@/lib/utils';
+
+const FALLBACK_IMG = 'https://mannatthemes.com/blogloo/default/assets/images/blogs/4.jpg';
 
 // Re-export for backward compatibility (SideContainer, BlogContainer still import from './HeroSection')
 export type { HeroSectionProps };
@@ -53,17 +59,45 @@ const TopStoriesPanel = ({ articles }: { articles: HeroSectionProps[] }) => {
       )}
 
       {/* Compact list below the hero image */}
-      <div className="news-card px-3 py-1">
+      <div className="flex flex-col gap-4 mt-2">
         {list.map((art) => (
-          <ArticleCard
+          <Link
             key={art._id}
-            variant="compact"
-            title={art.title}
-            slug={art.slug}
-            createdAt={art.createdAt}
-            blogImageUrl={art.blogImageUrl}
-            category={art.category}
-          />
+            href={articleSlug({ slug: art.slug, createdAt: art.createdAt })}
+            aria-label={`Read article: ${art.title ?? 'article'}`}
+            className="group flex items-start gap-3"
+          >
+            {/* Thumbnail — 160px wide, 16:9 */}
+            <div
+              className="relative shrink-0 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800"
+              style={{ width: '160px', aspectRatio: '16/9' }}
+            >
+              <Image
+                src={art.blogImageUrl ?? FALLBACK_IMG}
+                alt={art.title ?? 'article image'}
+                fill
+                quality={70}
+                sizes="160px"
+                className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+              />
+              {art.category && (
+                <span className="absolute top-1.5 left-1.5 bg-red-600 text-white text-[9px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded-sm">
+                  {art.category}
+                </span>
+              )}
+            </div>
+
+            {/* Text */}
+            <div className="flex-1 min-w-0 flex flex-col gap-1 pt-0.5">
+              <h3 className="text-sm font-bold text-[var(--color-headline)] line-clamp-3 group-hover:text-red-600 transition-colors leading-snug">
+                {art.title ?? 'No title'}
+              </h3>
+              <span className="text-xs text-red-500 font-semibold uppercase tracking-wide">
+                {art.category}
+              </span>
+              <TimeAgo date={art.createdAt} />
+            </div>
+          </Link>
         ))}
       </div>
     </section>
@@ -80,17 +114,45 @@ const LocalNewsPanel = ({ articles }: { articles: HeroSectionProps[] }) => {
     <aside className="flex flex-col gap-3">
       <SectionHeading title="Local News" />
 
-      <div className="news-card px-3 py-1">
+      <div className="flex flex-col gap-4 mt-2">
         {articles.slice(0, 5).map((art) => (
-          <ArticleCard
+          <Link
             key={art._id}
-            variant="horizontal"
-            title={art.title}
-            slug={art.slug}
-            createdAt={art.createdAt}
-            blogImageUrl={art.blogImageUrl}
-            category={art.category}
-          />
+            href={articleSlug({ slug: art.slug, createdAt: art.createdAt })}
+            aria-label={`Read article: ${art.title ?? 'article'}`}
+            className="group flex items-start gap-3"
+          >
+            {/* Thumbnail — 160px wide, 16:9 */}
+            <div
+              className="relative shrink-0 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800"
+              style={{ width: '160px', aspectRatio: '16/9' }}
+            >
+              <Image
+                src={art.blogImageUrl ?? FALLBACK_IMG}
+                alt={art.title ?? 'article image'}
+                fill
+                quality={70}
+                sizes="160px"
+                className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+              />
+              {art.category && (
+                <span className="absolute top-1.5 left-1.5 bg-red-600 text-white text-[9px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded-sm">
+                  {art.category}
+                </span>
+              )}
+            </div>
+
+            {/* Text */}
+            <div className="flex-1 min-w-0 flex flex-col gap-1 pt-0.5">
+              <h3 className="text-sm font-bold text-[var(--color-headline)] line-clamp-3 group-hover:text-red-600 transition-colors leading-snug">
+                {art.title ?? 'No title'}
+              </h3>
+              <span className="text-xs text-red-500 font-semibold uppercase tracking-wide">
+                {art.category}
+              </span>
+              <TimeAgo date={art.createdAt} />
+            </div>
+          </Link>
         ))}
       </div>
     </aside>

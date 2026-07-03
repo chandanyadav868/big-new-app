@@ -191,80 +191,122 @@ function WebStory({ setStories }: { setStories: React.Dispatch<React.SetStateAct
     }
 
     return (
-        <div className='flex min-h-full'>
-            <div className='p-2'>
-                <div className="flex px-1 gap-2 mb-2 flex-wrap justify-center">
-                    <input
-                        className='outline outline-2 outline-red-300 p-2 rounded-md'
-                        ref={articleSearchRef}
-                        placeholder="Search article by slug"
-                    />
+        <section className="max-w-[1400px] mx-auto p-4 md:p-6 bg-transparent text-gray-900 dark:text-gray-100 transition-colors">
+            
+            {/* Top Action Bar */}
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white dark:bg-gray-900 p-4 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm sticky top-2 z-20 transition-colors mb-6">
+                <div className="flex items-center gap-4">
+                    <h1 className="font-bold text-2xl">Story Editor</h1>
+                </div>
+                
+                <div className="flex flex-wrap items-center gap-3 w-full md:w-auto">
+                    {/* Search / Fetch */}
+                    <div className="flex items-center gap-2 mr-4 border-r border-gray-200 dark:border-gray-700 pr-4">
+                        <input
+                            className='bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-md px-3 py-1.5 focus:ring-2 focus:ring-blue-500 focus:outline-none w-[200px] text-sm shadow-sm transition-colors'
+                            ref={articleSearchRef}
+                            placeholder="Slug to fetch..."
+                        />
+                        <button
+                            onClick={webstoryFetching}
+                            className="px-4 py-1.5 rounded-md shadow-sm text-white text-sm font-medium transition-colors hover:opacity-90 bg-indigo-600"
+                        >
+                            {fetchingWebstory ? "..." : "Fetch"}
+                        </button>
+                    </div>
 
-                    <Button
-                        onClick={webstoryFetching}
-                        style={{ backgroundImage: 'linear-gradient(45deg, #0c4fd9b3,     #f9f9f9b3)' }}
-                        text={fetchingWebstory ? "Fetching" : "Web Story Fetch"}
-                    />
+                    <button 
+                        onClick={() => preview()} 
+                        className='px-5 py-2 rounded-lg shadow-sm bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 font-medium transition-colors text-sm'
+                    >
+                        Preview
+                    </button>
+                    
+                    <button 
+                        onClick={() => AiWebStories()} 
+                        className='px-5 py-2 rounded-lg shadow-sm bg-purple-600 hover:bg-purple-700 text-white font-medium transition-colors text-sm flex items-center gap-2'
+                    >
+                        ✨ {animation ? "..." : "AI Writer"}
+                    </button>
+
+                    <button 
+                        onClick={() => updateWebStory()} 
+                        className='px-5 py-2 rounded-lg shadow-sm bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors text-sm'
+                    >
+                        {processing ? "Updating..." : "Update Story"}
+                    </button>
+                </div>
+            </div>
+
+            {/* Two Column Layout */}
+            <div className="grid grid-cols-1 xl:grid-cols-[1fr_350px] gap-6 items-start">
+                
+                {/* Left Column (Code Editor & Prompts) */}
+                <div className="flex flex-col gap-6">
+                    
+                    {/* Prompt Box */}
+                    <div className="bg-white dark:bg-gray-900 rounded-xl p-5 border border-gray-200 dark:border-gray-800 shadow-sm transition-colors">
+                        <label className="text-sm font-semibold mb-2 block">AI Prompt / Instructions</label>
+                        <textarea 
+                            placeholder='Enter your prompts for the AI Web Story generator...' 
+                            className='h-[100px] rounded-lg shadow-inner w-full p-4 resize-none bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-colors text-sm' 
+                            value={cutomeInstruction} 
+                            onChange={(e) => setCutomeInstruction(e.target.value)}
+                        />
+                    </div>
+
+                    {/* HTML Code Editor */}
+                    <div className="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-200 dark:border-gray-800 shadow-sm transition-colors min-h-[600px] flex flex-col">
+                        <label className="text-sm font-semibold mb-3 px-1 block">Raw HTML Content</label>
+                        <div className='flex-1 border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-950 rounded-lg overflow-auto shadow-inner relative'>
+                            <Editor
+                                value={mandatoryPartCode}
+                                onValueChange={code => setMandatoryPartCode(code)}
+                                highlight={code => highlight(code, Prism.languages.html, 'html')}
+                                padding={16}
+                                className='focus:outline-none min-h-full'
+                                style={{
+                                    fontFamily: '"Fira code", "Fira Mono", monospace',
+                                    fontSize: 14, 
+                                    whiteSpace: "pre-wrap",
+                                }}
+                            />
+                        </div>
+                    </div>
+
                 </div>
 
-                {/* form title, desc, slug */}
-                <FormInput control={control} handleSubmit={handleSubmit} newStories={newStories} newWebStoryCreate={newWebStoryCreate} />
-
-
-                <div className='flex justify-around items-center flex-wrap gap-2'>
-
-                    <button onClick={() => updateWebStory()} className='px-4 py-2 rounded-md shadow-md w-fit bg-green-400 mx-auto m-4'>{processing ? "Updating" : "Update"}</button>
-
-                    <button onClick={() => preview()} className='px-4 py-2 rounded-md shadow-md w-fit bg-green-400 mx-auto m-4'>Preview</button>
-
-                    <button onClick={() => AiWebStories()} className='px-4 py-2 rounded-md shadow-md w-fit bg-green-400 mx-auto m-4'>{animation ? "Generating..." : "Ai Writer"}</button>
-
-                </div>
-
-
-                <textarea placeholder='Enter your prompts...' className='h-[100px] rounded-md shadow-md w-full p-2 resize-none bg-slate-100 ' value={cutomeInstruction} onChange={(e) => setCutomeInstruction(e.target.value)}></textarea>
-
-                <div className='border border-1 border-red-300 rounded-md max-[426px]:w-full p-1' style={{ maxHeight: "100vh", overflow: "auto", maxWidth: 450 }}>
-                    <Editor
-                        value={mandatoryPartCode}
-                        onValueChange={code => setMandatoryPartCode((prev) => (code))}
-                        highlight={code => highlight(code, Prism.languages.html, 'html')}
-                        padding={10}
-                        className='rounded-md border-none'
-                        style={{
-                            fontFamily: '"Fira code", "Fira Mono", monospace',
-                            fontSize: 20, whiteSpace: "pre-wrap"
-                        }}
-                    />
+                {/* Right Column (Settings Sidebar) */}
+                <div className="flex flex-col gap-6 sticky top-[90px]">
+                    <div className="bg-white dark:bg-gray-900 rounded-xl p-5 border border-gray-200 dark:border-gray-800 shadow-sm transition-colors">
+                        <h3 className="font-bold text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400 border-b border-gray-100 dark:border-gray-800 pb-2 mb-4">Story Metadata</h3>
+                        <FormInput control={control} handleSubmit={handleSubmit} newStories={newStories} newWebStoryCreate={newWebStoryCreate} />
+                    </div>
                 </div>
 
             </div>
-
-        </div>
+        </section>
     )
 }
 
 export default React.memo(WebStory)
 
-
-
-const FormInput = ({ control, newStories, handleSubmit, newWebStoryCreate }:{control:Control<FieldValues, any>,newStories:any,handleSubmit:UseFormHandleSubmit<FieldValues, undefined>,newWebStoryCreate:boolean}) => {
-
+const FormInput = ({ control, newStories, handleSubmit, newWebStoryCreate }: { control: Control<FieldValues, any>, newStories: any, handleSubmit: UseFormHandleSubmit<FieldValues, undefined>, newWebStoryCreate: boolean }) => {
     return (
-        <form onSubmit={handleSubmit(newStories)} className='flex flex-col flex-wrap'>
+        <form onSubmit={handleSubmit(newStories)} className='flex flex-col gap-4'>
+            
             <Controller
                 name='title'
                 control={control}
                 render={({ field }) => (
-                    <Input lableText='Title' placeholder='Enter Title... ' {...field} />
-                )}
-            />
-
-            <Controller
-                name='poster'
-                control={control}
-                render={({ field }) => (
-                    <Input lableText='Poster' placeholder='Enter Poster... ' {...field} />
+                    <div className="flex flex-col gap-1.5">
+                        <label className="text-sm font-semibold">Title</label>
+                        <input
+                            {...field}
+                            placeholder="Story Title..."
+                            className="w-full outline-none focus:ring-2 focus:ring-blue-500 px-3 py-2.5 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm transition-colors"
+                        />
+                    </div>
                 )}
             />
 
@@ -272,7 +314,29 @@ const FormInput = ({ control, newStories, handleSubmit, newWebStoryCreate }:{con
                 name='slug'
                 control={control}
                 render={({ field }) => (
-                    <Input lableText='Slug' placeholder='Enter Slug... ' {...field} />
+                    <div className="flex flex-col gap-1.5">
+                        <label className="text-sm font-semibold">URL Slug</label>
+                        <input
+                            {...field}
+                            placeholder="url-slug"
+                            className="w-full outline-none focus:ring-2 focus:ring-blue-500 px-3 py-2.5 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm lowercase font-mono transition-colors"
+                        />
+                    </div>
+                )}
+            />
+
+            <Controller
+                name='poster'
+                control={control}
+                render={({ field }) => (
+                    <div className="flex flex-col gap-1.5">
+                        <label className="text-sm font-semibold">Poster URL</label>
+                        <input
+                            {...field}
+                            placeholder="https://..."
+                            className="w-full outline-none focus:ring-2 focus:ring-blue-500 px-3 py-2.5 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm transition-colors"
+                        />
+                    </div>
                 )}
             />
 
@@ -280,13 +344,24 @@ const FormInput = ({ control, newStories, handleSubmit, newWebStoryCreate }:{con
                 name='description'
                 control={control}
                 render={({ field }) => (
-                    <Input lableText='Description' placeholder='Enter Description... ' {...field} />
+                    <div className="flex flex-col gap-1.5">
+                        <label className="text-sm font-semibold">Description</label>
+                        <textarea
+                            {...field}
+                            placeholder="Brief story description..."
+                            className="w-full outline-none focus:ring-2 focus:ring-blue-500 px-3 py-2.5 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm min-h-[100px] resize-none transition-colors"
+                        />
+                    </div>
                 )}
             />
 
-            <button type='submit' className='px-4 py-2 rounded-md shadow-md w-fit bg-green-400 mx-auto m-4'>{newWebStoryCreate ? "Creating..." : "New Story"}</button>
+            <button 
+                type='submit' 
+                className='w-full py-2.5 mt-2 rounded-lg shadow-sm bg-emerald-600 hover:bg-emerald-700 text-white font-medium transition-colors text-sm'
+            >
+                {newWebStoryCreate ? "Creating..." : "Create New Story"}
+            </button>
 
         </form>
     )
-
 }

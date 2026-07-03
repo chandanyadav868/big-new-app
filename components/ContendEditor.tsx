@@ -259,257 +259,295 @@ const ContentEditor = ({ blogImageUrl, category, slug, content, title, descripti
 
     return (
         <>
-            <div className="flex gap-2 flex-wrap p-2">
-                <input className="w-4 cursor-pointer" type="checkbox" value={String(storyShow)} onClick={() => setStoriesShow(prev => !prev)} />
-                <span className="font-bold">Story Active</span>
-            </div>
+            <label className="flex items-center justify-between p-5 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl shadow-sm mb-6 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-all max-w-[1400px] mx-auto mt-4">
+                <div className="flex flex-col gap-1">
+                    <span className="font-bold text-gray-900 dark:text-white text-lg">Web Story Editor</span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">Toggle this switch to open the visual Web Story Builder instead of the standard Article Editor.</span>
+                </div>
+                <div className="relative inline-flex items-center cursor-pointer ml-4 shrink-0">
+                    <input 
+                        type="checkbox" 
+                        className="sr-only peer" 
+                        checked={storyShow}
+                        onChange={() => setStoriesShow(prev => !prev)} 
+                    />
+                    <div className="w-14 h-7 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                </div>
+            </label>
 
             {storyShow && <WebStory setStories={setStories} />}
             {storyShow && <PreviewStory stories={stories} />}
 
-            {!storyShow && <section>
-                <div className="md:w-[80%] w-[99%] mx-auto flex gap-4 flex-col outline outline-1 rounded-md p-2 mt-2">
-                    <h1 className="font-bold text-2xl text-center ">Article </h1>
-
-                    <div className="flex justify-end gap-4">
-                        {success.success && <BadgeCheck size={32} fill="green" color="white" />}
-                        {success.error && <CircleX size={32} fill="red" color="white" />}
-                    </div>
-
-                    <div>
-                        <button onClick={TitleDesSlugReWrite}>
-                            {slugAnimation ? "Generating" : "AI Generate"}
-                        </button>
-                    </div>
-
-                    <form
-                        className="flex gap-4 flex-col rounded-md p-2 mt-2"
-                        onSubmit={handleSubmit(submissionData)}
-                    >
-                        {/* slug */}
-                        <Controller
-                            name="slug"
-                            control={control}
-                            defaultValue={slug || ""}
-                            rules={{ required: true }}
-                            render={({ field }) => (
-                                <EditInput
-                                    {...field}
-                                    lableText="Slug"
-                                    inputname="slug"
-                                    placeholder="Enter Your Slug..."
-                                    className="lowercase"
-                                />
-                            )}
-                        />
-                        {/* title */}
-                        <Controller
-                            name="title"
-                            control={control}
-                            defaultValue={title || ""}
-                            rules={{ required: true }}
-                            render={({ field }) => (
-                                <EditInput
-                                    {...field}
-                                    lableText="Title"
-                                    inputname="title"
-                                    placeholder="Enter Your Title..."
-                                    className=""
-                                />
-                            )}
-                        />
-                        {/* description */}
-                        <Controller
-                            name="description"
-                            control={control}
-                            defaultValue={description ?? ""}
-                            rules={{ required: true }}
-                            render={({ field }) => (
-                                <div className="flex flex-wrap gap-4 items-center justify-center">
-                                    <label className="font-bold w-[20%]" htmlFor="description">Description</label>
-                                    <textarea {...field} className="outline-none focus:ring-1 shadow-inner px-7 py-3 rounded-md bg-slate-100 flex-1 min-h-28 resize-none">
-                                    </textarea>
-                                </div>
-
-                            )}
-                        />
-                        {/* imageUrl */}
-                        <Controller
-                            name="blogImageUrl"
-                            control={control}
-                            defaultValue={blogImageUrl}
-                            rules={{ required: true }}
-                            render={({ field }) => (
-                                <EditInput
-                                    {...field}
-                                    lableText="Feature Image"
-                                    inputname="slblogImageUrlug"
-                                    placeholder="Enter Your Featured Image..."
-                                    className=""
-                                />
-                            )}
-                        />
-                        {/* image preview */}
-                        <div className="w-[200px] h-[100px] mx-auto">
-                            {imagePreview && <Image
-                                src={imagePreview}
-                                height={1000}
-                                width={1000}
-                                alt="Preview"
-                                className="w-full h-full rounded-md shadow-md border border-red-100 object-cover"
-                                style={{ aspectRatio: "16/9" }}
-                                loading="lazy"
-                                decoding="async"
-                            />}
+            {!storyShow && <section className="max-w-[1400px] mx-auto p-4 md:p-6 mt-4">
+                <form
+                    onSubmit={handleSubmit(submissionData)}
+                    className="flex flex-col gap-6 text-gray-900 dark:text-gray-100"
+                >
+                    {/* Top Action Bar */}
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white dark:bg-gray-900 p-4 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm sticky top-2 z-20 transition-colors">
+                        <div className="flex items-center gap-4">
+                            <h1 className="font-bold text-2xl">Article Editor</h1>
+                            {success.success && <BadgeCheck size={28} fill="green" color="white" />}
+                            {success.error && <CircleX size={28} fill="red" color="white" />}
                         </div>
-                        {/* alt featured Image */}
-                        <Controller
-                            name="featuredImagealt"
-                            control={control}
-                            defaultValue={featuredImagealt}
-                            rules={{ required: true }}
-                            render={({ field }) => (
-                                <EditInput
-                                    {...field}
-                                    lableText="Image Alt"
-                                    inputname="featuredImagealt"
-                                    placeholder="Enter Your Featured Image Alt..."
-                                    className=""
-                                />
-                            )}
-                        />
 
-                        {/* category */}
-                        <Controller
-                            name="category"
-                            control={control}
-                            defaultValue={category}
-                            rules={{ required: true }}
-                            render={({ field }) => (
-                                <EditInput
-                                    {...field}
-                                    lableText="Category"
-                                    inputname="category"
-                                    placeholder="Enter Your Category for article..."
-                                    className=""
-                                />
-                            )}
-                        />
-
-                        {/* editor */}
-                        <Controller
-                            name="createdby"
-                            control={control}
-                            rules={{ required: true }}
-                            defaultValue=""
-                            render={({ field }) => (
-                                <EditInput
-                                    {...field}
-                                    lableText="Createdby"
-                                    inputname="createdby"
-                                    placeholder="Enter Your Createdby for article..."
-                                    className=""
-                                />
-                            )}
-                        />
-
-                        {/* public */}
-                        <Controller
-                            name="visibility"
-                            control={control}
-                            defaultValue={true}
-                            render={({ field }) => (
-                                <div className="flex items-center flex-wrap">
-                                    <label className="flex font-bold text-xl w-[15%] shrink-0">
-                                        Visibility
-                                    </label>
-                                    <select
-                                        {...field}
-                                        className="shadow-md px-7 py-3 text-xl font-bold flex-1"
-                                        value={String(field.value)}
-                                    >
-                                        <option value="#">Choose Visibility</option>
-                                        <option value="false">False</option>
-                                        <option value="true">True</option>
-                                    </select>
-                                </div>
-                            )}
-                        />
-
-                        {/* content */}
-                        <div className="flex justify-between items-center">
-                            <span
-                                className="bg-blue-400 w-fit px-3 py-1 rounded-md font-bold text-xl hover:cursor-pointer"
+                        <div className="flex flex-wrap items-center gap-3">
+                            <button
+                                type="button"
+                                className="bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 px-5 py-2 rounded-lg font-medium transition-colors text-sm"
                                 onClick={() => reset()}
                             >
                                 Reset
-                            </span>
-
+                            </button>
+                            <button
+                                type="button"
+                                onClick={TitleDesSlugReWrite}
+                                className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-5 rounded-lg shadow-sm transition-colors text-sm flex items-center justify-center min-w-[140px]"
+                            >
+                                {slugAnimation ? "Generating SEO..." : "✨ AI Meta SEO"}
+                            </button>
                             <AiButton onClick={aiWriter} animation={animation} />
-                        </div>
 
-                        <div className="flex gap-2 flex-wrap justify-center">
-                            <span
+                            <button
+                                type="button"
                                 onClick={() => newArticle()}
-                                className="bg-blue-400 px-2 py-2 text-base rounded-md shadow-md font-bold  hover:bg-blue-600 cursor-pointer"
-                            >{newArticleCreating ? "Creating..." : "New Create"}</span>
+                                className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg shadow-sm font-medium transition-colors text-sm"
+                            >
+                                {newArticleCreating ? "Creating..." : "Create New"}
+                            </button>
+
                             <Button
                                 submission={submission}
                                 type="submit"
-                                text={"Update"}
-                                className="bg-blue-400 px-2 py-2 text-base rounded-md shadow-md font-bold hover:bg-blue-600"
+                                text={"Update Article"}
+                                className="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2 rounded-lg shadow-sm font-medium transition-colors text-sm"
                             />
                         </div>
+                    </div>
 
-                        <Controller
-                            name="content"
-                            control={control}
-                            rules={{ required: "Please write contents", }}
-                            render={({ field, fieldState: { error } }) => (
-                                <>
-                                    <MarkdownEditor
-                                        className="md:max-w-[720px] w-full mx-auto"
-                                        maxHeight="600px"
-                                        minHeight="600px"
-                                        theme={"dark"}
-                                        width="100%"
-                                        enablePreview={false}
-                                        toolbars={[
-                                            "undo", "redo", "bold", "italic", "header", "strike", "underline", "quote", "olist", "ulist", "todo", "link", "image", "code", "codeBlock", title2
-                                        ]}
-                                        previewProps={{
-                                            style: {
-                                                backgroundColor: "red",
-                                                width: "100%",
-                                            },
-                                            className: "bg-red-600"
-                                        }}
-                                        style={{
-                                            border: "1px solid #ccc",
-                                            borderRadius: "8px",
-                                            padding: "2px",
-                                            // width:"0px"
-                                        }}
-                                        value={newContent}
-                                        onChange={(value) => {
-                                            setNewContent(value); // locale state
-                                            field.onChange(value); // react-hook-form update
-                                        }}
-                                    />
-                                    {error && <span className="font-bold text-red-500">{error.message}</span>}
-                                    {preview && <MarkdownEditor.Markdown source={newContent} style={{ backgroundColor: "white" }} />}
-                                </>
-                            )
-                            }
-                        />
+                    {/* Two Column Layout */}
+                    <div className="grid grid-cols-1 xl:grid-cols-[1fr_350px] gap-6 items-start">
 
+                        {/* Main Editor Column (Left) */}
+                        <div className="flex flex-col gap-6">
 
+                            {/* Markdown Editor */}
+                            <div className="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-200 dark:border-gray-800 shadow-sm transition-colors max-w-[700px] mx-auto min-h-[700px]">
+                                <Controller
+                                    name="content"
+                                    control={control}
+                                    rules={{ required: "Please write contents", }}
+                                    render={({ field, fieldState: { error } }) => (
+                                        <div className="h-full flex flex-col">
+                                            {error && <span className="font-bold text-red-500 mb-2 block">{error.message}</span>}
+                                            <div className="flex-1 overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700">
+                                                <MarkdownEditor
+                                                    className="w-full h-full"
+                                                    height="700px"
+                                                    theme={"dark"}
+                                                    width="100%"
+                                                    enablePreview={false}
+                                                    toolbars={[
+                                                        "undo", "redo", "bold", "italic", "header", "strike", "underline", "quote", "olist", "ulist", "todo", "link", "image", "code", "codeBlock", title2
+                                                    ]}
+                                                    value={newContent}
+                                                    onChange={(value) => {
+                                                        setNewContent(value);
+                                                        field.onChange(value);
+                                                    }}
+                                                />
+                                            </div>
+                                            {preview && (
+                                                <div className="mt-4 p-4 border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-900 overflow-x-auto">
+                                                    <MarkdownEditor.Markdown 
+                                                        source={newContent} 
+                                                        style={{ color: "#ffffff", backgroundColor: "transparent" }} 
+                                                    />
+                                                </div>
+                                            )}
+                                        </div>
+                                    )}
+                                />
+                            </div>
+                        </div>
 
+                        {/* Settings Sidebar (Right) */}
+                        <div className="flex flex-col gap-6 sticky top-[90px]">
 
-                    </form>
-                </div>
-            </section>
-            }
+                            {/* Publishing Card */}
+                            <div className="bg-white dark:bg-gray-900 rounded-xl p-5 border border-gray-200 dark:border-gray-800 shadow-sm transition-colors flex flex-col gap-4">
+                                <h3 className="font-bold text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400 border-b border-gray-100 dark:border-gray-800 pb-2">Publishing</h3>
+
+                                <Controller
+                                    name="visibility"
+                                    control={control}
+                                    defaultValue={true}
+                                    render={({ field }) => (
+                                        <div className="flex flex-col gap-1.5">
+                                            <label className="text-sm font-semibold">Visibility</label>
+                                            <select
+                                                {...field}
+                                                className="w-full outline-none focus:ring-2 focus:ring-blue-500 px-3 py-2.5 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm font-medium transition-colors cursor-pointer"
+                                                value={String(field.value)}
+                                            >
+                                                <option value="true">Public (Live)</option>
+                                                <option value="false">Hidden (Draft)</option>
+                                            </select>
+                                        </div>
+                                    )}
+                                />
+
+                                <Controller
+                                    name="createdby"
+                                    control={control}
+                                    rules={{ required: true }}
+                                    defaultValue=""
+                                    render={({ field }) => (
+                                        <div className="flex flex-col gap-1.5">
+                                            <label className="text-sm font-semibold">Author (Created By)</label>
+                                            <input
+                                                {...field}
+                                                placeholder="Author name..."
+                                                className="w-full outline-none focus:ring-2 focus:ring-blue-500 px-3 py-2.5 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm transition-colors"
+                                            />
+                                        </div>
+                                    )}
+                                />
+
+                                <Controller
+                                    name="category"
+                                    control={control}
+                                    defaultValue={category}
+                                    rules={{ required: true }}
+                                    render={({ field }) => (
+                                        <div className="flex flex-col gap-1.5">
+                                            <label className="text-sm font-semibold">Category</label>
+                                            <input
+                                                {...field}
+                                                placeholder="e.g. cricket, wwe..."
+                                                className="w-full outline-none focus:ring-2 focus:ring-blue-500 px-3 py-2.5 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm transition-colors"
+                                            />
+                                        </div>
+                                    )}
+                                />
+                            </div>
+
+                            {/* Media Card */}
+                            <div className="bg-white dark:bg-gray-900 rounded-xl p-5 border border-gray-200 dark:border-gray-800 shadow-sm transition-colors flex flex-col gap-4">
+                                <h3 className="font-bold text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400 border-b border-gray-100 dark:border-gray-800 pb-2">Media</h3>
+
+                                {/* Image Preview */}
+                                <div className="w-full aspect-video rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center">
+                                    {imagePreview ? (
+                                        <Image
+                                            src={imagePreview}
+                                            height={400}
+                                            width={600}
+                                            alt="Preview"
+                                            className="w-full h-full object-cover"
+                                            unoptimized
+                                        />
+                                    ) : (
+                                        <span className="text-gray-400 text-sm font-medium">No Image</span>
+                                    )}
+                                </div>
+
+                                <Controller
+                                    name="blogImageUrl"
+                                    control={control}
+                                    defaultValue={blogImageUrl}
+                                    rules={{ required: true }}
+                                    render={({ field }) => (
+                                        <div className="flex flex-col gap-1.5">
+                                            <label className="text-sm font-semibold">Image URL</label>
+                                            <input
+                                                {...field}
+                                                placeholder="https://..."
+                                                className="w-full outline-none focus:ring-2 focus:ring-blue-500 px-3 py-2.5 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm transition-colors"
+                                            />
+                                        </div>
+                                    )}
+                                />
+
+                                <Controller
+                                    name="featuredImagealt"
+                                    control={control}
+                                    defaultValue={featuredImagealt}
+                                    rules={{ required: true }}
+                                    render={({ field }) => (
+                                        <div className="flex flex-col gap-1.5">
+                                            <label className="text-sm font-semibold">Image Alt Text</label>
+                                            <input
+                                                {...field}
+                                                placeholder="Describe the image..."
+                                                className="w-full outline-none focus:ring-2 focus:ring-blue-500 px-3 py-2.5 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm transition-colors"
+                                            />
+                                        </div>
+                                    )}
+                                />
+                            </div>
+
+                            {/* SEO / Meta Card */}
+                            <div className="bg-white dark:bg-gray-900 rounded-xl p-5 border border-gray-200 dark:border-gray-800 shadow-sm transition-colors flex flex-col gap-4">
+                                <h3 className="font-bold text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400 border-b border-gray-100 dark:border-gray-800 pb-2">SEO & Meta</h3>
+
+                                <Controller
+                                    name="title"
+                                    control={control}
+                                    defaultValue={title || ""}
+                                    rules={{ required: true }}
+                                    render={({ field }) => (
+                                        <div className="flex flex-col gap-1.5">
+                                            <label className="text-sm font-semibold">Article Title</label>
+                                            <input
+                                                {...field}
+                                                type="text"
+                                                placeholder="Article Title..."
+                                                className="w-full outline-none focus:ring-2 focus:ring-blue-500 px-3 py-2.5 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm transition-colors"
+                                            />
+                                        </div>
+                                    )}
+                                />
+
+                                <Controller
+                                    name="slug"
+                                    control={control}
+                                    defaultValue={slug || ""}
+                                    rules={{ required: true }}
+                                    render={({ field }) => (
+                                        <div className="flex flex-col gap-1.5">
+                                            <label className="text-sm font-semibold">URL Slug</label>
+                                            <input
+                                                {...field}
+                                                placeholder="url-friendly-slug"
+                                                className="w-full outline-none focus:ring-2 focus:ring-blue-500 px-3 py-2.5 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm lowercase transition-colors font-mono"
+                                            />
+                                        </div>
+                                    )}
+                                />
+
+                                <Controller
+                                    name="description"
+                                    control={control}
+                                    defaultValue={description ?? ""}
+                                    rules={{ required: true }}
+                                    render={({ field }) => (
+                                        <div className="flex flex-col gap-1.5">
+                                            <label className="text-sm font-semibold">Meta Description</label>
+                                            <textarea
+                                                {...field}
+                                                placeholder="Brief description for search engines..."
+                                                className="w-full outline-none focus:ring-2 focus:ring-blue-500 px-3 py-2.5 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm min-h-[100px] resize-none transition-colors"
+                                            />
+                                        </div>
+                                    )}
+                                />
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+            </section>}
         </>
     );
 };

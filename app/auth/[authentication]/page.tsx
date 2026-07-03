@@ -76,7 +76,10 @@ function Authentication() {
   return (
     <div className='min-h-[calc(100vh-80px)] w-full flex justify-center items-center p-4'>
       <div className='w-full max-w-md news-card shadow-lg p-8'>
-        <div className='mb-8'>
+        <div className='mb-8 flex flex-col items-center'>
+          <Link href="/" className="mb-6 block">
+            <img src="https://ik.imagekit.io/o66qwandt/logo.png.png" alt="HumanTaking Logo" className="h-12 w-auto object-contain" />
+          </Link>
           <h1 className='font-extrabold text-3xl text-center text-[var(--color-headline)]'>
             {authentication === "login" && "Welcome Back"}
             {authentication === "signup" && "Create Account"}

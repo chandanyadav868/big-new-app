@@ -15,7 +15,7 @@ import Link from 'next/link';
 import React from 'react';
 import { articleSlug } from '@/lib/utils';
 import TimeAgo from './TimeAgo';
-import CategoryPill from './CategoryPill';
+// Import removed to avoid nested <a> tags
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -134,10 +134,12 @@ const FeaturedCard = ({
           style={{ aspectRatio: '16/9' }}
           fetchPriority="high"
         />
-        {/* Category chip overlaid on image */}
+        {/* Category chip overlaid on image - plain span to avoid nested <a> */}
         {category && (
           <div className="absolute top-2 left-2">
-            <CategoryPill category={category} size="md" />
+            <span className="inline-block font-semibold uppercase tracking-wide rounded-full bg-red-50 text-red-600 border border-red-200 text-xs px-2.5 py-1 shadow-sm">
+              {category}
+            </span>
           </div>
         )}
       </div>

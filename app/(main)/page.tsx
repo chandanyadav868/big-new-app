@@ -20,6 +20,8 @@ import SectionHeading from '../../components/ui/SectionHeading';
 const ForYouSection = ({ articles }: { articles: HeroSectionProps[] }) => {
   if (!articles || articles.length === 0) return null;
 
+
+
   return (
     <section className="flex flex-col gap-3">
       <SectionHeading title="For You" />
