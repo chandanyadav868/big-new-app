@@ -67,6 +67,16 @@ const profileFetching = createSlice({
             state.intialProfile.arrayOfArticles = copyIntialResult.map((v,i)=> v._id === section? {...v,articles:[...v.articles,...data]}:v);
 
             return state
+        },
+        deleteArticleAction: (state, action: { payload: { section: string, articleId: string } }) => {
+            const { section, articleId } = action.payload;
+            if (state.intialProfile.arrayOfArticles) {
+                state.intialProfile.arrayOfArticles = state.intialProfile.arrayOfArticles.map(v => 
+                    v._id === section 
+                        ? { ...v, articles: v.articles.filter(a => a._id !== articleId), totalSizeOfArticles: Math.max(0, v.totalSizeOfArticles - 1) }
+                        : v
+                );
+            }
         }
     },
     extraReducers(builder) {
@@ -85,6 +95,6 @@ const profileFetching = createSlice({
     },
 })
 
-export const { addingNewArticle } = profileFetching.actions
+export const { addingNewArticle, deleteArticleAction } = profileFetching.actions
 
 export const profileFetchingData = profileFetching.reducer

@@ -1,8 +1,8 @@
 "use client"
 
-import { addingNewArticle } from '@/lib/readux/profileFetching';
+import { addingNewArticle, deleteArticleAction } from '@/lib/readux/profileFetching';
 import { AppDispatch, RootState } from '@/lib/readux/store';
-import { useParams,useRouter } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import React, { useCallback, useMemo, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import ArticleCard from './ui/ArticleCard';
@@ -11,34 +11,53 @@ import { FilePenLine, Trash2 } from 'lucide-react';
 
 export function ChannelPageComp() {
     const [moreArticlesFetching, setMoreArticleFetching] = useState(false);
+    const [toastMessage, setToastMessage] = useState<string | null>(null);
+    const [deleteConfirmId, setDeleteConfirmId] = useState<string | null>(null);
     const dispatch = useDispatch<AppDispatch>();
     const router = useRouter();
     const { profile, section } = useParams();
-    const secCategory = typeof section === "string" ? decodeURIComponent(section) : decodeURIComponent(section?.[0]??"")
+    const secCategory = typeof section === "string" ? decodeURIComponent(section) : decodeURIComponent(section?.[0] ?? "")
 
     const { error, intialProfile, loading } = useSelector((state: RootState) => state.profileFetching);
 
-    console.log({intialProfile});
-    console.log({secCategory});
-    
-    
-
-    const dataFetching = intialProfile.arrayOfArticles?.find((v,i)=> v._id === secCategory);
-
-    console.log({dataFetching});
-    
+    console.log({ intialProfile });
+    console.log({ secCategory });
 
 
-    const deleteArticle = async (id: string) => {
+
+    const dataFetching = intialProfile.arrayOfArticles?.find((v, i) => v._id === secCategory);
+
+    console.log({ dataFetching });
+
+
+
+    const showToast = (message: string) => {
+        setToastMessage(message);
+        setTimeout(() => setToastMessage(null), 3000);
+    };
+
+    const confirmDeleteArticle = async () => {
+        if (!deleteConfirmId) return;
+        const id = deleteConfirmId;
+
         try {
             console.log("deleting articleId:- ", id);
-            const response = await fetch(`/api/articleDelete?deleteId=${id}`,{
-                method:"GET"
+            const response = await fetch(`/api/articleDelete?deleteId=${id}`, {
+                method: "GET"
             });
             const responseJson = await response.json();
             console.log("responseJson:- ", responseJson);
+            if (response.ok) {
+                dispatch(deleteArticleAction({ section: secCategory ?? "", articleId: id }));
+                showToast("Successfully deleted the article");
+            } else {
+                showToast(responseJson.message || "Failed to delete the article");
+            }
         } catch (error) {
             console.log("Error in the deleteArticle");
+            showToast("Error deleting article");
+        } finally {
+            setDeleteConfirmId(null);
         }
     };
 
@@ -71,20 +90,19 @@ export function ChannelPageComp() {
             {/* category tabs */}
             <div className='flex gap-6 overflow-x-auto border-b border-[var(--color-divider)] scrollbar-hide mb-6'>
                 {category?.map((data, index) => (
-                    <div 
+                    <div
                         onClick={() => router.push(`/u/${profile}/${data}`)}
-                        className={`pb-3 cursor-pointer whitespace-nowrap font-semibold transition-colors text-sm ${
-                            secCategory === data 
-                            ? "text-red-600 border-b-2 border-red-600" 
-                            : "text-[var(--color-meta)] hover:text-[var(--color-headline)]"
-                        }`} 
+                        className={`pb-3 cursor-pointer whitespace-nowrap font-semibold transition-colors text-sm ${secCategory === data
+                                ? "text-red-600 border-b-2 border-red-600"
+                                : "text-[var(--color-meta)] hover:text-[var(--color-headline)]"
+                            }`}
                         key={data}
                     >
                         {data.toUpperCase()}
                     </div>
                 ))}
             </div>
-            
+
             {/* Articles Grid */}
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                 {dataFetching && dataFetching?.articles.map((data, index) => (
@@ -92,21 +110,21 @@ export function ChannelPageComp() {
                         <div className="flex-1 p-3 pb-0">
                             <ArticleCard variant="featured" {...data} key={data._id} />
                         </div>
-                        
+
                         {intialProfile.isYouOwner && (
                             <div className='flex justify-end gap-3 px-4 pb-4 mt-auto border-t border-[var(--color-divider)] pt-3'>
-                                <Link 
+                                <Link
                                     href={`/edit/${data._id}`}
                                     className="flex items-center justify-center p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-600 transition-colors"
                                 >
                                     <FilePenLine size={18} />
                                 </Link>
-                                <button 
-                                    onClick={() => deleteArticle(data?._id)}
+                                {intialProfile.isYouOwner && <button
+                                    onClick={() => setDeleteConfirmId(data?._id)}
                                     className="flex items-center justify-center p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-red-100 dark:hover:bg-red-900/30 hover:text-red-600 transition-colors"
                                 >
                                     <Trash2 size={18} />
-                                </button>
+                                </button>}
                             </div>
                         )}
                     </div>
@@ -117,14 +135,44 @@ export function ChannelPageComp() {
             {secCategory &&
                 ((dataFetching?.totalSizeOfArticles ?? 0) > (dataFetching?.articles?.length ?? 0)) &&
                 <div className='flex justify-center mt-8'>
-                    <button 
-                        onClick={() => moreArticle()} 
+                    <button
+                        onClick={() => moreArticle()}
                         disabled={moreArticlesFetching}
                         className="px-6 py-2.5 bg-gray-100 dark:bg-gray-800 text-[var(--color-headline)] hover:bg-gray-200 dark:hover:bg-gray-700 font-semibold rounded-full transition-colors disabled:opacity-50"
                     >
                         {moreArticlesFetching ? "Loading..." : "Load More Articles"}
                     </button>
                 </div>}
+
+            {toastMessage && (
+                <div className="fixed bottom-4 right-4 bg-gray-800 text-white px-4 py-2 rounded-md shadow-lg z-50">
+                    {toastMessage}
+                </div>
+            )}
+
+            {/* Custom Delete Confirmation Modal */}
+            {deleteConfirmId && (
+                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+                    <div className="bg-white dark:bg-gray-900 rounded-lg p-6 max-w-sm w-full mx-4 shadow-xl border border-gray-200 dark:border-gray-800">
+                        <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Delete Article</h3>
+                        <p className="text-gray-600 dark:text-gray-400 mb-6 text-sm">Are you sure you want to delete this article? This action cannot be undone.</p>
+                        <div className="flex justify-end gap-3">
+                            <button
+                                onClick={() => setDeleteConfirmId(null)}
+                                className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors"
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                onClick={confirmDeleteArticle}
+                                className="px-4 py-2 text-sm font-medium bg-red-600 hover:bg-red-700 text-white rounded-md transition-colors"
+                            >
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
